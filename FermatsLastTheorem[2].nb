@@ -1,0 +1,337 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[      8781,        328]
+NotebookOptionsPosition[      7375,        273]
+NotebookOutlinePosition[      7742,        289]
+CellTagsIndexPosition[      7699,        286]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Fermat's Last Theorem", "Title"],
+
+Cell[CellGroupData[{
+
+Cell["Author", "Subsection"],
+
+Cell["\<\
+Eric W. Weisstein
+January 5, 2006\
+\>", "Text"],
+
+Cell[TextData[{
+ "This notebook downloaded from ",
+ ButtonBox["http://mathworld.wolfram.com/notebooks/DiophantineEquations/\
+FermatsLastTheorem.nb",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{
+    URL["http://mathworld.wolfram.com/notebooks/DiophantineEquations/\
+FermatsLastTheorem.nb"], None}],
+ "."
+}], "Text"],
+
+Cell[TextData[{
+ "For more information, see Eric's ",
+ StyleBox["MathWorld",
+  FontSlant->"Italic"],
+ " entry ",
+ ButtonBox["http://mathworld.wolfram.com/FermatsLastTheorem.html",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{
+    URL["http://mathworld.wolfram.com/FermatsLastTheorem.html"], None}],
+ "."
+}], "Text"],
+
+Cell[TextData[{
+ "For a list of Eric's math packages that may be needed to evaluate this \
+notebook, see ",
+ ButtonBox["http://mathworld.wolfram.com/packages/",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{
+    URL["http://mathworld.wolfram.com/packages/"], None}],
+ ".  An archive of these packages may be downloaded from ",
+ ButtonBox["http://mathworld.wolfram.com/packages/MathWorldPackages.zip",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{
+    URL["http://mathworld.wolfram.com/packages/MathWorldPackages.zip"], None}],
+ ", as well as from the ",
+ StyleBox["Mathematica Information Center",
+  FontSlant->"Italic"],
+ "'s ",
+ ButtonBox["MathSource item 4775",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{
+    URL["http://library.wolfram.com/infocenter/MathSource/4775/"], None}],
+ ".  A list of Eric's utility packages that may be needed to evaluate this \
+notebook may be downloaded from ",
+ ButtonBox["MathSource item 5087",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{
+    URL["http://library.wolfram.com/infocenter/MathSource/5087/"], None}],
+ "."
+}], "Text"],
+
+Cell["\<\
+\[Copyright]2006 Wolfram Research, Inc. except for portions noted otherwise\
+\>", "Text"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Simpson's Fallacious Counterexample", "Section"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"num", "=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"1782", "^", "12"}], "+", 
+     RowBox[{"1841", "^", "12"}]}], ",", 
+    RowBox[{"1922", "^", "12"}]}], "}"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "2541210258614589176288669958142428526657", ",", 
+   "2541210259314801410819278649643651567616"}], "}"}]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Position", "[", 
+    RowBox[{
+     RowBox[{"Equal", "@@@", 
+      RowBox[{"Transpose", "[", 
+       RowBox[{"IntegerDigits", "/@", "num"}], "]"}]}], ",", "False", ",", 
+     "1", ",", "1"}], "]"}], "[", 
+   RowBox[{"[", 
+    RowBox[{"1", ",", "1"}], "]"}], "]"}], "-", "1"}]], "Input"],
+
+Cell[BoxData["9"], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\"Proof\"", "Section"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FullSimplify", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"x", "^", "n"}], "+", 
+     RowBox[{"y", "^", "n"}]}], "\[Equal]", 
+    RowBox[{"z", "^", "n"}]}], ",", 
+   RowBox[{
+    RowBox[{"Element", "[", 
+     RowBox[{
+      RowBox[{"x", "|", "y", "|", "z", "|", "n"}], ",", "Integers"}], "]"}], "&&", 
+    RowBox[{"n", ">", "2"}], "&&", 
+    RowBox[{
+     RowBox[{"x", " ", "y", " ", "z"}], "\[NotEqual]", "0"}]}]}], 
+  "]"}]], "Input"],
+
+Cell[BoxData["False"], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"TimeConstrained", "[", 
+   RowBox[{
+    RowBox[{"Reduce", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"x", "^", "n"}], "+", 
+         RowBox[{"y", "^", "n"}]}], "\[Equal]", 
+        RowBox[{"z", "^", "n"}]}], "&&", 
+       RowBox[{"Element", "[", 
+        RowBox[{
+         RowBox[{"x", "|", "y", "|", "z", "|", "n"}], ",", "Integers"}], 
+        "]"}], "&&", 
+       RowBox[{"n", ">", "2"}], "&&", 
+       RowBox[{
+        RowBox[{"x", " ", "y", " ", "z"}], "\[NotEqual]", "0"}]}], ",", 
+      RowBox[{"{", 
+       RowBox[{"x", ",", "y", ",", "z", ",", "n"}], "}"}]}], "]"}], ",", 
+    "3600"}], "]"}], "//", "Timing"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"3439.4152299999996`", ",", "$Aborted"}], "}"}]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Reduce", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"x", "^", "n"}], "+", 
+      RowBox[{"y", "^", "n"}]}], "\[Equal]", 
+     RowBox[{"z", "^", "n"}]}], "&&", 
+    RowBox[{"n", ">", "2"}], "&&", 
+    RowBox[{
+     RowBox[{"x", " ", "y", " ", "z"}], "\[NotEqual]", "0"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y", ",", "z", ",", "n"}], "}"}], ",", "Integers"}], 
+  "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Reduce", "::", "\<\"nsmet\"\>"}], ":", 
+  " ", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"This system cannot be solved with \
+the methods available to Reduce.\\\\\\\"\\\", \\\"MT\\\"]\\) \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/Reduce\\\", ButtonNote -> \
+\\\"Reduce::nsmet\\\"]\\)\"\>"}]], "Message", "MSG"],
+
+Cell[BoxData[
+ RowBox[{"Reduce", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      SuperscriptBox["x", "n"], "+", 
+      SuperscriptBox["y", "n"]}], "\[Equal]", 
+     SuperscriptBox["z", "n"]}], "&&", 
+    RowBox[{"n", ">", "2"}], "&&", 
+    RowBox[{
+     RowBox[{"x", " ", "y", " ", "z"}], "\[NotEqual]", "0"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y", ",", "z", ",", "n"}], "}"}], ",", "Integers"}], 
+  "]"}]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Exists", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y", ",", "z", ",", "n"}], "}"}], ",", 
+   RowBox[{
+    RowBox[{"Element", "[", 
+     RowBox[{
+      RowBox[{"x", "|", "y", "|", "z", "|", "n"}], ",", "Integers"}], "]"}], "&&", 
+    RowBox[{"n", ">", "2"}], "&&", 
+    RowBox[{
+     RowBox[{"x", " ", "y", " ", "z"}], "\[NotEqual]", "0"}]}], ",", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"x", "^", "n"}], "+", 
+     RowBox[{"y", "^", "n"}]}], "\[Equal]", 
+    RowBox[{"z", "^", "n"}]}]}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  SubscriptBox["\[Exists]", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"x", ",", "y", ",", "z", ",", "n"}], "}"}], ",", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"x", "|", "y", "|", "z", "|", "n"}], ")"}], "\[Element]", 
+      "Integers"}], "&&", 
+     RowBox[{"n", ">", "2"}], "&&", 
+     RowBox[{
+      RowBox[{"x", " ", "y", " ", "z"}], "\[NotEqual]", "0"}]}]}]], 
+  RowBox[{
+   RowBox[{
+    SuperscriptBox["x", "n"], "+", 
+    SuperscriptBox["y", "n"]}], "\[Equal]", 
+   SuperscriptBox["z", "n"]}]}]], "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{762, 710},
+WindowMargins->{{68, Automatic}, {Automatic, -14}},
+ShowSelection->True,
+FrontEndVersion->"9.0 for Microsoft Windows (32-bit) (November 20, 2012)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 38, 0, 90, "Title"],
+Cell[CellGroupData[{
+Cell[630, 26, 28, 0, 43, "Subsection"],
+Cell[661, 28, 57, 3, 49, "Text"],
+Cell[721, 33, 311, 9, 49, "Text"],
+Cell[1035, 44, 311, 10, 49, "Text"],
+Cell[1349, 56, 1053, 27, 106, "Text"],
+Cell[2405, 85, 99, 2, 30, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2541, 92, 54, 0, 79, "Section"],
+Cell[CellGroupData[{
+Cell[2620, 96, 212, 7, 31, "Input"],
+Cell[2835, 105, 158, 4, 52, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3030, 114, 332, 10, 52, "Input"],
+Cell[3365, 126, 28, 0, 31, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3442, 132, 28, 0, 79, "Section"],
+Cell[CellGroupData[{
+Cell[3495, 136, 472, 15, 29, "Input"],
+Cell[3970, 153, 32, 0, 27, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4039, 158, 707, 21, 44, "Input"],
+Cell[4749, 181, 98, 2, 27, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4884, 188, 441, 14, 27, "Input"],
+Cell[5328, 204, 416, 7, 23, "Message"],
+Cell[5747, 213, 445, 14, 33, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6229, 232, 542, 16, 29, "Input"],
+Cell[6774, 250, 561, 18, 32, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

@@ -1,0 +1,259 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      8176,        249]
+NotebookOptionsPosition[      7438,        222]
+NotebookOutlinePosition[      7946,        242]
+CellTagsIndexPosition[      7903,        239]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"Sum", "[", 
+  RowBox[{"x", ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "x"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.630658360282136*^9, 3.630658411427061*^9}, {
+  3.630661247320265*^9, 3.630661252231546*^9}, {3.630661360038712*^9, 
+  3.630661494789419*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"NestList", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"Sum", "[", 
+         RowBox[{"#", ",", "n"}], "]"}], "+", "1"}], "&"}], ",", "x", ",", 
+      "6"}], "]"}], "/.", 
+    RowBox[{"x", "\[Rule]", "1"}]}], "//", "Expand"}], "//", "TableForm"}]], \
+"Input",
+ CellChangeTimes->{{3.6306615066070952`*^9, 3.630661507984174*^9}, 
+   3.630662207416179*^9, {3.6306623417458625`*^9, 3.630662344538022*^9}, {
+   3.630662746339004*^9, 3.6306628071544824`*^9}, {3.6306628736102834`*^9, 
+   3.6306628980896835`*^9}, {3.6306726771746273`*^9, 3.63067271795196*^9}, {
+   3.6306732926668315`*^9, 3.6306733192413516`*^9}, {3.630673371883363*^9, 
+   3.630673514084496*^9}, {3.630673699320091*^9, 3.630673734868124*^9}, {
+   3.630673774253377*^9, 3.630673836779953*^9}, {3.630674272788892*^9, 
+   3.6306742771741424`*^9}, {3.630674318131485*^9, 3.6306743202406054`*^9}, {
+   3.6307094913187647`*^9, 3.6307094933818827`*^9}, {3.630709567258108*^9, 
+   3.6307095680341525`*^9}, {3.6307096708820353`*^9, 3.6307096754932985`*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[GridBox[{
+     {"1"},
+     {
+      RowBox[{"1", "+", "n"}]},
+     {
+      RowBox[{"1", "+", 
+       FractionBox["n", "2"], "+", 
+       FractionBox[
+        SuperscriptBox["n", "2"], "2"]}]},
+     {
+      RowBox[{"1", "+", 
+       FractionBox[
+        RowBox[{"5", " ", "n"}], "6"], "+", 
+       FractionBox[
+        SuperscriptBox["n", "3"], "6"]}]},
+     {
+      RowBox[{"1", "+", 
+       FractionBox[
+        RowBox[{"7", " ", "n"}], "12"], "+", 
+       FractionBox[
+        RowBox[{"11", " ", 
+         SuperscriptBox["n", "2"]}], "24"], "-", 
+       FractionBox[
+        SuperscriptBox["n", "3"], "12"], "+", 
+       FractionBox[
+        SuperscriptBox["n", "4"], "24"]}]},
+     {
+      RowBox[{"1", "+", 
+       FractionBox[
+        RowBox[{"47", " ", "n"}], "60"], "+", 
+       FractionBox[
+        SuperscriptBox["n", "2"], "24"], "+", 
+       FractionBox[
+        RowBox[{"5", " ", 
+         SuperscriptBox["n", "3"]}], "24"], "-", 
+       FractionBox[
+        SuperscriptBox["n", "4"], "24"], "+", 
+       FractionBox[
+        SuperscriptBox["n", "5"], "120"]}]},
+     {
+      RowBox[{"1", "+", 
+       FractionBox[
+        RowBox[{"37", " ", "n"}], "60"], "+", 
+       FractionBox[
+        RowBox[{"19", " ", 
+         SuperscriptBox["n", "2"]}], "45"], "-", 
+       FractionBox[
+        RowBox[{"5", " ", 
+         SuperscriptBox["n", "3"]}], "48"], "+", 
+       FractionBox[
+        RowBox[{"11", " ", 
+         SuperscriptBox["n", "4"]}], "144"], "-", 
+       FractionBox[
+        SuperscriptBox["n", "5"], "80"], "+", 
+       FractionBox[
+        SuperscriptBox["n", "6"], "720"]}]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.5599999999999999]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}],
+   Column],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.6306743211506577`*^9, 3.630709494320936*^9, 
+  3.6307095685951843`*^9, 3.6307096764713545`*^9}]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.630674303102625*^9, 3.630674303276635*^9}}],
+
+Cell[BoxData[
+ RowBox[{"MapThread", "[", 
+  RowBox[{"Part", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"NestList", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{"Sum", "[", 
+           RowBox[{"#", ",", "n"}], "]"}], "+", "1"}], "&"}], ",", "x", ",", 
+        "5"}], "]"}], "/.", 
+      RowBox[{"x", "\[Rule]", "1"}]}], ",", 
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"2", ";;", "All"}], ",", 
+       RowBox[{"{", "6", "}"}]}], "]"}]}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.6306743862243795`*^9, 3.630674420952366*^9}, {
+  3.6306746471323028`*^9, 3.630674653437663*^9}, {3.630707427678731*^9, 
+  3.6307074707401943`*^9}, {3.630707530392606*^9, 3.6307075814485264`*^9}, {
+  3.630707632131425*^9, 3.6307076506164827`*^9}, {3.630707789843446*^9, 
+  3.6307078447835884`*^9}, {3.630707896880568*^9, 3.630707898730674*^9}, {
+  3.630707984063555*^9, 3.630707989151846*^9}, {3.6307080238118277`*^9, 
+  3.630708026899005*^9}, {3.630708075748799*^9, 3.630708077969926*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Expand", "[", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"NestList", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{"Sum", "[", 
+           RowBox[{"#", ",", "n"}], "]"}], "+", "1"}], "&"}], ",", "x", ",", 
+        "5"}], "]"}], "/.", 
+      RowBox[{"x", "\[Rule]", "1"}]}], "//", "Factor"}], ")"}], "*", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"i", "!"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "0", ",", "5"}], "}"}]}], "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.6307081229845004`*^9, 3.630708215500792*^9}, {
+  3.6307084844881773`*^9, 3.6307085165120087`*^9}, {3.630708548388832*^9, 
+  3.630708615107648*^9}, {3.6307087493183246`*^9, 3.6307087513114386`*^9}}],
+
+Cell[BoxData[" "], "Input",
+ CellChangeTimes->{3.630712933439643*^9}],
+
+Cell[BoxData[
+ RowBox[{" ", 
+  RowBox[{"Expand", "[", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", 
+     RowBox[{"1", "+", "n"}], ",", 
+     RowBox[{"2", "+", "n", "+", 
+      SuperscriptBox["n", "2"]}], ",", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"1", "+", "n"}], ")"}], " ", 
+      RowBox[{"(", 
+       RowBox[{"6", "-", "n", "+", 
+        SuperscriptBox["n", "2"]}], ")"}]}], ",", 
+     RowBox[{"24", "+", 
+      RowBox[{"14", " ", "n"}], "+", 
+      RowBox[{"11", " ", 
+       SuperscriptBox["n", "2"]}], "-", 
+      RowBox[{"2", " ", 
+       SuperscriptBox["n", "3"]}], "+", 
+      SuperscriptBox["n", "4"]}], ",", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"1", "+", "n"}], ")"}], " ", 
+      RowBox[{"(", 
+       RowBox[{"120", "-", 
+        RowBox[{"26", " ", "n"}], "+", 
+        RowBox[{"31", " ", 
+         SuperscriptBox["n", "2"]}], "-", 
+        RowBox[{"6", " ", 
+         SuperscriptBox["n", "3"]}], "+", 
+        SuperscriptBox["n", "4"]}], ")"}]}]}], "}"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.6307086393740363`*^9, 3.6307086444613276`*^9}, {
+  3.6307086861917143`*^9, 3.6307086869587584`*^9}, {3.630709791451931*^9, 
+  3.630709845296011*^9}, {3.6307104377508974`*^9, 3.630710444491283*^9}}]
+},
+WindowSize->{767, 606},
+WindowMargins->{{Automatic, 98}, {6, Automatic}},
+PrintingCopies->1,
+PrintingPageRange->{32000, 32000},
+PrintingOptions->{"Magnification"->1.,
+"PaperOrientation"->"Portrait",
+"PaperSize"->{595.1999999999999, 841.92}},
+FrontEndVersion->"10.0 for Microsoft Windows (32-bit) (July 1, 2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 292, 7, 31, "Input"],
+Cell[CellGroupData[{
+Cell[875, 31, 1092, 22, 31, InheritFromParent],
+Cell[1970, 55, 2240, 73, 201, "Output"]
+}, Open  ]],
+Cell[4225, 131, 92, 1, 31, InheritFromParent],
+Cell[4320, 134, 1040, 24, 31, "Input"],
+Cell[5363, 160, 769, 21, 31, "Input"],
+Cell[6135, 183, 69, 1, 31, "Input"],
+Cell[6207, 186, 1227, 34, 55, InheritFromParent]
+}
+]
+*)
+
+(* End of internal cache information *)
+

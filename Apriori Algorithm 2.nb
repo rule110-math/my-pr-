@@ -1,0 +1,2941 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    119273,       2933]
+NotebookOptionsPosition[    118198,       2908]
+NotebookOutlinePosition[    118571,       2924]
+CellTagsIndexPosition[    118528,       2921]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+min_support=0.0045, min_confidence=0.2, min_lift=3, min_length=2\
+\>", "ExternalLanguage",
+ CellChangeTimes->{{3.7771333524206877`*^9, 3.7771333611551876`*^9}, {
+   3.777133400463436*^9, 3.7771334043216567`*^9}, {3.7771334607468843`*^9, 
+   3.777133633801782*^9}, {3.77713370561789*^9, 3.7771337398728495`*^9}, {
+   3.777133770947626*^9, 3.7771338341802435`*^9}, 3.7771338787267914`*^9, {
+   3.777133945864631*^9, 3.7771339488578024`*^9}, {3.777134060994216*^9, 
+   3.7771340886888*^9}, {3.7771344563748302`*^9, 3.777134575460642*^9}, {
+   3.7771346119847307`*^9, 3.7771347440652857`*^9}, {3.777134824113864*^9, 
+   3.77713484519407*^9}, {3.777135366358879*^9, 3.7771354500616665`*^9}, {
+   3.777137104088271*^9, 
+   3.7771371316248465`*^9}},ExpressionUUID->"ef550a70-bf49-430e-ae15-\
+b460b238d54d"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"f", "=", 
+  RowBox[{"ExternalFunction", "[", 
+   RowBox[{
+   "\"\<Python\>\"", ",", 
+    "\"\<import numpy as np\nimport matplotlib.pyplot as plt\nimport pandas \
+as pd\nfrom apyori import apriori\n\ndef p(r,a,b,c,d):\n      \
+association_rules = apriori(r, min_support=a, min_confidence=b, \
+min_lift=c,min_length=d)\n      association_results = list(association_rules)\
+\n      return association_results       \>\""}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.777136616822401*^9, 3.7771366711705093`*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"23baab54-8f60-4622-b74f-db4c2473f24e"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   TagBox["ExternalFunction",
+    "SummaryHead"], "[", 
+   DynamicModuleBox[{Typeset`open$$ = False, Typeset`embedState$$ = "Ready"}, 
+    TemplateBox[{PaneSelectorBox[{False -> GridBox[{{
+            PaneBox[
+             ButtonBox[
+              DynamicBox[
+               FEPrivate`FrontEndResource[
+               "FEBitmaps", "SquarePlusIconMedium"]], 
+              ButtonFunction :> (Typeset`open$$ = True), Appearance -> None, 
+              Evaluator -> Automatic, Method -> "Preemptive"], 
+             Alignment -> {Center, Center}, ImageSize -> 
+             Dynamic[{
+               Automatic, 3.5 CurrentValue["FontCapHeight"]/
+                AbsoluteCurrentValue[Magnification]}]], 
+            GridBox[{{
+               RowBox[{
+                 TagBox["\"Name: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["\"p\"", "SummaryItem"]}], 
+               RowBox[{
+                 TagBox["\"Arguments: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox[
+                  RowBox[{"{", 
+                    
+                    RowBox[{
+                    "\"r\"", ",", "\"a\"", ",", "\"b\"", ",", "\"c\"", ",", 
+                    "\"d\""}], "}"}], "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"System: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["\"Python\"", "SummaryItem"]}], "\[SpanFromLeft]"}}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
+             False, GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
+              BaseStyle -> {
+              ShowStringCharacters -> False, NumberMarks -> False, 
+               PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+          GridBoxAlignment -> {"Rows" -> {{Top}}}, AutoDelete -> False, 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+          BaselinePosition -> {1, 1}], True -> GridBox[{{
+            PaneBox[
+             ButtonBox[
+              DynamicBox[
+               FEPrivate`FrontEndResource[
+               "FEBitmaps", "SquareMinusIconMedium"]], 
+              ButtonFunction :> (Typeset`open$$ = False), Appearance -> None, 
+              Evaluator -> Automatic, Method -> "Preemptive"], 
+             Alignment -> {Center, Center}, ImageSize -> 
+             Dynamic[{
+               Automatic, 3.5 CurrentValue["FontCapHeight"]/
+                AbsoluteCurrentValue[Magnification]}]], 
+            GridBox[{{
+               RowBox[{
+                 TagBox["\"Name: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["\"p\"", "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"Arguments: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox[
+                  RowBox[{"{", 
+                    
+                    RowBox[{
+                    "\"r\"", ",", "\"a\"", ",", "\"b\"", ",", "\"c\"", ",", 
+                    "\"d\""}], "}"}], "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"System: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["\"Python\"", "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"Type: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["\"PythonFunction\"", "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"IsModule: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["False", "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"IsClass: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["False", "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"IsFunction: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["True", "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"IsMethod: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["False", "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"IsCallable: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["True", "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"Session: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox[
+                  InterpretationBox[
+                   RowBox[{
+                    TagBox["ExternalSessionObject", "SummaryHead"], "[", 
+                    
+                    DynamicModuleBox[{
+                    Typeset`open$$ = False, Typeset`embedState$$ = "Ready"}, 
+                    TemplateBox[{
+                    PaneSelectorBox[{False -> GridBox[{{
+                    PaneBox[
+                    ButtonBox[
+                    DynamicBox[
+                    FEPrivate`FrontEndResource[
+                    "FEBitmaps", "SquarePlusIconMedium"]], 
+                    ButtonFunction :> (Typeset`open$$ = True), Appearance -> 
+                    None, Evaluator -> Automatic, Method -> "Preemptive"], 
+                    Alignment -> {Center, Center}, ImageSize -> 
+                    Dynamic[{Automatic, 3.5 CurrentValue["FontCapHeight"]/
+                    AbsoluteCurrentValue[Magnification]}]], 
+                    GraphicsBox[{{
+                    Hue[0.5766283524904214, 0.6682027649769585, 0.651], 
+                    EdgeForm[None], 
+                    
+                    FilledCurveBox[{{{1, 4, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 
+                    3}}, {{1, 4, 3}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}, {1, 3, 3}, {1, 3, 3}, {0, 1, 0}, {0, 1, 0}, {1, 3, 
+                    3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}, {1, 3, 3}}}, {{{58, 
+                    120}, {60, 120}, {62, 118}, {62, 115}, {62, 112}, {60, 
+                    110}, {58, 110}, {55, 110}, {53, 112}, {53, 115}, {53, 
+                    118}, {55, 120}, {58, 120}}, {{72, 128}, {44, 128}, {46, 
+                    116}, {46, 116}, {46, 104}, {73, 104}, {73, 100}, {36, 
+                    100}, {36, 100}, {18, 102}, {18, 74}, {18, 45}, {33, 
+                    46}, {33, 46}, {43, 46}, {43, 59}, {43, 59}, {42, 75}, {
+                    58, 75}, {85, 75}, {85, 75}, {99, 75}, {99, 89}, {99, 
+                    114}, {99, 114}, {102, 128}, {72, 128}}}]}, {
+                    Hue[0.1164, 0.745, 0.99], 
+                    EdgeForm[None], 
+                    
+                    FilledCurveBox[{{{1, 4, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 
+                    3}}, {{1, 4, 3}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}, {1, 3, 3}, {1, 3, 3}, {0, 1, 0}, {0, 1, 0}, {1, 3, 
+                    3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}, {1, 3, 3}}}, {{{88, 
+                    27}, {85, 27}, {83, 29}, {83, 32}, {83, 34}, {85, 37}, {
+                    88, 37}, {91, 37}, {93, 34}, {93, 32}, {93, 29}, {91, 
+                    27}, {88, 27}}, {{73, 18}, {101, 18}, {99, 31}, {99, 
+                    31}, {99, 43}, {73, 43}, {73, 47}, {110, 47}, {110, 47}, {
+                    128, 45}, {128, 73}, {128, 102}, {112, 101}, {112, 101}, {
+                    103, 101}, {103, 87}, {103, 87}, {104, 72}, {88, 72}, {61,
+                     72}, {61, 72}, {46, 72}, {46, 57}, {46, 33}, {46, 33}, {
+                    44, 18}, {73, 18}}}]}}, {ImageSize -> {Automatic, 
+                    Dynamic[3.5 CurrentValue["FontCapHeight"]]}, 
+                    ImageSize -> {Automatic, 
+                    Dynamic[3.5 CurrentValue["FontCapHeight"]]}}], 
+                    GridBox[{{
+                    RowBox[{
+                    TagBox["\"System: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["\"Python\"", "SummaryItem"]}], 
+                    RowBox[{
+                    TagBox["\"EvaluationCount: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox[
+                    DynamicBox[
+                    ToBoxes[
+                    If[$SessionID === 24753901766207611065, 
+                    ExternalSessionObject[
+                    "8f8b256b-b6b4-4f61-9471-398a1eac88f9"][
+                    "EvaluationCount"], None], StandardForm], 
+                    TrackedSymbols :> {$SessionID, 
+                    ExternalEvaluate`Private`$Links}], "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox["\"UUID: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox[
+                    "\"8f8b256b-b6b4-4f61-9471-398a1eac88f9\"", 
+                    "SummaryItem"]}], "\[SpanFromLeft]"}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
+                    AutoDelete -> False, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{2}}, "Rows" -> {{Automatic}}}, 
+                    BaseStyle -> {
+                    ShowStringCharacters -> False, NumberMarks -> False, 
+                    PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+                    GridBoxAlignment -> {"Rows" -> {{Top}}}, AutoDelete -> 
+                    False, GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    BaselinePosition -> {1, 1}], True -> GridBox[{{
+                    PaneBox[
+                    ButtonBox[
+                    DynamicBox[
+                    FEPrivate`FrontEndResource[
+                    "FEBitmaps", "SquareMinusIconMedium"]], 
+                    ButtonFunction :> (Typeset`open$$ = False), Appearance -> 
+                    None, Evaluator -> Automatic, Method -> "Preemptive"], 
+                    Alignment -> {Center, Center}, ImageSize -> 
+                    Dynamic[{Automatic, 3.5 CurrentValue["FontCapHeight"]/
+                    AbsoluteCurrentValue[Magnification]}]], 
+                    GraphicsBox[{{
+                    Hue[0.5766283524904214, 0.6682027649769585, 0.651], 
+                    EdgeForm[None], 
+                    
+                    FilledCurveBox[{{{1, 4, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 
+                    3}}, {{1, 4, 3}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}, {1, 3, 3}, {1, 3, 3}, {0, 1, 0}, {0, 1, 0}, {1, 3, 
+                    3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}, {1, 3, 3}}}, {{{58, 
+                    120}, {60, 120}, {62, 118}, {62, 115}, {62, 112}, {60, 
+                    110}, {58, 110}, {55, 110}, {53, 112}, {53, 115}, {53, 
+                    118}, {55, 120}, {58, 120}}, {{72, 128}, {44, 128}, {46, 
+                    116}, {46, 116}, {46, 104}, {73, 104}, {73, 100}, {36, 
+                    100}, {36, 100}, {18, 102}, {18, 74}, {18, 45}, {33, 
+                    46}, {33, 46}, {43, 46}, {43, 59}, {43, 59}, {42, 75}, {
+                    58, 75}, {85, 75}, {85, 75}, {99, 75}, {99, 89}, {99, 
+                    114}, {99, 114}, {102, 128}, {72, 128}}}]}, {
+                    Hue[0.1164, 0.745, 0.99], 
+                    EdgeForm[None], 
+                    
+                    FilledCurveBox[{{{1, 4, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 
+                    3}}, {{1, 4, 3}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                    0}, {1, 3, 3}, {1, 3, 3}, {0, 1, 0}, {0, 1, 0}, {1, 3, 
+                    3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}, {1, 3, 3}}}, {{{88, 
+                    27}, {85, 27}, {83, 29}, {83, 32}, {83, 34}, {85, 37}, {
+                    88, 37}, {91, 37}, {93, 34}, {93, 32}, {93, 29}, {91, 
+                    27}, {88, 27}}, {{73, 18}, {101, 18}, {99, 31}, {99, 
+                    31}, {99, 43}, {73, 43}, {73, 47}, {110, 47}, {110, 47}, {
+                    128, 45}, {128, 73}, {128, 102}, {112, 101}, {112, 101}, {
+                    103, 101}, {103, 87}, {103, 87}, {104, 72}, {88, 72}, {61,
+                     72}, {61, 72}, {46, 72}, {46, 57}, {46, 33}, {46, 33}, {
+                    44, 18}, {73, 18}}}]}}, {ImageSize -> {Automatic, 
+                    Dynamic[3.5 CurrentValue["FontCapHeight"]]}, 
+                    ImageSize -> {Automatic, 
+                    Dynamic[3.5 CurrentValue["FontCapHeight"]]}}], 
+                    GridBox[{{
+                    RowBox[{
+                    TagBox["\"System: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["\"Python\"", "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox["\"EvaluationCount: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox[
+                    DynamicBox[
+                    ToBoxes[
+                    If[
+                    And[
+                    ValueQ[ExternalEvaluate`Private`$Links], 
+                    KeyExistsQ[
+                    ExternalEvaluate`Private`$Links, 
+                    "8f8b256b-b6b4-4f61-9471-398a1eac88f9"]], 
+                    ExternalEvaluate`Private`$Links[
+                    "8f8b256b-b6b4-4f61-9471-398a1eac88f9", 
+                    "EvaluationCount"], None], StandardForm]], 
+                    "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox["\"UUID: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["\"8f8b256b-b6b4-4f61-9471-398a1eac88f9\"", 
+                    "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox["\"Process: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox[
+                    RowBox[{"ProcessObject", "[", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"\"ManagedProcess\"", "\[Rule]", "True"}], ",", 
+                    RowBox[{"\"UID\"", "\[Rule]", "1"}], ",", 
+                    RowBox[{"\"PID\"", "\[Rule]", "8172"}], ",", 
+                    RowBox[{"\"PPID\"", "\[Rule]", "9168"}], ",", 
+                    RowBox[{"\"Program\"", "\[Rule]", "\"python.exe\""}], ",", 
+                    
+                    RowBox[{"\"Path\"", "\[Rule]", 
+                    "\"C:\\\\Users\\\\WIN-07\\\\AppData\\\\Local\\\\Programs\\\
+\\Python\\\\Python37-32\\\\python.exe\""}], ",", 
+                    RowBox[{"\"User\"", "\[Rule]", "\"WIN-07\""}], ",", 
+                    RowBox[{"\"StartTime\"", "\[Rule]", "1568156895"}]}], 
+                    "}"}], "]"}], "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox["\"Epilog: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox[
+                    RowBox[{"Missing", "[", 
+                    RowBox[{"\"KeyAbsent\"", ",", "\"Epilog\""}], "]"}], 
+                    "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox["\"Prolog: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox[
+                    RowBox[{"Missing", "[", 
+                    RowBox[{"\"KeyAbsent\"", ",", "\"Prolog\""}], "]"}], 
+                    "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox["\"SessionEpilog: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["None", "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox["\"SessionProlog: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["None", "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox["\"Version: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["\"3.7.0\"", "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox["\"Executable: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox[
+                    "\"C:\\\\Users\\\\WIN-07\\\\AppData\\\\Local\\\\Programs\\\
+\\Python\\\\Python37-32\\\\python.exe\"", "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox["\"ReturnType: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["\"Expression\"", "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox["\"SessionOptions: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox[
+                    RowBox[{"{", "}"}], "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox["\"Active: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["True", "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox["\"Socket: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox[
+                    InterpretationBox[
+                    RowBox[{
+                    TagBox["SocketObject", "SummaryHead"], "[", 
+                    
+                    DynamicModuleBox[{Typeset`open$$ = False, 
+                    Typeset`embedState$$ = "Ready"}, 
+                    TemplateBox[{
+                    PaneSelectorBox[{False -> GridBox[{{
+                    PaneBox[
+                    ButtonBox[
+                    DynamicBox[
+                    FEPrivate`FrontEndResource[
+                    "FEBitmaps", "SquarePlusIconMedium"]], 
+                    ButtonFunction :> (Typeset`open$$ = True), Appearance -> 
+                    None, Evaluator -> Automatic, Method -> "Preemptive"], 
+                    Alignment -> {Center, Center}, ImageSize -> 
+                    Dynamic[{Automatic, 3.5 CurrentValue["FontCapHeight"]/
+                    AbsoluteCurrentValue[Magnification]}]], 
+                    GraphicsBox[
+                    GeometricTransformationBox[{{{
+                    FilledCurveBox[{{
+                    
+                    Line[{{36.558, 8.569}, {40.947, 8.569}, {40.947, 
+                    43.684000000000005`}, {36.558, 43.684000000000005`}, {
+                    36.558, 8.569}}]}}]}, {
+                    FilledCurveBox[{{
+                    
+                    Line[{{59.053, 8.569}, {63.443, 8.569}, {63.443, 
+                    43.684000000000005`}, {59.053, 43.684000000000005`}, {
+                    59.053, 8.569}}]}}]}, {{
+                    FilledCurveBox[{{
+                    
+                    Line[{{55.487, 8.569}, {56.95, 8.569}, {56.95, 
+                    21.188000000000002`}, {55.487, 21.188000000000002`}, {
+                    55.487, 8.569}}]}}]}, {
+                    FilledCurveBox[{{
+                    
+                    Line[{{52.562, 8.569}, {54.025, 8.569}, {54.025, 
+                    21.188000000000002`}, {52.562, 21.188000000000002`}, {
+                    52.562, 8.569}}]}}]}, {
+                    FilledCurveBox[{{
+                    
+                    Line[{{49.636, 8.569}, {51.099000000000004`, 8.569}, {
+                    51.099000000000004`, 21.188000000000002`}, {49.636, 
+                    21.188000000000002`}, {49.636, 8.569}}]}}]}, {
+                    FilledCurveBox[{{
+                    
+                    Line[{{46.709, 8.569}, {48.172000000000004`, 8.569}, {
+                    48.172000000000004`, 21.188000000000002`}, {46.709, 
+                    21.188000000000002`}, {46.709, 8.569}}]}}]}, {
+                    FilledCurveBox[{{
+                    
+                    Line[{{43.783, 8.569}, {45.246, 8.569}, {45.246, 
+                    21.188000000000002`}, {43.783, 21.188000000000002`}, {
+                    43.783, 8.569}}]}}]}}, {
+                    FilledCurveBox[{{
+                    
+                    Line[{{40.947, 4.911}, {59.787000000000006`, 4.911}, {
+                    59.787000000000006`, 6.922}, {40.947, 6.922}, {40.947, 
+                    4.911}}]}}]}, {
+                    FilledCurveBox[{{
+                    
+                    Line[{{44.057, 31.675}, {56.678000000000004`, 31.675}, {
+                    56.678000000000004`, 39.051}, {44.057, 39.051}, {44.057, 
+                    31.675}}]}}]}, {
+                    FilledCurveBox[{{
+                    
+                    Line[{{44.057, 43.685}, {56.678000000000004`, 43.685}, {
+                    56.678000000000004`, 65.089}, {44.057, 65.089}, {44.057, 
+                    43.685}}]}}]}}}, {{{1, 0}, {0, -1}}, Center}], {
+                    ImageSize -> {Automatic, 
+                    Dynamic[3.5 CurrentValue["FontCapHeight"]]}, 
+                    PlotRange -> {{20, 80}, {0, 70}}, 
+                    BaseStyle -> {CacheGraphics -> False}, ImageSize -> 30}], 
+                    GridBox[{{
+                    RowBox[{
+                    TagBox["\"IPAddress: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["\"127.0.0.1\"", "SummaryItem"]}], 
+                    RowBox[{
+                    TagBox["\"Port: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["\"49774\"", "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox["\"UUID: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox[
+                    "\"fc8053de-3fbf-4ce3-92a3-e49c52565377\"", 
+                    "SummaryItem"]}], 
+                    RowBox[{
+                    TagBox["\"Protocol: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["\"ZMQ_PAIR\"", "SummaryItem"]}]}}, 
+                    GridBoxAlignment -> {"Columns" -> {{Left}}, 
+                    "Rows" -> {{Automatic}}}, AutoDelete -> False, 
+                    GridBoxItemSize -> {"Columns" -> {{Automatic}}, 
+                    "Rows" -> {{Automatic}}}, GridBoxSpacings -> {
+                    "Columns" -> {{2}}, "Rows" -> {{Automatic}}}, 
+                    BaseStyle -> {ShowStringCharacters -> False, NumberMarks -> 
+                    False, PrintPrecision -> 3, ShowSyntaxStyles -> False}]}},
+                     GridBoxAlignment -> {"Rows" -> {{Top}}}, AutoDelete -> 
+                    False, GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    BaselinePosition -> {1, 1}], True -> GridBox[{{
+                    PaneBox[
+                    ButtonBox[
+                    DynamicBox[
+                    FEPrivate`FrontEndResource[
+                    "FEBitmaps", "SquareMinusIconMedium"]], 
+                    ButtonFunction :> (Typeset`open$$ = False), Appearance -> 
+                    None, Evaluator -> Automatic, Method -> "Preemptive"], 
+                    Alignment -> {Center, Center}, ImageSize -> 
+                    Dynamic[{Automatic, 3.5 CurrentValue["FontCapHeight"]/
+                    AbsoluteCurrentValue[Magnification]}]], 
+                    GraphicsBox[
+                    GeometricTransformationBox[{{{
+                    FilledCurveBox[{{
+                    
+                    Line[{{36.558, 8.569}, {40.947, 8.569}, {40.947, 
+                    43.684000000000005`}, {36.558, 43.684000000000005`}, {
+                    36.558, 8.569}}]}}]}, {
+                    FilledCurveBox[{{
+                    
+                    Line[{{59.053, 8.569}, {63.443, 8.569}, {63.443, 
+                    43.684000000000005`}, {59.053, 43.684000000000005`}, {
+                    59.053, 8.569}}]}}]}, {{
+                    FilledCurveBox[{{
+                    
+                    Line[{{55.487, 8.569}, {56.95, 8.569}, {56.95, 
+                    21.188000000000002`}, {55.487, 21.188000000000002`}, {
+                    55.487, 8.569}}]}}]}, {
+                    FilledCurveBox[{{
+                    
+                    Line[{{52.562, 8.569}, {54.025, 8.569}, {54.025, 
+                    21.188000000000002`}, {52.562, 21.188000000000002`}, {
+                    52.562, 8.569}}]}}]}, {
+                    FilledCurveBox[{{
+                    
+                    Line[{{49.636, 8.569}, {51.099000000000004`, 8.569}, {
+                    51.099000000000004`, 21.188000000000002`}, {49.636, 
+                    21.188000000000002`}, {49.636, 8.569}}]}}]}, {
+                    FilledCurveBox[{{
+                    
+                    Line[{{46.709, 8.569}, {48.172000000000004`, 8.569}, {
+                    48.172000000000004`, 21.188000000000002`}, {46.709, 
+                    21.188000000000002`}, {46.709, 8.569}}]}}]}, {
+                    FilledCurveBox[{{
+                    
+                    Line[{{43.783, 8.569}, {45.246, 8.569}, {45.246, 
+                    21.188000000000002`}, {43.783, 21.188000000000002`}, {
+                    43.783, 8.569}}]}}]}}, {
+                    FilledCurveBox[{{
+                    
+                    Line[{{40.947, 4.911}, {59.787000000000006`, 4.911}, {
+                    59.787000000000006`, 6.922}, {40.947, 6.922}, {40.947, 
+                    4.911}}]}}]}, {
+                    FilledCurveBox[{{
+                    
+                    Line[{{44.057, 31.675}, {56.678000000000004`, 31.675}, {
+                    56.678000000000004`, 39.051}, {44.057, 39.051}, {44.057, 
+                    31.675}}]}}]}, {
+                    FilledCurveBox[{{
+                    
+                    Line[{{44.057, 43.685}, {56.678000000000004`, 43.685}, {
+                    56.678000000000004`, 65.089}, {44.057, 65.089}, {44.057, 
+                    43.685}}]}}]}}}, {{{1, 0}, {0, -1}}, Center}], {
+                    ImageSize -> {Automatic, 
+                    Dynamic[3.5 CurrentValue["FontCapHeight"]]}, 
+                    PlotRange -> {{20, 80}, {0, 70}}, 
+                    BaseStyle -> {CacheGraphics -> False}, ImageSize -> 30}], 
+                    GridBox[{{
+                    RowBox[{
+                    TagBox[
+                    "\"DestinationIPAddress: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox[
+                    RowBox[{"IPAddress", "[", "\"127.0.0.1\"", "]"}], 
+                    "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox["\"DestinationPort: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["\"49774\"", "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox["\"SourceIPAddress: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox[
+                    RowBox[{"IPAddress", "[", "\"127.0.0.1\"", "]"}], 
+                    "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox["\"SourcePort: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["\"49779\"", "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox["\"Protocol: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["\"ZMQ_PAIR\"", "SummaryItem"]}]}}, 
+                    GridBoxAlignment -> {"Columns" -> {{Left}}, 
+                    "Rows" -> {{Automatic}}}, AutoDelete -> False, 
+                    GridBoxItemSize -> {"Columns" -> {{Automatic}}, 
+                    "Rows" -> {{Automatic}}}, GridBoxSpacings -> {
+                    "Columns" -> {{2}}, "Rows" -> {{Automatic}}}, 
+                    BaseStyle -> {ShowStringCharacters -> False, NumberMarks -> 
+                    False, PrintPrecision -> 3, ShowSyntaxStyles -> False}]}},
+                     GridBoxAlignment -> {"Rows" -> {{Top}}}, AutoDelete -> 
+                    False, GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    BaselinePosition -> {1, 1}]}, 
+                    Dynamic[Typeset`open$$], ImageSize -> Automatic]}, 
+                    "SummaryPanel"], DynamicModuleValues :> {}], "]"}], 
+                    SocketObject["fc8053de-3fbf-4ce3-92a3-e49c52565377"], 
+                    Selectable -> False, Editable -> False, 
+                    SelectWithContents -> True], "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox["\"ProcessMemory: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox[
+                    DynamicBox[
+                    ToBoxes[
+                    If[
+                    And[
+                    ValueQ[ExternalEvaluate`Private`$Links], 
+                    KeyExistsQ[
+                    ExternalEvaluate`Private`$Links, 
+                    "8f8b256b-b6b4-4f61-9471-398a1eac88f9"]], 
+                    ExternalEvaluate`Private`$Links[
+                    "8f8b256b-b6b4-4f61-9471-398a1eac88f9", "ProcessMemory"], 
+                    None], StandardForm]], "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox["\"ProcessThreads: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox[
+                    DynamicBox[
+                    ToBoxes[
+                    If[
+                    And[
+                    ValueQ[ExternalEvaluate`Private`$Links], 
+                    KeyExistsQ[ExternalEvaluate`Private`$Links, 
+                    "8f8b256b-b6b4-4f61-9471-398a1eac88f9"]], 
+                    ExternalEvaluate`Private`$Links[
+                    "8f8b256b-b6b4-4f61-9471-398a1eac88f9", "ProcessThreads"],
+                     None], StandardForm]], "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox["\"SessionTime: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox[
+                    DynamicBox[
+                    ToBoxes[
+                    If[
+                    And[
+                    ValueQ[ExternalEvaluate`Private`$Links], 
+                    KeyExistsQ[
+                    ExternalEvaluate`Private`$Links, 
+                    "8f8b256b-b6b4-4f61-9471-398a1eac88f9"]], 
+                    ExternalSessionObject[
+                    "8f8b256b-b6b4-4f61-9471-398a1eac88f9"]["SessionTime"], 
+                    None], StandardForm]], "SummaryItem"]}]}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
+                    AutoDelete -> False, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{2}}, "Rows" -> {{Automatic}}}, 
+                    BaseStyle -> {
+                    ShowStringCharacters -> False, NumberMarks -> False, 
+                    PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+                    GridBoxAlignment -> {"Rows" -> {{Top}}}, AutoDelete -> 
+                    False, GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    BaselinePosition -> {1, 1}]}, 
+                    Dynamic[Typeset`open$$], ImageSize -> Automatic]}, 
+                    "SummaryPanel"], DynamicModuleValues :> {}], "]"}], 
+                   ExternalSessionObject[
+                   "8f8b256b-b6b4-4f61-9471-398a1eac88f9"], Selectable -> 
+                   False, Editable -> False, SelectWithContents -> True], 
+                  "SummaryItem"]}]}}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
+             False, GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
+              BaseStyle -> {
+              ShowStringCharacters -> False, NumberMarks -> False, 
+               PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+          GridBoxAlignment -> {"Rows" -> {{Top}}}, AutoDelete -> False, 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+          BaselinePosition -> {1, 1}]}, 
+       Dynamic[Typeset`open$$], ImageSize -> Automatic]},
+     "SummaryPanel"],
+    DynamicModuleValues:>{}], "]"}],
+  ExternalFunction[
+   Association[
+   "System" -> "Python", "Type" -> "PythonFunction", "Name" -> "p", 
+    "IsModule" -> False, "IsClass" -> False, "IsFunction" -> True, "IsMethod" -> 
+    False, "IsCallable" -> True, "Arguments" -> {"r", "a", "b", "c", "d"}, 
+    "Session" -> 
+    ExternalSessionObject["8f8b256b-b6b4-4f61-9471-398a1eac88f9"]]],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
+ CellChangeTimes->{3.777139045630321*^9, 3.7771457012469735`*^9},
+ CellLabel->"Out[1]=",ExpressionUUID->"64b65eae-032a-4a4a-be2b-b6036fe91aa0"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Clear", "[", "re", "]"}], "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.777137056376542*^9, 3.7771370694742913`*^9}, 
+   3.777138137444376*^9, 3.7771390702927313`*^9},
+ CellLabel->"In[8]:=",ExpressionUUID->"f1baa98e-13b2-4962-97cd-779c1ec67b93"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"re1", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"ToString", "/@", 
+      RowBox[{"RandomChoice", "[", 
+       RowBox[{
+        RowBox[{"Range", "[", "10", "]"}], ",", "10"}], "]"}]}], ",", "10"}], 
+    "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.7771443047831*^9, 3.7771443082122965`*^9}, {
+   3.7771449489259434`*^9, 3.7771450235832133`*^9}, {3.777145055823057*^9, 
+   3.7771451149334383`*^9}, {3.7771451736857986`*^9, 3.777145211309951*^9}, {
+   3.7771453069104185`*^9, 3.7771453092615533`*^9}, 3.7771453845508595`*^9, {
+   3.7771465323915124`*^9, 3.7771465355976954`*^9}, {3.7771465928369694`*^9, 
+   3.7771466149872365`*^9}},
+ CellLabel->"In[45]:=",ExpressionUUID->"d63ffa57-51f9-49a3-a340-830b9a96db05"],
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"re", "=", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<nan\>\"", ",", "\"\<meatballs\>\"", ",", "\"\<eggs\>\"", ",", 
+        "\"\<bnana\>\"", ",", "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", 
+        "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", 
+        "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", 
+        "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", 
+        "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", 
+        "\"\<nan\>\"", ",", "\"\<nan\>\""}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<chutney\>\"", ",", "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", 
+        "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", "\"\<faafa\>\"", ",", 
+        "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", 
+        "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", 
+        "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", 
+        "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", 
+        "\"\<nan\>\"", ",", "\"\<nan\>\""}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<turkey\>\"", ",", "\"\<avocado\>\"", ",", "\"\<nan\>\"", ",", 
+        "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", 
+        "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", 
+        "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", 
+        "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", 
+        "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", 
+        "\"\<nan\>\"", ",", "\"\<nan\>\""}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<mineral water\>\"", ",", "\"\<milk\>\"", ",", 
+        "\"\<energy bar\>\"", ",", "\"\<whole wheat rice\>\"", ",", 
+        "\"\<green tea\>\"", ",", "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", 
+        "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", 
+        "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", 
+        "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", 
+        "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", 
+        "\"\<nan\>\""}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<low fat yogurt\>\"", ",", "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", 
+        "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", 
+        "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", 
+        "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", 
+        "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", 
+        "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", 
+        "\"\<nan\>\"", ",", "\"\<nan\>\""}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<whole wheat pasta\>\"", ",", "\"\<french fries\>\"", ",", 
+        "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", 
+        "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", 
+        "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", 
+        "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", 
+        "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", 
+        "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", "\"\<nan\>\""}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<soup\>\"", ",", "\"\<light cream\>\"", ",", "\"\<shallot\>\"", 
+        ",", "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", 
+        "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", 
+        "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", 
+        "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", 
+        "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", 
+        "\"\<nan\>\"", ",", "\"\<nan\>\""}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<frozen vegetables\>\"", ",", "\"\<spaghetti\>\"", ",", 
+        "\"\<green tea\>\"", ",", "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", 
+        "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", 
+        "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", 
+        "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", 
+        "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", 
+        "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", "\"\<nan\>\""}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<french fries\>\"", ",", "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", 
+        "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", 
+        "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", 
+        "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", 
+        "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", 
+        "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", "\"\<nan\>\"", ",", 
+        "\"\<nan\>\"", ",", "\"\<nan\>\""}], "}"}]}], "}"}]}], 
+   ";"}]}]], "Input",
+ CellChangeTimes->{{3.7771366900645905`*^9, 3.7771368077143197`*^9}, {
+   3.7771369591089787`*^9, 3.777136975955942*^9}, {3.7771370293549967`*^9, 
+   3.7771370463559694`*^9}, {3.777137279549307*^9, 3.777137286323694*^9}, {
+   3.7771373943728743`*^9, 3.7771374226814938`*^9}, {3.777138180598844*^9, 
+   3.7771381811638765`*^9}, 3.7771386050961237`*^9, 3.777138728003154*^9, 
+   3.777138970166005*^9, 3.777139073816933*^9, {3.7771460115747232`*^9, 
+   3.777146019803194*^9}, {3.7771460613735714`*^9, 3.777146063003665*^9}, {
+   3.7771465751499577`*^9, 3.7771465790371804`*^9}},
+ CellLabel->"In[38]:=",ExpressionUUID->"2fb1e300-006e-4d13-a462-10dd238d5eba"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"f", "[", 
+  RowBox[{"re", ",", "0.004", ",", "0.1", ",", "2", ",", "3"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.777137079799882*^9, 3.7771370862422504`*^9}, {
+   3.77713714357753*^9, 3.7771371772824574`*^9}, {3.777137371157547*^9, 
+   3.7771374195963173`*^9}, {3.7771457302106304`*^9, 
+   3.7771457401321974`*^9}, {3.7771458275651984`*^9, 
+   3.7771458368067274`*^9}, {3.7771458759979687`*^9, 
+   3.7771458809642525`*^9}, {3.7771459442058697`*^9, 3.777145981605009*^9}, {
+   3.777146372709379*^9, 3.77714637290839*^9}, {3.7771465850785255`*^9, 
+   3.777146585260536*^9}, 3.777146622790683*^9, {3.7771467643177776`*^9, 
+   3.7771467702171154`*^9}, 3.7771468791903477`*^9},
+ CellLabel->"In[49]:=",ExpressionUUID->"02dc214b-55f5-45f3-8299-3a995f1fc449"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"turkey\"\>", ",", "\<\"avocado\"\>"}], "}"}], ",", 
+     "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", "\<\"avocado\"\>", "}"}], ",", 
+         RowBox[{"{", "\<\"turkey\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", "\<\"turkey\"\>", "}"}], ",", 
+         RowBox[{"{", "\<\"avocado\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"eggs\"\>", ",", "\<\"bnana\"\>"}], "}"}], ",", 
+     "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", "\<\"bnana\"\>", "}"}], ",", 
+         RowBox[{"{", "\<\"eggs\"\>", "}"}], ",", "1.`", ",", "9.`"}], "}"}], 
+       ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", "\<\"eggs\"\>", "}"}], ",", 
+         RowBox[{"{", "\<\"bnana\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"meatballs\"\>", ",", "\<\"bnana\"\>"}], "}"}], ",", 
+     "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", "\<\"bnana\"\>", "}"}], ",", 
+         RowBox[{"{", "\<\"meatballs\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", "\<\"meatballs\"\>", "}"}], ",", 
+         RowBox[{"{", "\<\"bnana\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"chutney\"\>", ",", "\<\"faafa\"\>"}], "}"}], ",", 
+     "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", "\<\"chutney\"\>", "}"}], ",", 
+         RowBox[{"{", "\<\"faafa\"\>", "}"}], ",", "1.`", ",", "9.`"}], "}"}],
+        ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", "\<\"faafa\"\>", "}"}], ",", 
+         RowBox[{"{", "\<\"chutney\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"eggs\"\>", ",", "\<\"meatballs\"\>"}], "}"}], ",", 
+     "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", "\<\"eggs\"\>", "}"}], ",", 
+         RowBox[{"{", "\<\"meatballs\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", "\<\"meatballs\"\>", "}"}], ",", 
+         RowBox[{"{", "\<\"eggs\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"green tea\"\>", ",", "\<\"energy bar\"\>"}], "}"}], ",", 
+     "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", "\<\"energy bar\"\>", "}"}], ",", 
+         RowBox[{"{", "\<\"green tea\"\>", "}"}], ",", "1.`", ",", "4.5`"}], 
+        "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", "\<\"green tea\"\>", "}"}], ",", 
+         RowBox[{"{", "\<\"energy bar\"\>", "}"}], ",", "0.5`", ",", "4.5`"}],
+         "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"milk\"\>", ",", "\<\"energy bar\"\>"}], "}"}], ",", 
+     "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", "\<\"energy bar\"\>", "}"}], ",", 
+         RowBox[{"{", "\<\"milk\"\>", "}"}], ",", "1.`", ",", "9.`"}], "}"}], 
+       ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", "\<\"milk\"\>", "}"}], ",", 
+         RowBox[{"{", "\<\"energy bar\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"energy bar\"\>", ",", "\<\"mineral water\"\>"}], "}"}], 
+     ",", "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", "\<\"energy bar\"\>", "}"}], ",", 
+         RowBox[{"{", "\<\"mineral water\"\>", "}"}], ",", "1.`", ",", 
+         "9.`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", "\<\"mineral water\"\>", "}"}], ",", 
+         RowBox[{"{", "\<\"energy bar\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"energy bar\"\>", ",", "\<\"whole wheat rice\"\>"}], "}"}], 
+     ",", "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", "\<\"energy bar\"\>", "}"}], ",", 
+         RowBox[{"{", "\<\"whole wheat rice\"\>", "}"}], ",", "1.`", ",", 
+         "9.`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", "\<\"whole wheat rice\"\>", "}"}], ",", 
+         RowBox[{"{", "\<\"energy bar\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"whole wheat pasta\"\>", ",", "\<\"french fries\"\>"}], 
+      "}"}], ",", "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", "\<\"french fries\"\>", "}"}], ",", 
+         RowBox[{"{", "\<\"whole wheat pasta\"\>", "}"}], ",", "0.5`", ",", 
+         "4.5`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", "\<\"whole wheat pasta\"\>", "}"}], ",", 
+         RowBox[{"{", "\<\"french fries\"\>", "}"}], ",", "1.`", ",", 
+         "4.5`"}], "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"green tea\"\>", ",", "\<\"frozen vegetables\"\>"}], "}"}], 
+     ",", "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", "\<\"frozen vegetables\"\>", "}"}], ",", 
+         RowBox[{"{", "\<\"green tea\"\>", "}"}], ",", "1.`", ",", "4.5`"}], 
+        "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", "\<\"green tea\"\>", "}"}], ",", 
+         RowBox[{"{", "\<\"frozen vegetables\"\>", "}"}], ",", "0.5`", ",", 
+         "4.5`"}], "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"spaghetti\"\>", ",", "\<\"frozen vegetables\"\>"}], "}"}], 
+     ",", "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", "\<\"frozen vegetables\"\>", "}"}], ",", 
+         RowBox[{"{", "\<\"spaghetti\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", "\<\"spaghetti\"\>", "}"}], ",", 
+         RowBox[{"{", "\<\"frozen vegetables\"\>", "}"}], ",", "1.`", ",", 
+         "9.`"}], "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"milk\"\>", ",", "\<\"green tea\"\>"}], "}"}], ",", 
+     "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", "\<\"green tea\"\>", "}"}], ",", 
+         RowBox[{"{", "\<\"milk\"\>", "}"}], ",", "0.5`", ",", "4.5`"}], 
+        "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", "\<\"milk\"\>", "}"}], ",", 
+         RowBox[{"{", "\<\"green tea\"\>", "}"}], ",", "1.`", ",", "4.5`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"green tea\"\>", ",", "\<\"mineral water\"\>"}], "}"}], ",",
+      "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", "\<\"green tea\"\>", "}"}], ",", 
+         RowBox[{"{", "\<\"mineral water\"\>", "}"}], ",", "0.5`", ",", 
+         "4.5`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", "\<\"mineral water\"\>", "}"}], ",", 
+         RowBox[{"{", "\<\"green tea\"\>", "}"}], ",", "1.`", ",", "4.5`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"green tea\"\>", ",", "\<\"spaghetti\"\>"}], "}"}], ",", 
+     "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", "\<\"green tea\"\>", "}"}], ",", 
+         RowBox[{"{", "\<\"spaghetti\"\>", "}"}], ",", "0.5`", ",", "4.5`"}], 
+        "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", "\<\"spaghetti\"\>", "}"}], ",", 
+         RowBox[{"{", "\<\"green tea\"\>", "}"}], ",", "1.`", ",", "4.5`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"green tea\"\>", ",", "\<\"whole wheat rice\"\>"}], "}"}], 
+     ",", "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", "\<\"green tea\"\>", "}"}], ",", 
+         RowBox[{"{", "\<\"whole wheat rice\"\>", "}"}], ",", "0.5`", ",", 
+         "4.5`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", "\<\"whole wheat rice\"\>", "}"}], ",", 
+         RowBox[{"{", "\<\"green tea\"\>", "}"}], ",", "1.`", ",", "4.5`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"shallot\"\>", ",", "\<\"light cream\"\>"}], "}"}], ",", 
+     "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", "\<\"light cream\"\>", "}"}], ",", 
+         RowBox[{"{", "\<\"shallot\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", "\<\"shallot\"\>", "}"}], ",", 
+         RowBox[{"{", "\<\"light cream\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"light cream\"\>", ",", "\<\"soup\"\>"}], "}"}], ",", 
+     "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", "\<\"light cream\"\>", "}"}], ",", 
+         RowBox[{"{", "\<\"soup\"\>", "}"}], ",", "1.`", ",", "9.`"}], "}"}], 
+       ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", "\<\"soup\"\>", "}"}], ",", 
+         RowBox[{"{", "\<\"light cream\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"milk\"\>", ",", "\<\"mineral water\"\>"}], "}"}], ",", 
+     "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", "\<\"milk\"\>", "}"}], ",", 
+         RowBox[{"{", "\<\"mineral water\"\>", "}"}], ",", "1.`", ",", 
+         "9.`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", "\<\"mineral water\"\>", "}"}], ",", 
+         RowBox[{"{", "\<\"milk\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"milk\"\>", ",", "\<\"whole wheat rice\"\>"}], "}"}], ",", 
+     "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", "\<\"milk\"\>", "}"}], ",", 
+         RowBox[{"{", "\<\"whole wheat rice\"\>", "}"}], ",", "1.`", ",", 
+         "9.`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", "\<\"whole wheat rice\"\>", "}"}], ",", 
+         RowBox[{"{", "\<\"milk\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"whole wheat rice\"\>", ",", "\<\"mineral water\"\>"}], 
+      "}"}], ",", "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", "\<\"mineral water\"\>", "}"}], ",", 
+         RowBox[{"{", "\<\"whole wheat rice\"\>", "}"}], ",", "1.`", ",", 
+         "9.`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", "\<\"whole wheat rice\"\>", "}"}], ",", 
+         RowBox[{"{", "\<\"mineral water\"\>", "}"}], ",", "1.`", ",", 
+         "9.`"}], "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"shallot\"\>", ",", "\<\"soup\"\>"}], "}"}], ",", 
+     "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", "\<\"shallot\"\>", "}"}], ",", 
+         RowBox[{"{", "\<\"soup\"\>", "}"}], ",", "1.`", ",", "9.`"}], "}"}], 
+       ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", "\<\"soup\"\>", "}"}], ",", 
+         RowBox[{"{", "\<\"shallot\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"turkey\"\>", ",", "\<\"nan\"\>", ",", "\<\"avocado\"\>"}], 
+      "}"}], ",", "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"nan\"\>", ",", "\<\"avocado\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"turkey\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"nan\"\>", ",", "\<\"turkey\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"avocado\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"meatballs\"\>", ",", "\<\"eggs\"\>", 
+       ",", "\<\"bnana\"\>"}], "}"}], ",", "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"eggs\"\>", ",", "\<\"bnana\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"meatballs\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"meatballs\"\>", ",", "\<\"bnana\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"eggs\"\>", "}"}], ",", "1.`", ",", "9.`"}], "}"}], 
+       ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"eggs\"\>", ",", "\<\"meatballs\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"bnana\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"nan\"\>", ",", "\<\"eggs\"\>", ",", "\<\"bnana\"\>"}], 
+      "}"}], ",", "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"nan\"\>", ",", "\<\"bnana\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"eggs\"\>", "}"}], ",", "1.`", ",", "9.`"}], "}"}], 
+       ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"nan\"\>", ",", "\<\"eggs\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"bnana\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"meatballs\"\>", ",", "\<\"nan\"\>", ",", "\<\"bnana\"\>"}],
+       "}"}], ",", "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"nan\"\>", ",", "\<\"bnana\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"meatballs\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"nan\"\>", ",", "\<\"meatballs\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"bnana\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"chutney\"\>", ",", "\<\"nan\"\>", ",", "\<\"faafa\"\>"}], 
+      "}"}], ",", "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"chutney\"\>", ",", "\<\"nan\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"faafa\"\>", "}"}], ",", "1.`", ",", "9.`"}], "}"}],
+        ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"nan\"\>", ",", "\<\"faafa\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"chutney\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"nan\"\>", ",", "\<\"eggs\"\>", ",", "\<\"meatballs\"\>"}], 
+      "}"}], ",", "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"nan\"\>", ",", "\<\"eggs\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"meatballs\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"nan\"\>", ",", "\<\"meatballs\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"eggs\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"green tea\"\>", ",", "\<\"milk\"\>", 
+       ",", "\<\"energy bar\"\>"}], "}"}], ",", "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"green tea\"\>", ",", "\<\"energy bar\"\>"}], "}"}], 
+         ",", 
+         RowBox[{"{", "\<\"milk\"\>", "}"}], ",", "1.`", ",", "9.`"}], "}"}], 
+       ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"milk\"\>", ",", "\<\"energy bar\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"green tea\"\>", "}"}], ",", "1.`", ",", "4.5`"}], 
+        "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"milk\"\>", ",", "\<\"green tea\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"energy bar\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"green tea\"\>", ",", "\<\"energy bar\"\>", 
+       ",", "\<\"mineral water\"\>"}], "}"}], ",", "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"green tea\"\>", ",", "\<\"energy bar\"\>"}], "}"}], 
+         ",", 
+         RowBox[{"{", "\<\"mineral water\"\>", "}"}], ",", "1.`", ",", 
+         "9.`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"energy bar\"\>", ",", "\<\"mineral water\"\>"}], "}"}],
+          ",", 
+         RowBox[{"{", "\<\"green tea\"\>", "}"}], ",", "1.`", ",", "4.5`"}], 
+        "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"green tea\"\>", ",", "\<\"mineral water\"\>"}], "}"}], 
+         ",", 
+         RowBox[{"{", "\<\"energy bar\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"green tea\"\>", ",", "\<\"energy bar\"\>", 
+       ",", "\<\"nan\"\>"}], "}"}], ",", "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"energy bar\"\>", ",", "\<\"nan\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"green tea\"\>", "}"}], ",", "1.`", ",", "4.5`"}], 
+        "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"green tea\"\>", ",", "\<\"nan\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"energy bar\"\>", "}"}], ",", "0.5`", ",", "4.5`"}],
+         "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"green tea\"\>", ",", "\<\"energy bar\"\>", 
+       ",", "\<\"whole wheat rice\"\>"}], "}"}], ",", "0.1111111111111111`", 
+     ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"green tea\"\>", ",", "\<\"energy bar\"\>"}], "}"}], 
+         ",", 
+         RowBox[{"{", "\<\"whole wheat rice\"\>", "}"}], ",", "1.`", ",", 
+         "9.`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"energy bar\"\>", ",", "\<\"whole wheat rice\"\>"}], 
+          "}"}], ",", 
+         RowBox[{"{", "\<\"green tea\"\>", "}"}], ",", "1.`", ",", "4.5`"}], 
+        "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"green tea\"\>", ",", "\<\"whole wheat rice\"\>"}], 
+          "}"}], ",", 
+         RowBox[{"{", "\<\"energy bar\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"milk\"\>", ",", "\<\"energy bar\"\>", 
+       ",", "\<\"mineral water\"\>"}], "}"}], ",", "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"milk\"\>", ",", "\<\"energy bar\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"mineral water\"\>", "}"}], ",", "1.`", ",", 
+         "9.`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"energy bar\"\>", ",", "\<\"mineral water\"\>"}], "}"}],
+          ",", 
+         RowBox[{"{", "\<\"milk\"\>", "}"}], ",", "1.`", ",", "9.`"}], "}"}], 
+       ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"milk\"\>", ",", "\<\"mineral water\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"energy bar\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"milk\"\>", ",", "\<\"energy bar\"\>", ",", "\<\"nan\"\>"}],
+       "}"}], ",", "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"energy bar\"\>", ",", "\<\"nan\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"milk\"\>", "}"}], ",", "1.`", ",", "9.`"}], "}"}], 
+       ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"milk\"\>", ",", "\<\"nan\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"energy bar\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"milk\"\>", ",", "\<\"energy bar\"\>", 
+       ",", "\<\"whole wheat rice\"\>"}], "}"}], ",", "0.1111111111111111`", 
+     ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"milk\"\>", ",", "\<\"energy bar\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"whole wheat rice\"\>", "}"}], ",", "1.`", ",", 
+         "9.`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"energy bar\"\>", ",", "\<\"whole wheat rice\"\>"}], 
+          "}"}], ",", 
+         RowBox[{"{", "\<\"milk\"\>", "}"}], ",", "1.`", ",", "9.`"}], "}"}], 
+       ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"milk\"\>", ",", "\<\"whole wheat rice\"\>"}], "}"}], 
+         ",", 
+         RowBox[{"{", "\<\"energy bar\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"energy bar\"\>", ",", "\<\"nan\"\>", 
+       ",", "\<\"mineral water\"\>"}], "}"}], ",", "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"energy bar\"\>", ",", "\<\"nan\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"mineral water\"\>", "}"}], ",", "1.`", ",", 
+         "9.`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"nan\"\>", ",", "\<\"mineral water\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"energy bar\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"energy bar\"\>", ",", "\<\"whole wheat rice\"\>", 
+       ",", "\<\"mineral water\"\>"}], "}"}], ",", "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"energy bar\"\>", ",", "\<\"mineral water\"\>"}], "}"}],
+          ",", 
+         RowBox[{"{", "\<\"whole wheat rice\"\>", "}"}], ",", "1.`", ",", 
+         "9.`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"energy bar\"\>", ",", "\<\"whole wheat rice\"\>"}], 
+          "}"}], ",", 
+         RowBox[{"{", "\<\"mineral water\"\>", "}"}], ",", "1.`", ",", 
+         "9.`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"whole wheat rice\"\>", ",", "\<\"mineral water\"\>"}], 
+          "}"}], ",", 
+         RowBox[{"{", "\<\"energy bar\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"whole wheat rice\"\>", ",", "\<\"energy bar\"\>", 
+       ",", "\<\"nan\"\>"}], "}"}], ",", "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"energy bar\"\>", ",", "\<\"nan\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"whole wheat rice\"\>", "}"}], ",", "1.`", ",", 
+         "9.`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"nan\"\>", ",", "\<\"whole wheat rice\"\>"}], "}"}], 
+         ",", 
+         RowBox[{"{", "\<\"energy bar\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"whole wheat pasta\"\>", ",", "\<\"nan\"\>", 
+       ",", "\<\"french fries\"\>"}], "}"}], ",", "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"nan\"\>", ",", "\<\"french fries\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"whole wheat pasta\"\>", "}"}], ",", "0.5`", ",", 
+         "4.5`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"whole wheat pasta\"\>", ",", "\<\"nan\"\>"}], "}"}], 
+         ",", 
+         RowBox[{"{", "\<\"french fries\"\>", "}"}], ",", "1.`", ",", 
+         "4.5`"}], "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"green tea\"\>", ",", "\<\"frozen vegetables\"\>", 
+       ",", "\<\"nan\"\>"}], "}"}], ",", "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"nan\"\>", ",", "\<\"frozen vegetables\"\>"}], "}"}], 
+         ",", 
+         RowBox[{"{", "\<\"green tea\"\>", "}"}], ",", "1.`", ",", "4.5`"}], 
+        "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"green tea\"\>", ",", "\<\"nan\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"frozen vegetables\"\>", "}"}], ",", "0.5`", ",", 
+         "4.5`"}], "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"green tea\"\>", ",", "\<\"frozen vegetables\"\>", 
+       ",", "\<\"spaghetti\"\>"}], "}"}], ",", "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"green tea\"\>", ",", "\<\"frozen vegetables\"\>"}], 
+          "}"}], ",", 
+         RowBox[{"{", "\<\"spaghetti\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"spaghetti\"\>", ",", "\<\"frozen vegetables\"\>"}], 
+          "}"}], ",", 
+         RowBox[{"{", "\<\"green tea\"\>", "}"}], ",", "1.`", ",", "4.5`"}], 
+        "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"green tea\"\>", ",", "\<\"spaghetti\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"frozen vegetables\"\>", "}"}], ",", "1.`", ",", 
+         "9.`"}], "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"nan\"\>", ",", "\<\"frozen vegetables\"\>", 
+       ",", "\<\"spaghetti\"\>"}], "}"}], ",", "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"nan\"\>", ",", "\<\"frozen vegetables\"\>"}], "}"}], 
+         ",", 
+         RowBox[{"{", "\<\"spaghetti\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"nan\"\>", ",", "\<\"spaghetti\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"frozen vegetables\"\>", "}"}], ",", "1.`", ",", 
+         "9.`"}], "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"milk\"\>", ",", "\<\"green tea\"\>", 
+       ",", "\<\"mineral water\"\>"}], "}"}], ",", "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"milk\"\>", ",", "\<\"green tea\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"mineral water\"\>", "}"}], ",", "1.`", ",", 
+         "9.`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"green tea\"\>", ",", "\<\"mineral water\"\>"}], "}"}], 
+         ",", 
+         RowBox[{"{", "\<\"milk\"\>", "}"}], ",", "1.`", ",", "9.`"}], "}"}], 
+       ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"milk\"\>", ",", "\<\"mineral water\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"green tea\"\>", "}"}], ",", "1.`", ",", "4.5`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"milk\"\>", ",", "\<\"green tea\"\>", ",", "\<\"nan\"\>"}], 
+      "}"}], ",", "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"green tea\"\>", ",", "\<\"nan\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"milk\"\>", "}"}], ",", "0.5`", ",", "4.5`"}], 
+        "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"milk\"\>", ",", "\<\"nan\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"green tea\"\>", "}"}], ",", "1.`", ",", "4.5`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"milk\"\>", ",", "\<\"green tea\"\>", 
+       ",", "\<\"whole wheat rice\"\>"}], "}"}], ",", "0.1111111111111111`", 
+     ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"milk\"\>", ",", "\<\"green tea\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"whole wheat rice\"\>", "}"}], ",", "1.`", ",", 
+         "9.`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"green tea\"\>", ",", "\<\"whole wheat rice\"\>"}], 
+          "}"}], ",", 
+         RowBox[{"{", "\<\"milk\"\>", "}"}], ",", "1.`", ",", "9.`"}], "}"}], 
+       ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"milk\"\>", ",", "\<\"whole wheat rice\"\>"}], "}"}], 
+         ",", 
+         RowBox[{"{", "\<\"green tea\"\>", "}"}], ",", "1.`", ",", "4.5`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"green tea\"\>", ",", "\<\"nan\"\>", 
+       ",", "\<\"mineral water\"\>"}], "}"}], ",", "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"green tea\"\>", ",", "\<\"nan\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"mineral water\"\>", "}"}], ",", "0.5`", ",", 
+         "4.5`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"nan\"\>", ",", "\<\"mineral water\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"green tea\"\>", "}"}], ",", "1.`", ",", "4.5`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"green tea\"\>", ",", "\<\"whole wheat rice\"\>", 
+       ",", "\<\"mineral water\"\>"}], "}"}], ",", "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"green tea\"\>", ",", "\<\"mineral water\"\>"}], "}"}], 
+         ",", 
+         RowBox[{"{", "\<\"whole wheat rice\"\>", "}"}], ",", "1.`", ",", 
+         "9.`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"green tea\"\>", ",", "\<\"whole wheat rice\"\>"}], 
+          "}"}], ",", 
+         RowBox[{"{", "\<\"mineral water\"\>", "}"}], ",", "1.`", ",", 
+         "9.`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"whole wheat rice\"\>", ",", "\<\"mineral water\"\>"}], 
+          "}"}], ",", 
+         RowBox[{"{", "\<\"green tea\"\>", "}"}], ",", "1.`", ",", "4.5`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"green tea\"\>", ",", "\<\"nan\"\>", 
+       ",", "\<\"spaghetti\"\>"}], "}"}], ",", "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"green tea\"\>", ",", "\<\"nan\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"spaghetti\"\>", "}"}], ",", "0.5`", ",", "4.5`"}], 
+        "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"nan\"\>", ",", "\<\"spaghetti\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"green tea\"\>", "}"}], ",", "1.`", ",", "4.5`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"whole wheat rice\"\>", ",", "\<\"green tea\"\>", 
+       ",", "\<\"nan\"\>"}], "}"}], ",", "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"green tea\"\>", ",", "\<\"nan\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"whole wheat rice\"\>", "}"}], ",", "0.5`", ",", 
+         "4.5`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"nan\"\>", ",", "\<\"whole wheat rice\"\>"}], "}"}], 
+         ",", 
+         RowBox[{"{", "\<\"green tea\"\>", "}"}], ",", "1.`", ",", "4.5`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"nan\"\>", ",", "\<\"shallot\"\>", 
+       ",", "\<\"light cream\"\>"}], "}"}], ",", "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"nan\"\>", ",", "\<\"light cream\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"shallot\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"nan\"\>", ",", "\<\"shallot\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"light cream\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"nan\"\>", ",", "\<\"light cream\"\>", 
+       ",", "\<\"soup\"\>"}], "}"}], ",", "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"nan\"\>", ",", "\<\"light cream\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"soup\"\>", "}"}], ",", "1.`", ",", "9.`"}], "}"}], 
+       ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"nan\"\>", ",", "\<\"soup\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"light cream\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"shallot\"\>", ",", "\<\"light cream\"\>", 
+       ",", "\<\"soup\"\>"}], "}"}], ",", "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"shallot\"\>", ",", "\<\"light cream\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"soup\"\>", "}"}], ",", "1.`", ",", "9.`"}], "}"}], 
+       ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"light cream\"\>", ",", "\<\"soup\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"shallot\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"shallot\"\>", ",", "\<\"soup\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"light cream\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"milk\"\>", ",", "\<\"nan\"\>", 
+       ",", "\<\"mineral water\"\>"}], "}"}], ",", "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"milk\"\>", ",", "\<\"nan\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"mineral water\"\>", "}"}], ",", "1.`", ",", 
+         "9.`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"nan\"\>", ",", "\<\"mineral water\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"milk\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"milk\"\>", ",", "\<\"whole wheat rice\"\>", 
+       ",", "\<\"mineral water\"\>"}], "}"}], ",", "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"milk\"\>", ",", "\<\"mineral water\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"whole wheat rice\"\>", "}"}], ",", "1.`", ",", 
+         "9.`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"milk\"\>", ",", "\<\"whole wheat rice\"\>"}], "}"}], 
+         ",", 
+         RowBox[{"{", "\<\"mineral water\"\>", "}"}], ",", "1.`", ",", 
+         "9.`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"whole wheat rice\"\>", ",", "\<\"mineral water\"\>"}], 
+          "}"}], ",", 
+         RowBox[{"{", "\<\"milk\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"milk\"\>", ",", "\<\"nan\"\>", 
+       ",", "\<\"whole wheat rice\"\>"}], "}"}], ",", "0.1111111111111111`", 
+     ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"milk\"\>", ",", "\<\"nan\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"whole wheat rice\"\>", "}"}], ",", "1.`", ",", 
+         "9.`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"nan\"\>", ",", "\<\"whole wheat rice\"\>"}], "}"}], 
+         ",", 
+         RowBox[{"{", "\<\"milk\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"nan\"\>", ",", "\<\"whole wheat rice\"\>", 
+       ",", "\<\"mineral water\"\>"}], "}"}], ",", "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"nan\"\>", ",", "\<\"mineral water\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"whole wheat rice\"\>", "}"}], ",", "1.`", ",", 
+         "9.`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"nan\"\>", ",", "\<\"whole wheat rice\"\>"}], "}"}], 
+         ",", 
+         RowBox[{"{", "\<\"mineral water\"\>", "}"}], ",", "1.`", ",", 
+         "9.`"}], "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"nan\"\>", ",", "\<\"shallot\"\>", ",", "\<\"soup\"\>"}], 
+      "}"}], ",", "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"nan\"\>", ",", "\<\"shallot\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"soup\"\>", "}"}], ",", "1.`", ",", "9.`"}], "}"}], 
+       ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"nan\"\>", ",", "\<\"soup\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"shallot\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"meatballs\"\>", ",", "\<\"nan\"\>", ",", "\<\"eggs\"\>", 
+       ",", "\<\"bnana\"\>"}], "}"}], ",", "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"nan\"\>", ",", "\<\"eggs\"\>", ",", "\<\"bnana\"\>"}], 
+          "}"}], ",", 
+         RowBox[{"{", "\<\"meatballs\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"meatballs\"\>", ",", "\<\"nan\"\>", 
+           ",", "\<\"bnana\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"eggs\"\>", "}"}], ",", "1.`", ",", "9.`"}], "}"}], 
+       ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"nan\"\>", ",", "\<\"eggs\"\>", 
+           ",", "\<\"meatballs\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"bnana\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"green tea\"\>", ",", "\<\"milk\"\>", 
+       ",", "\<\"energy bar\"\>", ",", "\<\"mineral water\"\>"}], "}"}], ",", 
+     "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"green tea\"\>", ",", "\<\"milk\"\>", 
+           ",", "\<\"energy bar\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"mineral water\"\>", "}"}], ",", "1.`", ",", 
+         "9.`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"green tea\"\>", ",", "\<\"energy bar\"\>", 
+           ",", "\<\"mineral water\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"milk\"\>", "}"}], ",", "1.`", ",", "9.`"}], "}"}], 
+       ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"milk\"\>", ",", "\<\"energy bar\"\>", 
+           ",", "\<\"mineral water\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"green tea\"\>", "}"}], ",", "1.`", ",", "4.5`"}], 
+        "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"milk\"\>", ",", "\<\"green tea\"\>", 
+           ",", "\<\"mineral water\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"energy bar\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"green tea\"\>", ",", "\<\"milk\"\>", 
+       ",", "\<\"energy bar\"\>", ",", "\<\"nan\"\>"}], "}"}], ",", 
+     "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"green tea\"\>", ",", "\<\"energy bar\"\>", 
+           ",", "\<\"nan\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"milk\"\>", "}"}], ",", "1.`", ",", "9.`"}], "}"}], 
+       ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"milk\"\>", ",", "\<\"energy bar\"\>", 
+           ",", "\<\"nan\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"green tea\"\>", "}"}], ",", "1.`", ",", "4.5`"}], 
+        "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"milk\"\>", ",", "\<\"green tea\"\>", 
+           ",", "\<\"nan\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"energy bar\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"green tea\"\>", ",", "\<\"milk\"\>", 
+       ",", "\<\"energy bar\"\>", ",", "\<\"whole wheat rice\"\>"}], "}"}], 
+     ",", "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"green tea\"\>", ",", "\<\"milk\"\>", 
+           ",", "\<\"energy bar\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"whole wheat rice\"\>", "}"}], ",", "1.`", ",", 
+         "9.`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"green tea\"\>", ",", "\<\"energy bar\"\>", 
+           ",", "\<\"whole wheat rice\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"milk\"\>", "}"}], ",", "1.`", ",", "9.`"}], "}"}], 
+       ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"milk\"\>", ",", "\<\"energy bar\"\>", 
+           ",", "\<\"whole wheat rice\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"green tea\"\>", "}"}], ",", "1.`", ",", "4.5`"}], 
+        "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"milk\"\>", ",", "\<\"green tea\"\>", 
+           ",", "\<\"whole wheat rice\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"energy bar\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"green tea\"\>", ",", "\<\"energy bar\"\>", 
+       ",", "\<\"nan\"\>", ",", "\<\"mineral water\"\>"}], "}"}], ",", 
+     "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"green tea\"\>", ",", "\<\"energy bar\"\>", 
+           ",", "\<\"nan\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"mineral water\"\>", "}"}], ",", "1.`", ",", 
+         "9.`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"energy bar\"\>", ",", "\<\"nan\"\>", 
+           ",", "\<\"mineral water\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"green tea\"\>", "}"}], ",", "1.`", ",", "4.5`"}], 
+        "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"green tea\"\>", ",", "\<\"nan\"\>", 
+           ",", "\<\"mineral water\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"energy bar\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"green tea\"\>", ",", "\<\"energy bar\"\>", 
+       ",", "\<\"whole wheat rice\"\>", ",", "\<\"mineral water\"\>"}], "}"}],
+      ",", "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"green tea\"\>", ",", "\<\"energy bar\"\>", 
+           ",", "\<\"mineral water\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"whole wheat rice\"\>", "}"}], ",", "1.`", ",", 
+         "9.`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"green tea\"\>", ",", "\<\"energy bar\"\>", 
+           ",", "\<\"whole wheat rice\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"mineral water\"\>", "}"}], ",", "1.`", ",", 
+         "9.`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"energy bar\"\>", ",", "\<\"whole wheat rice\"\>", 
+           ",", "\<\"mineral water\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"green tea\"\>", "}"}], ",", "1.`", ",", "4.5`"}], 
+        "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"green tea\"\>", ",", "\<\"whole wheat rice\"\>", 
+           ",", "\<\"mineral water\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"energy bar\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"green tea\"\>", ",", "\<\"energy bar\"\>", 
+       ",", "\<\"nan\"\>", ",", "\<\"whole wheat rice\"\>"}], "}"}], ",", 
+     "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"green tea\"\>", ",", "\<\"energy bar\"\>", 
+           ",", "\<\"nan\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"whole wheat rice\"\>", "}"}], ",", "1.`", ",", 
+         "9.`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"whole wheat rice\"\>", ",", "\<\"energy bar\"\>", 
+           ",", "\<\"nan\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"green tea\"\>", "}"}], ",", "1.`", ",", "4.5`"}], 
+        "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"whole wheat rice\"\>", ",", "\<\"green tea\"\>", 
+           ",", "\<\"nan\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"energy bar\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"milk\"\>", ",", "\<\"energy bar\"\>", ",", "\<\"nan\"\>", 
+       ",", "\<\"mineral water\"\>"}], "}"}], ",", "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"milk\"\>", ",", "\<\"energy bar\"\>", 
+           ",", "\<\"nan\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"mineral water\"\>", "}"}], ",", "1.`", ",", 
+         "9.`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"energy bar\"\>", ",", "\<\"nan\"\>", 
+           ",", "\<\"mineral water\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"milk\"\>", "}"}], ",", "1.`", ",", "9.`"}], "}"}], 
+       ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"milk\"\>", ",", "\<\"nan\"\>", 
+           ",", "\<\"mineral water\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"energy bar\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"milk\"\>", ",", "\<\"energy bar\"\>", 
+       ",", "\<\"whole wheat rice\"\>", ",", "\<\"mineral water\"\>"}], "}"}],
+      ",", "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"milk\"\>", ",", "\<\"energy bar\"\>", 
+           ",", "\<\"mineral water\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"whole wheat rice\"\>", "}"}], ",", "1.`", ",", 
+         "9.`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"milk\"\>", ",", "\<\"energy bar\"\>", 
+           ",", "\<\"whole wheat rice\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"mineral water\"\>", "}"}], ",", "1.`", ",", 
+         "9.`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"energy bar\"\>", ",", "\<\"whole wheat rice\"\>", 
+           ",", "\<\"mineral water\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"milk\"\>", "}"}], ",", "1.`", ",", "9.`"}], "}"}], 
+       ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"milk\"\>", ",", "\<\"whole wheat rice\"\>", 
+           ",", "\<\"mineral water\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"energy bar\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"whole wheat rice\"\>", ",", "\<\"milk\"\>", 
+       ",", "\<\"energy bar\"\>", ",", "\<\"nan\"\>"}], "}"}], ",", 
+     "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"milk\"\>", ",", "\<\"energy bar\"\>", 
+           ",", "\<\"nan\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"whole wheat rice\"\>", "}"}], ",", "1.`", ",", 
+         "9.`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"whole wheat rice\"\>", ",", "\<\"energy bar\"\>", 
+           ",", "\<\"nan\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"milk\"\>", "}"}], ",", "1.`", ",", "9.`"}], "}"}], 
+       ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"milk\"\>", ",", "\<\"nan\"\>", 
+           ",", "\<\"whole wheat rice\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"energy bar\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"whole wheat rice\"\>", ",", "\<\"energy bar\"\>", 
+       ",", "\<\"nan\"\>", ",", "\<\"mineral water\"\>"}], "}"}], ",", 
+     "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"energy bar\"\>", ",", "\<\"nan\"\>", 
+           ",", "\<\"mineral water\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"whole wheat rice\"\>", "}"}], ",", "1.`", ",", 
+         "9.`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"whole wheat rice\"\>", ",", "\<\"energy bar\"\>", 
+           ",", "\<\"nan\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"mineral water\"\>", "}"}], ",", "1.`", ",", 
+         "9.`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"nan\"\>", ",", "\<\"whole wheat rice\"\>", 
+           ",", "\<\"mineral water\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"energy bar\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"green tea\"\>", ",", "\<\"frozen vegetables\"\>", 
+       ",", "\<\"nan\"\>", ",", "\<\"spaghetti\"\>"}], "}"}], ",", 
+     "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"green tea\"\>", ",", "\<\"frozen vegetables\"\>", 
+           ",", "\<\"nan\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"spaghetti\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"nan\"\>", ",", "\<\"frozen vegetables\"\>", 
+           ",", "\<\"spaghetti\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"green tea\"\>", "}"}], ",", "1.`", ",", "4.5`"}], 
+        "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"green tea\"\>", ",", "\<\"nan\"\>", 
+           ",", "\<\"spaghetti\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"frozen vegetables\"\>", "}"}], ",", "1.`", ",", 
+         "9.`"}], "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"milk\"\>", ",", "\<\"green tea\"\>", ",", "\<\"nan\"\>", 
+       ",", "\<\"mineral water\"\>"}], "}"}], ",", "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"milk\"\>", ",", "\<\"green tea\"\>", 
+           ",", "\<\"nan\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"mineral water\"\>", "}"}], ",", "1.`", ",", 
+         "9.`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"green tea\"\>", ",", "\<\"nan\"\>", 
+           ",", "\<\"mineral water\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"milk\"\>", "}"}], ",", "1.`", ",", "9.`"}], "}"}], 
+       ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"milk\"\>", ",", "\<\"nan\"\>", 
+           ",", "\<\"mineral water\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"green tea\"\>", "}"}], ",", "1.`", ",", "4.5`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"milk\"\>", ",", "\<\"green tea\"\>", 
+       ",", "\<\"whole wheat rice\"\>", ",", "\<\"mineral water\"\>"}], "}"}],
+      ",", "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"milk\"\>", ",", "\<\"green tea\"\>", 
+           ",", "\<\"mineral water\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"whole wheat rice\"\>", "}"}], ",", "1.`", ",", 
+         "9.`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"milk\"\>", ",", "\<\"green tea\"\>", 
+           ",", "\<\"whole wheat rice\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"mineral water\"\>", "}"}], ",", "1.`", ",", 
+         "9.`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"green tea\"\>", ",", "\<\"whole wheat rice\"\>", 
+           ",", "\<\"mineral water\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"milk\"\>", "}"}], ",", "1.`", ",", "9.`"}], "}"}], 
+       ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"milk\"\>", ",", "\<\"whole wheat rice\"\>", 
+           ",", "\<\"mineral water\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"green tea\"\>", "}"}], ",", "1.`", ",", "4.5`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"whole wheat rice\"\>", ",", "\<\"milk\"\>", 
+       ",", "\<\"green tea\"\>", ",", "\<\"nan\"\>"}], "}"}], ",", 
+     "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"milk\"\>", ",", "\<\"green tea\"\>", 
+           ",", "\<\"nan\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"whole wheat rice\"\>", "}"}], ",", "1.`", ",", 
+         "9.`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"whole wheat rice\"\>", ",", "\<\"green tea\"\>", 
+           ",", "\<\"nan\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"milk\"\>", "}"}], ",", "1.`", ",", "9.`"}], "}"}], 
+       ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"milk\"\>", ",", "\<\"nan\"\>", 
+           ",", "\<\"whole wheat rice\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"green tea\"\>", "}"}], ",", "1.`", ",", "4.5`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"whole wheat rice\"\>", ",", "\<\"green tea\"\>", 
+       ",", "\<\"nan\"\>", ",", "\<\"mineral water\"\>"}], "}"}], ",", 
+     "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"green tea\"\>", ",", "\<\"nan\"\>", 
+           ",", "\<\"mineral water\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"whole wheat rice\"\>", "}"}], ",", "1.`", ",", 
+         "9.`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"whole wheat rice\"\>", ",", "\<\"green tea\"\>", 
+           ",", "\<\"nan\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"mineral water\"\>", "}"}], ",", "1.`", ",", 
+         "9.`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"nan\"\>", ",", "\<\"whole wheat rice\"\>", 
+           ",", "\<\"mineral water\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"green tea\"\>", "}"}], ",", "1.`", ",", "4.5`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"nan\"\>", ",", "\<\"shallot\"\>", 
+       ",", "\<\"light cream\"\>", ",", "\<\"soup\"\>"}], "}"}], ",", 
+     "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"nan\"\>", ",", "\<\"shallot\"\>", 
+           ",", "\<\"light cream\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"soup\"\>", "}"}], ",", "1.`", ",", "9.`"}], "}"}], 
+       ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"nan\"\>", ",", "\<\"light cream\"\>", 
+           ",", "\<\"soup\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"shallot\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"nan\"\>", ",", "\<\"shallot\"\>", 
+           ",", "\<\"soup\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"light cream\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"milk\"\>", ",", "\<\"nan\"\>", 
+       ",", "\<\"whole wheat rice\"\>", ",", "\<\"mineral water\"\>"}], "}"}],
+      ",", "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"milk\"\>", ",", "\<\"nan\"\>", 
+           ",", "\<\"mineral water\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"whole wheat rice\"\>", "}"}], ",", "1.`", ",", 
+         "9.`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"milk\"\>", ",", "\<\"nan\"\>", 
+           ",", "\<\"whole wheat rice\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"mineral water\"\>", "}"}], ",", "1.`", ",", 
+         "9.`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"nan\"\>", ",", "\<\"whole wheat rice\"\>", 
+           ",", "\<\"mineral water\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"milk\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"green tea\"\>", ",", "\<\"nan\"\>", ",", "\<\"milk\"\>", 
+       ",", "\<\"energy bar\"\>", ",", "\<\"mineral water\"\>"}], "}"}], ",", 
+     "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"green tea\"\>", ",", "\<\"milk\"\>", 
+           ",", "\<\"energy bar\"\>", ",", "\<\"nan\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"mineral water\"\>", "}"}], ",", "1.`", ",", 
+         "9.`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"green tea\"\>", ",", "\<\"energy bar\"\>", 
+           ",", "\<\"nan\"\>", ",", "\<\"mineral water\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"milk\"\>", "}"}], ",", "1.`", ",", "9.`"}], "}"}], 
+       ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"milk\"\>", ",", "\<\"energy bar\"\>", 
+           ",", "\<\"nan\"\>", ",", "\<\"mineral water\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"green tea\"\>", "}"}], ",", "1.`", ",", "4.5`"}], 
+        "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"milk\"\>", ",", "\<\"green tea\"\>", 
+           ",", "\<\"nan\"\>", ",", "\<\"mineral water\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"energy bar\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"green tea\"\>", ",", "\<\"whole wheat rice\"\>", 
+       ",", "\<\"milk\"\>", ",", "\<\"energy bar\"\>", 
+       ",", "\<\"mineral water\"\>"}], "}"}], ",", "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"green tea\"\>", ",", "\<\"milk\"\>", 
+           ",", "\<\"energy bar\"\>", ",", "\<\"mineral water\"\>"}], "}"}], 
+         ",", 
+         RowBox[{"{", "\<\"whole wheat rice\"\>", "}"}], ",", "1.`", ",", 
+         "9.`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"green tea\"\>", ",", "\<\"milk\"\>", 
+           ",", "\<\"energy bar\"\>", ",", "\<\"whole wheat rice\"\>"}], 
+          "}"}], ",", 
+         RowBox[{"{", "\<\"mineral water\"\>", "}"}], ",", "1.`", ",", 
+         "9.`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"green tea\"\>", ",", "\<\"energy bar\"\>", 
+           ",", "\<\"whole wheat rice\"\>", ",", "\<\"mineral water\"\>"}], 
+          "}"}], ",", 
+         RowBox[{"{", "\<\"milk\"\>", "}"}], ",", "1.`", ",", "9.`"}], "}"}], 
+       ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"milk\"\>", ",", "\<\"energy bar\"\>", 
+           ",", "\<\"whole wheat rice\"\>", ",", "\<\"mineral water\"\>"}], 
+          "}"}], ",", 
+         RowBox[{"{", "\<\"green tea\"\>", "}"}], ",", "1.`", ",", "4.5`"}], 
+        "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"milk\"\>", ",", "\<\"green tea\"\>", 
+           ",", "\<\"whole wheat rice\"\>", ",", "\<\"mineral water\"\>"}], 
+          "}"}], ",", 
+         RowBox[{"{", "\<\"energy bar\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"green tea\"\>", ",", "\<\"nan\"\>", 
+       ",", "\<\"whole wheat rice\"\>", ",", "\<\"milk\"\>", 
+       ",", "\<\"energy bar\"\>"}], "}"}], ",", "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"green tea\"\>", ",", "\<\"milk\"\>", 
+           ",", "\<\"energy bar\"\>", ",", "\<\"nan\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"whole wheat rice\"\>", "}"}], ",", "1.`", ",", 
+         "9.`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"green tea\"\>", ",", "\<\"energy bar\"\>", 
+           ",", "\<\"nan\"\>", ",", "\<\"whole wheat rice\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"milk\"\>", "}"}], ",", "1.`", ",", "9.`"}], "}"}], 
+       ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"whole wheat rice\"\>", ",", "\<\"milk\"\>", 
+           ",", "\<\"energy bar\"\>", ",", "\<\"nan\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"green tea\"\>", "}"}], ",", "1.`", ",", "4.5`"}], 
+        "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"whole wheat rice\"\>", ",", "\<\"milk\"\>", 
+           ",", "\<\"green tea\"\>", ",", "\<\"nan\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"energy bar\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"green tea\"\>", ",", "\<\"nan\"\>", 
+       ",", "\<\"whole wheat rice\"\>", ",", "\<\"energy bar\"\>", 
+       ",", "\<\"mineral water\"\>"}], "}"}], ",", "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"green tea\"\>", ",", "\<\"energy bar\"\>", 
+           ",", "\<\"nan\"\>", ",", "\<\"mineral water\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"whole wheat rice\"\>", "}"}], ",", "1.`", ",", 
+         "9.`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"green tea\"\>", ",", "\<\"energy bar\"\>", 
+           ",", "\<\"nan\"\>", ",", "\<\"whole wheat rice\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"mineral water\"\>", "}"}], ",", "1.`", ",", 
+         "9.`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"whole wheat rice\"\>", ",", "\<\"energy bar\"\>", 
+           ",", "\<\"nan\"\>", ",", "\<\"mineral water\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"green tea\"\>", "}"}], ",", "1.`", ",", "4.5`"}], 
+        "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"whole wheat rice\"\>", ",", "\<\"green tea\"\>", 
+           ",", "\<\"nan\"\>", ",", "\<\"mineral water\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"energy bar\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"nan\"\>", ",", "\<\"whole wheat rice\"\>", 
+       ",", "\<\"milk\"\>", ",", "\<\"energy bar\"\>", 
+       ",", "\<\"mineral water\"\>"}], "}"}], ",", "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"milk\"\>", ",", "\<\"energy bar\"\>", 
+           ",", "\<\"nan\"\>", ",", "\<\"mineral water\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"whole wheat rice\"\>", "}"}], ",", "1.`", ",", 
+         "9.`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"whole wheat rice\"\>", ",", "\<\"milk\"\>", 
+           ",", "\<\"energy bar\"\>", ",", "\<\"nan\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"mineral water\"\>", "}"}], ",", "1.`", ",", 
+         "9.`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"whole wheat rice\"\>", ",", "\<\"energy bar\"\>", 
+           ",", "\<\"nan\"\>", ",", "\<\"mineral water\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"milk\"\>", "}"}], ",", "1.`", ",", "9.`"}], "}"}], 
+       ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"milk\"\>", ",", "\<\"nan\"\>", 
+           ",", "\<\"whole wheat rice\"\>", ",", "\<\"mineral water\"\>"}], 
+          "}"}], ",", 
+         RowBox[{"{", "\<\"energy bar\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"green tea\"\>", ",", "\<\"nan\"\>", 
+       ",", "\<\"whole wheat rice\"\>", ",", "\<\"milk\"\>", 
+       ",", "\<\"mineral water\"\>"}], "}"}], ",", "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"milk\"\>", ",", "\<\"green tea\"\>", 
+           ",", "\<\"nan\"\>", ",", "\<\"mineral water\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"whole wheat rice\"\>", "}"}], ",", "1.`", ",", 
+         "9.`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"whole wheat rice\"\>", ",", "\<\"milk\"\>", 
+           ",", "\<\"green tea\"\>", ",", "\<\"nan\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"mineral water\"\>", "}"}], ",", "1.`", ",", 
+         "9.`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"whole wheat rice\"\>", ",", "\<\"green tea\"\>", 
+           ",", "\<\"nan\"\>", ",", "\<\"mineral water\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"milk\"\>", "}"}], ",", "1.`", ",", "9.`"}], "}"}], 
+       ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"milk\"\>", ",", "\<\"nan\"\>", 
+           ",", "\<\"whole wheat rice\"\>", ",", "\<\"mineral water\"\>"}], 
+          "}"}], ",", 
+         RowBox[{"{", "\<\"green tea\"\>", "}"}], ",", "1.`", ",", "4.5`"}], 
+        "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"green tea\"\>", ",", "\<\"nan\"\>", 
+       ",", "\<\"whole wheat rice\"\>", ",", "\<\"milk\"\>", 
+       ",", "\<\"energy bar\"\>", ",", "\<\"mineral water\"\>"}], "}"}], ",", 
+     "0.1111111111111111`", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"green tea\"\>", ",", "\<\"nan\"\>", 
+           ",", "\<\"milk\"\>", ",", "\<\"energy bar\"\>", 
+           ",", "\<\"mineral water\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"whole wheat rice\"\>", "}"}], ",", "1.`", ",", 
+         "9.`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"green tea\"\>", ",", "\<\"nan\"\>", 
+           ",", "\<\"whole wheat rice\"\>", ",", "\<\"milk\"\>", 
+           ",", "\<\"energy bar\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"mineral water\"\>", "}"}], ",", "1.`", ",", 
+         "9.`"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"green tea\"\>", ",", "\<\"nan\"\>", 
+           ",", "\<\"whole wheat rice\"\>", ",", "\<\"energy bar\"\>", 
+           ",", "\<\"mineral water\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"milk\"\>", "}"}], ",", "1.`", ",", "9.`"}], "}"}], 
+       ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"nan\"\>", ",", "\<\"whole wheat rice\"\>", 
+           ",", "\<\"milk\"\>", ",", "\<\"energy bar\"\>", 
+           ",", "\<\"mineral water\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"green tea\"\>", "}"}], ",", "1.`", ",", "4.5`"}], 
+        "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"green tea\"\>", ",", "\<\"nan\"\>", 
+           ",", "\<\"whole wheat rice\"\>", ",", "\<\"milk\"\>", 
+           ",", "\<\"mineral water\"\>"}], "}"}], ",", 
+         RowBox[{"{", "\<\"energy bar\"\>", "}"}], ",", "1.`", ",", "9.`"}], 
+        "}"}]}], "}"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.7771467575273895`*^9, 3.7771467710891647`*^9}, 
+   3.777146880324413*^9},
+ CellLabel->"Out[49]=",ExpressionUUID->"16f1d7ff-84c8-4081-a118-60dcb5f0f991"]
+}, Open  ]]
+},
+WindowSize->{1008, 686},
+WindowMargins->{{-8, Automatic}, {Automatic, 0}},
+Magnification:>1.25 Inherited,
+FrontEndVersion->"12.0 for Microsoft Windows (32-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 809, 13, 60, "ExternalLanguage",ExpressionUUID->"ef550a70-bf49-430e-ae15-b460b238d54d"],
+Cell[CellGroupData[{
+Cell[1392, 37, 610, 11, 252, "Input",ExpressionUUID->"23baab54-8f60-4622-b74f-db4c2473f24e"],
+Cell[2005, 50, 33334, 634, 86, "Output",ExpressionUUID->"64b65eae-032a-4a4a-be2b-b6036fe91aa0"]
+}, Open  ]],
+Cell[35354, 687, 291, 5, 60, "Input",ExpressionUUID->"f1baa98e-13b2-4962-97cd-779c1ec67b93"],
+Cell[35648, 694, 763, 16, 35, "Input",ExpressionUUID->"d63ffa57-51f9-49a3-a340-830b9a96db05"],
+Cell[36414, 712, 5508, 97, 468, "Input",ExpressionUUID->"2fb1e300-006e-4d13-a462-10dd238d5eba"],
+Cell[CellGroupData[{
+Cell[41947, 813, 778, 13, 35, "Input",ExpressionUUID->"02dc214b-55f5-45f3-8299-3a995f1fc449"],
+Cell[42728, 828, 75454, 2077, 4898, "Output",ExpressionUUID->"16f1d7ff-84c8-4081-a118-60dcb5f0f991"]
+}, Open  ]]
+}
+]
+*)
+

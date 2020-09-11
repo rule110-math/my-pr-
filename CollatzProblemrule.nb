@@ -1,0 +1,1425 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     36467,       1415]
+NotebookOptionsPosition[     36063,       1397]
+NotebookOutlinePosition[     36406,       1412]
+CellTagsIndexPosition[     36363,       1409]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Collatz", "[", 
+    RowBox[{"a0_Integer", ",", 
+     RowBox[{"maxits_:", "1000"}]}], "]"}], ":=", 
+   RowBox[{"NestWhileList", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"EvenQ", "[", "#", "]"}], ",", 
+        RowBox[{"#", "/", "2"}], ",", 
+        RowBox[{
+         RowBox[{"3", "#"}], "+", "1"}]}], "]"}], "&"}], ",", "a0", ",", 
+     RowBox[{
+      RowBox[{"Unequal", "[", 
+       RowBox[{"#", ",", "1", ",", 
+        RowBox[{"-", "1"}], ",", 
+        RowBox[{"-", "10"}], ",", 
+        RowBox[{"-", "34"}]}], "]"}], "&"}], ",", "1", ",", "maxits"}], 
+    "]"}]}], "\n"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"Collatz", "[", "7", "]"}]], "Input",
+ CellChangeTimes->{{3.6324344834505367`*^9, 3.6324346898993454`*^9}, {
+  3.632434767451781*^9, 3.63243476830583*^9}, {3.632434845903268*^9, 
+  3.6324349051546574`*^9}, {3.632434941781752*^9, 3.632434995607831*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"ReplaceList", "[", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"Table", "[", 
+        RowBox[{
+         RowBox[{"Cases", "[", 
+          RowBox[{
+           RowBox[{"Collatz", "[", "n", "]"}], ",", 
+           RowBox[{"x_", "/;", 
+            RowBox[{
+             RowBox[{"OddQ", "[", "x", "]"}], "\[Equal]", "True"}]}]}], "]"}],
+          ",", 
+         RowBox[{"{", 
+          RowBox[{"n", ",", "1", ",", "100"}], "}"}]}], "]"}], ")"}], ",", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"___", ",", 
+         RowBox[{"{", 
+          RowBox[{"___", ",", "x_", ",", "y_", ",", "___"}], "}"}], ",", 
+         "___"}], "}"}], "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"x", "->", "y"}], "}"}]}]}], "]"}], "/.", 
+    RowBox[{"x_Integer", "\[Rule]", 
+     RowBox[{"BaseForm", "[", 
+      RowBox[{"x", ",", "2"}], "]"}]}]}], "//", "Union"}], "//", "TableForm"}]
+  ], "Input",
+ CellChangeTimes->{{3.6324350008841324`*^9, 3.632435263643162*^9}, {
+  3.632435357830549*^9, 3.6324353588786087`*^9}, {3.632437443255828*^9, 
+  3.632437573287266*^9}, {3.632437811382884*^9, 3.6324378376993895`*^9}, {
+  3.632438059441072*^9, 3.632438077052079*^9}, {3.632438147033082*^9, 
+  3.6324382838899097`*^9}, {3.6324383246712427`*^9, 3.6324385457208853`*^9}, {
+  3.6324387068471017`*^9, 3.632438820799619*^9}, {3.6324388784489164`*^9, 
+  3.6324389931524773`*^9}, {3.632439348603808*^9, 3.63243953099224*^9}, {
+  3.6324398886336956`*^9, 3.6324398930609493`*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"11\"\>", "\<\"2\"\>"],
+        3,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"101\"\>", "\<\"2\"\>"],
+        5,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"101\"\>", "\<\"2\"\>"],
+        5,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1\"\>", "\<\"2\"\>"],
+        1,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"111\"\>", "\<\"2\"\>"],
+        7,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1011\"\>", "\<\"2\"\>"],
+        11,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1001\"\>", "\<\"2\"\>"],
+        9,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"111\"\>", "\<\"2\"\>"],
+        7,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1011\"\>", "\<\"2\"\>"],
+        11,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"10001\"\>", "\<\"2\"\>"],
+        17,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1101\"\>", "\<\"2\"\>"],
+        13,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"101\"\>", "\<\"2\"\>"],
+        5,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1111\"\>", "\<\"2\"\>"],
+        15,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"10111\"\>", "\<\"2\"\>"],
+        23,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"10001\"\>", "\<\"2\"\>"],
+        17,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1101\"\>", "\<\"2\"\>"],
+        13,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"10011\"\>", "\<\"2\"\>"],
+        19,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"11101\"\>", "\<\"2\"\>"],
+        29,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"10101\"\>", "\<\"2\"\>"],
+        21,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1\"\>", "\<\"2\"\>"],
+        1,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"10111\"\>", "\<\"2\"\>"],
+        23,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"100011\"\>", "\<\"2\"\>"],
+        35,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"11001\"\>", "\<\"2\"\>"],
+        25,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"10011\"\>", "\<\"2\"\>"],
+        19,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"11011\"\>", "\<\"2\"\>"],
+        27,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"101001\"\>", "\<\"2\"\>"],
+        41,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"11101\"\>", "\<\"2\"\>"],
+        29,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1011\"\>", "\<\"2\"\>"],
+        11,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"11111\"\>", "\<\"2\"\>"],
+        31,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"101111\"\>", "\<\"2\"\>"],
+        47,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"100001\"\>", "\<\"2\"\>"],
+        33,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"11001\"\>", "\<\"2\"\>"],
+        25,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"100011\"\>", "\<\"2\"\>"],
+        35,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"110101\"\>", "\<\"2\"\>"],
+        53,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"100101\"\>", "\<\"2\"\>"],
+        37,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"111\"\>", "\<\"2\"\>"],
+        7,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"100111\"\>", "\<\"2\"\>"],
+        39,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"111011\"\>", "\<\"2\"\>"],
+        59,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"101001\"\>", "\<\"2\"\>"],
+        41,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"11111\"\>", "\<\"2\"\>"],
+        31,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"101011\"\>", "\<\"2\"\>"],
+        43,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1000001\"\>", "\<\"2\"\>"],
+        65,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"101101\"\>", "\<\"2\"\>"],
+        45,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"10001\"\>", "\<\"2\"\>"],
+        17,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"101111\"\>", "\<\"2\"\>"],
+        47,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1000111\"\>", "\<\"2\"\>"],
+        71,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"110001\"\>", "\<\"2\"\>"],
+        49,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"100101\"\>", "\<\"2\"\>"],
+        37,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"110011\"\>", "\<\"2\"\>"],
+        51,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1001101\"\>", "\<\"2\"\>"],
+        77,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"110101\"\>", "\<\"2\"\>"],
+        53,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"101\"\>", "\<\"2\"\>"],
+        5,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"110111\"\>", "\<\"2\"\>"],
+        55,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1010011\"\>", "\<\"2\"\>"],
+        83,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"111001\"\>", "\<\"2\"\>"],
+        57,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"101011\"\>", "\<\"2\"\>"],
+        43,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"111011\"\>", "\<\"2\"\>"],
+        59,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1011001\"\>", "\<\"2\"\>"],
+        89,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"111101\"\>", "\<\"2\"\>"],
+        61,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"10111\"\>", "\<\"2\"\>"],
+        23,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"111111\"\>", "\<\"2\"\>"],
+        63,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1011111\"\>", "\<\"2\"\>"],
+        95,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1000001\"\>", "\<\"2\"\>"],
+        65,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"110001\"\>", "\<\"2\"\>"],
+        49,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1000011\"\>", "\<\"2\"\>"],
+        67,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1100101\"\>", "\<\"2\"\>"],
+        101,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1000101\"\>", "\<\"2\"\>"],
+        69,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1101\"\>", "\<\"2\"\>"],
+        13,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1000111\"\>", "\<\"2\"\>"],
+        71,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1101011\"\>", "\<\"2\"\>"],
+        107,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1001001\"\>", "\<\"2\"\>"],
+        73,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"110111\"\>", "\<\"2\"\>"],
+        55,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1001011\"\>", "\<\"2\"\>"],
+        75,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1110001\"\>", "\<\"2\"\>"],
+        113,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1001101\"\>", "\<\"2\"\>"],
+        77,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"11101\"\>", "\<\"2\"\>"],
+        29,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1001111\"\>", "\<\"2\"\>"],
+        79,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1110111\"\>", "\<\"2\"\>"],
+        119,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1010001\"\>", "\<\"2\"\>"],
+        81,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"111101\"\>", "\<\"2\"\>"],
+        61,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1010011\"\>", "\<\"2\"\>"],
+        83,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1111101\"\>", "\<\"2\"\>"],
+        125,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1010101\"\>", "\<\"2\"\>"],
+        85,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1\"\>", "\<\"2\"\>"],
+        1,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1010111\"\>", "\<\"2\"\>"],
+        87,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"10000011\"\>", "\<\"2\"\>"],
+        131,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1011001\"\>", "\<\"2\"\>"],
+        89,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1000011\"\>", "\<\"2\"\>"],
+        67,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1011011\"\>", "\<\"2\"\>"],
+        91,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"10001001\"\>", "\<\"2\"\>"],
+        137,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1011101\"\>", "\<\"2\"\>"],
+        93,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"100011\"\>", "\<\"2\"\>"],
+        35,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1011111\"\>", "\<\"2\"\>"],
+        95,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"10001111\"\>", "\<\"2\"\>"],
+        143,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1100001\"\>", "\<\"2\"\>"],
+        97,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1001001\"\>", "\<\"2\"\>"],
+        73,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1100011\"\>", "\<\"2\"\>"],
+        99,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"10010101\"\>", "\<\"2\"\>"],
+        149,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1100101\"\>", "\<\"2\"\>"],
+        101,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"10011\"\>", "\<\"2\"\>"],
+        19,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1100111\"\>", "\<\"2\"\>"],
+        103,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"10011011\"\>", "\<\"2\"\>"],
+        155,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1101011\"\>", "\<\"2\"\>"],
+        107,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"10100001\"\>", "\<\"2\"\>"],
+        161,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1110001\"\>", "\<\"2\"\>"],
+        113,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1010101\"\>", "\<\"2\"\>"],
+        85,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1110111\"\>", "\<\"2\"\>"],
+        119,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"10110011\"\>", "\<\"2\"\>"],
+        179,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1111001\"\>", "\<\"2\"\>"],
+        121,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1011011\"\>", "\<\"2\"\>"],
+        91,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1111101\"\>", "\<\"2\"\>"],
+        125,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"101111\"\>", "\<\"2\"\>"],
+        47,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"10000011\"\>", "\<\"2\"\>"],
+        131,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"11000101\"\>", "\<\"2\"\>"],
+        197,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"10001001\"\>", "\<\"2\"\>"],
+        137,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1100111\"\>", "\<\"2\"\>"],
+        103,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"10001111\"\>", "\<\"2\"\>"],
+        143,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"11010111\"\>", "\<\"2\"\>"],
+        215,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"10010101\"\>", "\<\"2\"\>"],
+        149,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"111\"\>", "\<\"2\"\>"],
+        7,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"10011011\"\>", "\<\"2\"\>"],
+        155,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"11101001\"\>", "\<\"2\"\>"],
+        233,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"10100001\"\>", "\<\"2\"\>"],
+        161,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1111001\"\>", "\<\"2\"\>"],
+        121,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"10100111\"\>", "\<\"2\"\>"],
+        167,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"11111011\"\>", "\<\"2\"\>"],
+        251,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"10101111\"\>", "\<\"2\"\>"],
+        175,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"100000111\"\>", "\<\"2\"\>"],
+        263,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"10110011\"\>", "\<\"2\"\>"],
+        179,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"100001101\"\>", "\<\"2\"\>"],
+        269,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"11000101\"\>", "\<\"2\"\>"],
+        197,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"100101\"\>", "\<\"2\"\>"],
+        37,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"11010111\"\>", "\<\"2\"\>"],
+        215,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"101000011\"\>", "\<\"2\"\>"],
+        323,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"11101001\"\>", "\<\"2\"\>"],
+        233,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"10101111\"\>", "\<\"2\"\>"],
+        175,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"11111011\"\>", "\<\"2\"\>"],
+        251,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"101111001\"\>", "\<\"2\"\>"],
+        377,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"100000111\"\>", "\<\"2\"\>"],
+        263,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"110001011\"\>", "\<\"2\"\>"],
+        395,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"100001101\"\>", "\<\"2\"\>"],
+        269,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1100101\"\>", "\<\"2\"\>"],
+        101,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"100011011\"\>", "\<\"2\"\>"],
+        283,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"110101001\"\>", "\<\"2\"\>"],
+        425,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"100111111\"\>", "\<\"2\"\>"],
+        319,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"111011111\"\>", "\<\"2\"\>"],
+        479,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"101000011\"\>", "\<\"2\"\>"],
+        323,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"111100101\"\>", "\<\"2\"\>"],
+        485,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"101000101\"\>", "\<\"2\"\>"],
+        325,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"111101\"\>", "\<\"2\"\>"],
+        61,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"101111001\"\>", "\<\"2\"\>"],
+        377,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"100011011\"\>", "\<\"2\"\>"],
+        283,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"110001011\"\>", "\<\"2\"\>"],
+        395,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1001010001\"\>", "\<\"2\"\>"],
+        593,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"110101001\"\>", "\<\"2\"\>"],
+        425,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"100111111\"\>", "\<\"2\"\>"],
+        319,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"110110001\"\>", "\<\"2\"\>"],
+        433,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"101000101\"\>", "\<\"2\"\>"],
+        325,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"110111101\"\>", "\<\"2\"\>"],
+        445,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"10100111\"\>", "\<\"2\"\>"],
+        167,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"111011111\"\>", "\<\"2\"\>"],
+        479,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1011001111\"\>", "\<\"2\"\>"],
+        719,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"111100101\"\>", "\<\"2\"\>"],
+        485,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1011011\"\>", "\<\"2\"\>"],
+        91,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1001000001\"\>", "\<\"2\"\>"],
+        577,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"110110001\"\>", "\<\"2\"\>"],
+        433,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1001010001\"\>", "\<\"2\"\>"],
+        593,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"110111101\"\>", "\<\"2\"\>"],
+        445,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1011001111\"\>", "\<\"2\"\>"],
+        719,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"10000110111\"\>", "\<\"2\"\>"],
+        1079,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1110001111\"\>", "\<\"2\"\>"],
+        911,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"10101010111\"\>", "\<\"2\"\>"],
+        1367,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"10000110111\"\>", "\<\"2\"\>"],
+        1079,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"11001010011\"\>", "\<\"2\"\>"],
+        1619,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"10101010111\"\>", "\<\"2\"\>"],
+        1367,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"100000000011\"\>", "\<\"2\"\>"],
+        2051,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"11001010011\"\>", "\<\"2\"\>"],
+        1619,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"100101111101\"\>", "\<\"2\"\>"],
+        2429,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"100000000011\"\>", "\<\"2\"\>"],
+        2051,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"110000000101\"\>", "\<\"2\"\>"],
+        3077,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"100101111101\"\>", "\<\"2\"\>"],
+        2429,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1110001111\"\>", "\<\"2\"\>"],
+        911,
+        Editable->False],
+       BaseForm[#, 2]& ]}]},
+    {
+     RowBox[{
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"110000000101\"\>", "\<\"2\"\>"],
+        3077,
+        Editable->False],
+       BaseForm[#, 2]& ], "\[Rule]", 
+      TagBox[
+       InterpretationBox[
+        SubscriptBox["\<\"1001000001\"\>", "\<\"2\"\>"],
+        577,
+        Editable->False],
+       BaseForm[#, 2]& ]}]}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{{3.632439469942748*^9, 3.6324395317682843`*^9}, 
+   3.632439893862995*^9}]
+}, Open  ]]
+},
+WindowSize->{707, 505},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"9.0 for Microsoft Windows (32-bit) (November 20, 2012)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 680, 21, 92, "Input"],
+Cell[1240, 43, 275, 4, 31, "Input"],
+Cell[CellGroupData[{
+Cell[1540, 51, 1519, 37, 72, InheritFromParent],
+Cell[3062, 90, 32985, 1304, 1406, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

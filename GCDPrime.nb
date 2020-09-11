@@ -1,0 +1,855 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     33762,        846]
+NotebookOptionsPosition[     33218,        822]
+NotebookOutlinePosition[     33558,        837]
+CellTagsIndexPosition[     33515,        834]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"GCD", "[", 
+        RowBox[{"a", ",", "n"}], "]"}], ">", "1"}], ",", 
+      SubscriptBox["1", "n"], ",", "0"}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"a", ",", "35"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", 
+      RowBox[{"a", "-", "1"}]}], "}"}]}], "]"}], "//", "TableForm"}]], "Input"],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {"0", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\
+\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {"0", 
+     "0", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\
+\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>", "\<\"\"\>"},
+    {"0", 
+     SubscriptBox["1", "2"], 
+     "0", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\
+\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>"},
+    {"0", "0", "0", 
+     "0", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\
+\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {"0", 
+     SubscriptBox["1", "2"], 
+     SubscriptBox["1", "3"], 
+     SubscriptBox["1", "4"], 
+     "0", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\
+\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {"0", "0", "0", "0", "0", 
+     "0", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\
+\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {"0", 
+     SubscriptBox["1", "2"], "0", 
+     SubscriptBox["1", "4"], "0", 
+     SubscriptBox["1", "6"], 
+     "0", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\
+\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {"0", "0", 
+     SubscriptBox["1", "3"], "0", "0", 
+     SubscriptBox["1", "6"], "0", 
+     "0", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\
+\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>"},
+    {"0", 
+     SubscriptBox["1", "2"], "0", 
+     SubscriptBox["1", "4"], 
+     SubscriptBox["1", "5"], 
+     SubscriptBox["1", "6"], "0", 
+     SubscriptBox["1", "8"], 
+     "0", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\
+\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {"0", "0", "0", "0", "0", "0", "0", "0", "0", 
+     "0", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\
+\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {"0", 
+     SubscriptBox["1", "2"], 
+     SubscriptBox["1", "3"], 
+     SubscriptBox["1", "4"], "0", 
+     SubscriptBox["1", "6"], "0", 
+     SubscriptBox["1", "8"], 
+     SubscriptBox["1", "9"], 
+     SubscriptBox["1", "10"], 
+     "0", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\
+\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {"0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", 
+     "0", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\
+\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {"0", 
+     SubscriptBox["1", "2"], "0", 
+     SubscriptBox["1", "4"], "0", 
+     SubscriptBox["1", "6"], 
+     SubscriptBox["1", "7"], 
+     SubscriptBox["1", "8"], "0", 
+     SubscriptBox["1", "10"], "0", 
+     SubscriptBox["1", "12"], 
+     "0", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\
+\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {"0", "0", 
+     SubscriptBox["1", "3"], "0", 
+     SubscriptBox["1", "5"], 
+     SubscriptBox["1", "6"], "0", "0", 
+     SubscriptBox["1", "9"], 
+     SubscriptBox["1", "10"], "0", 
+     SubscriptBox["1", "12"], "0", 
+     "0", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\
+\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>", "\<\"\"\>"},
+    {"0", 
+     SubscriptBox["1", "2"], "0", 
+     SubscriptBox["1", "4"], "0", 
+     SubscriptBox["1", "6"], "0", 
+     SubscriptBox["1", "8"], "0", 
+     SubscriptBox["1", "10"], "0", 
+     SubscriptBox["1", "12"], "0", 
+     SubscriptBox["1", "14"], 
+     "0", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\
+\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>"},
+    {"0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", 
+     "0", "0", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\
+\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {"0", 
+     SubscriptBox["1", "2"], 
+     SubscriptBox["1", "3"], 
+     SubscriptBox["1", "4"], "0", 
+     SubscriptBox["1", "6"], "0", 
+     SubscriptBox["1", "8"], 
+     SubscriptBox["1", "9"], 
+     SubscriptBox["1", "10"], "0", 
+     SubscriptBox["1", "12"], "0", 
+     SubscriptBox["1", "14"], 
+     SubscriptBox["1", "15"], 
+     SubscriptBox["1", "16"], 
+     "0", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\
+\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {"0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", 
+     "0", "0", "0", 
+     "0", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\
+\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {"0", 
+     SubscriptBox["1", "2"], "0", 
+     SubscriptBox["1", "4"], 
+     SubscriptBox["1", "5"], 
+     SubscriptBox["1", "6"], "0", 
+     SubscriptBox["1", "8"], "0", 
+     SubscriptBox["1", "10"], "0", 
+     SubscriptBox["1", "12"], "0", 
+     SubscriptBox["1", "14"], 
+     SubscriptBox["1", "15"], 
+     SubscriptBox["1", "16"], "0", 
+     SubscriptBox["1", "18"], 
+     "0", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\
+\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {"0", "0", 
+     SubscriptBox["1", "3"], "0", "0", 
+     SubscriptBox["1", "6"], 
+     SubscriptBox["1", "7"], "0", 
+     SubscriptBox["1", "9"], "0", "0", 
+     SubscriptBox["1", "12"], "0", 
+     SubscriptBox["1", "14"], 
+     SubscriptBox["1", "15"], "0", "0", 
+     SubscriptBox["1", "18"], "0", 
+     "0", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\
+\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>"},
+    {"0", 
+     SubscriptBox["1", "2"], "0", 
+     SubscriptBox["1", "4"], "0", 
+     SubscriptBox["1", "6"], "0", 
+     SubscriptBox["1", "8"], "0", 
+     SubscriptBox["1", "10"], 
+     SubscriptBox["1", "11"], 
+     SubscriptBox["1", "12"], "0", 
+     SubscriptBox["1", "14"], "0", 
+     SubscriptBox["1", "16"], "0", 
+     SubscriptBox["1", "18"], "0", 
+     SubscriptBox["1", "20"], 
+     "0", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\
+\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>"},
+    {"0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", 
+     "0", "0", "0", "0", "0", "0", "0", 
+     "0", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\
+\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {"0", 
+     SubscriptBox["1", "2"], 
+     SubscriptBox["1", "3"], 
+     SubscriptBox["1", "4"], "0", 
+     SubscriptBox["1", "6"], "0", 
+     SubscriptBox["1", "8"], 
+     SubscriptBox["1", "9"], 
+     SubscriptBox["1", "10"], "0", 
+     SubscriptBox["1", "12"], "0", 
+     SubscriptBox["1", "14"], 
+     SubscriptBox["1", "15"], 
+     SubscriptBox["1", "16"], "0", 
+     SubscriptBox["1", "18"], "0", 
+     SubscriptBox["1", "20"], 
+     SubscriptBox["1", "21"], 
+     SubscriptBox["1", "22"], 
+     "0", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\
+\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {"0", "0", "0", "0", 
+     SubscriptBox["1", "5"], "0", "0", "0", "0", 
+     SubscriptBox["1", "10"], "0", "0", "0", "0", 
+     SubscriptBox["1", "15"], "0", "0", "0", "0", 
+     SubscriptBox["1", "20"], "0", "0", "0", 
+     "0", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\
+\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {"0", 
+     SubscriptBox["1", "2"], "0", 
+     SubscriptBox["1", "4"], "0", 
+     SubscriptBox["1", "6"], "0", 
+     SubscriptBox["1", "8"], "0", 
+     SubscriptBox["1", "10"], "0", 
+     SubscriptBox["1", "12"], 
+     SubscriptBox["1", "13"], 
+     SubscriptBox["1", "14"], "0", 
+     SubscriptBox["1", "16"], "0", 
+     SubscriptBox["1", "18"], "0", 
+     SubscriptBox["1", "20"], "0", 
+     SubscriptBox["1", "22"], "0", 
+     SubscriptBox["1", "24"], 
+     "0", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\
+\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {"0", "0", 
+     SubscriptBox["1", "3"], "0", "0", 
+     SubscriptBox["1", "6"], "0", "0", 
+     SubscriptBox["1", "9"], "0", "0", 
+     SubscriptBox["1", "12"], "0", "0", 
+     SubscriptBox["1", "15"], "0", "0", 
+     SubscriptBox["1", "18"], "0", "0", 
+     SubscriptBox["1", "21"], "0", "0", 
+     SubscriptBox["1", "24"], "0", 
+     "0", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\
+\>", "\<\"\"\>", "\<\"\"\>"},
+    {"0", 
+     SubscriptBox["1", "2"], "0", 
+     SubscriptBox["1", "4"], "0", 
+     SubscriptBox["1", "6"], 
+     SubscriptBox["1", "7"], 
+     SubscriptBox["1", "8"], "0", 
+     SubscriptBox["1", "10"], "0", 
+     SubscriptBox["1", "12"], "0", 
+     SubscriptBox["1", "14"], "0", 
+     SubscriptBox["1", "16"], "0", 
+     SubscriptBox["1", "18"], "0", 
+     SubscriptBox["1", "20"], 
+     SubscriptBox["1", "21"], 
+     SubscriptBox["1", "22"], "0", 
+     SubscriptBox["1", "24"], "0", 
+     SubscriptBox["1", "26"], 
+     "0", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\
+\>", "\<\"\"\>"},
+    {"0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", 
+     "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", 
+     "0", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\
+\>"},
+    {"0", 
+     SubscriptBox["1", "2"], 
+     SubscriptBox["1", "3"], 
+     SubscriptBox["1", "4"], 
+     SubscriptBox["1", "5"], 
+     SubscriptBox["1", "6"], "0", 
+     SubscriptBox["1", "8"], 
+     SubscriptBox["1", "9"], 
+     SubscriptBox["1", "10"], "0", 
+     SubscriptBox["1", "12"], "0", 
+     SubscriptBox["1", "14"], 
+     SubscriptBox["1", "15"], 
+     SubscriptBox["1", "16"], "0", 
+     SubscriptBox["1", "18"], "0", 
+     SubscriptBox["1", "20"], 
+     SubscriptBox["1", "21"], 
+     SubscriptBox["1", "22"], "0", 
+     SubscriptBox["1", "24"], 
+     SubscriptBox["1", "25"], 
+     SubscriptBox["1", "26"], 
+     SubscriptBox["1", "27"], 
+     SubscriptBox["1", "28"], 
+     "0", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {"0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", 
+     "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", 
+     "0", "0", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {"0", 
+     SubscriptBox["1", "2"], "0", 
+     SubscriptBox["1", "4"], "0", 
+     SubscriptBox["1", "6"], "0", 
+     SubscriptBox["1", "8"], "0", 
+     SubscriptBox["1", "10"], "0", 
+     SubscriptBox["1", "12"], "0", 
+     SubscriptBox["1", "14"], "0", 
+     SubscriptBox["1", "16"], "0", 
+     SubscriptBox["1", "18"], "0", 
+     SubscriptBox["1", "20"], "0", 
+     SubscriptBox["1", "22"], "0", 
+     SubscriptBox["1", "24"], "0", 
+     SubscriptBox["1", "26"], "0", 
+     SubscriptBox["1", "28"], "0", 
+     SubscriptBox["1", "30"], "0", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {"0", "0", 
+     SubscriptBox["1", "3"], "0", "0", 
+     SubscriptBox["1", "6"], "0", "0", 
+     SubscriptBox["1", "9"], "0", 
+     SubscriptBox["1", "11"], 
+     SubscriptBox["1", "12"], "0", "0", 
+     SubscriptBox["1", "15"], "0", "0", 
+     SubscriptBox["1", "18"], "0", "0", 
+     SubscriptBox["1", "21"], 
+     SubscriptBox["1", "22"], "0", 
+     SubscriptBox["1", "24"], "0", "0", 
+     SubscriptBox["1", "27"], "0", "0", 
+     SubscriptBox["1", "30"], "0", "0", "\<\"\"\>", "\<\"\"\>"},
+    {"0", 
+     SubscriptBox["1", "2"], "0", 
+     SubscriptBox["1", "4"], "0", 
+     SubscriptBox["1", "6"], "0", 
+     SubscriptBox["1", "8"], "0", 
+     SubscriptBox["1", "10"], "0", 
+     SubscriptBox["1", "12"], "0", 
+     SubscriptBox["1", "14"], "0", 
+     SubscriptBox["1", "16"], 
+     SubscriptBox["1", "17"], 
+     SubscriptBox["1", "18"], "0", 
+     SubscriptBox["1", "20"], "0", 
+     SubscriptBox["1", "22"], "0", 
+     SubscriptBox["1", "24"], "0", 
+     SubscriptBox["1", "26"], "0", 
+     SubscriptBox["1", "28"], "0", 
+     SubscriptBox["1", "30"], "0", 
+     SubscriptBox["1", "32"], "0", "\<\"\"\>"},
+    {"0", "0", "0", "0", 
+     SubscriptBox["1", "5"], "0", 
+     SubscriptBox["1", "7"], "0", "0", 
+     SubscriptBox["1", "10"], "0", "0", "0", 
+     SubscriptBox["1", "14"], 
+     SubscriptBox["1", "15"], "0", "0", "0", "0", 
+     SubscriptBox["1", "20"], 
+     SubscriptBox["1", "21"], "0", "0", "0", 
+     SubscriptBox["1", "25"], "0", "0", 
+     SubscriptBox["1", "28"], "0", 
+     SubscriptBox["1", "30"], "0", "0", "0", "0"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  TableForm[{{}, {0}, {0, 0}, {0, 
+     Subscript[1, 2], 0}, {0, 0, 0, 0}, {0, 
+     Subscript[1, 2], 
+     Subscript[1, 3], 
+     Subscript[1, 4], 0}, {0, 0, 0, 0, 0, 0}, {0, 
+     Subscript[1, 2], 0, 
+     Subscript[1, 4], 0, 
+     Subscript[1, 6], 0}, {0, 0, 
+     Subscript[1, 3], 0, 0, 
+     Subscript[1, 6], 0, 0}, {0, 
+     Subscript[1, 2], 0, 
+     Subscript[1, 4], 
+     Subscript[1, 5], 
+     Subscript[1, 6], 0, 
+     Subscript[1, 8], 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 
+     Subscript[1, 2], 
+     Subscript[1, 3], 
+     Subscript[1, 4], 0, 
+     Subscript[1, 6], 0, 
+     Subscript[1, 8], 
+     Subscript[1, 9], 
+     Subscript[1, 10], 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 
+     Subscript[1, 2], 0, 
+     Subscript[1, 4], 0, 
+     Subscript[1, 6], 
+     Subscript[1, 7], 
+     Subscript[1, 8], 0, 
+     Subscript[1, 10], 0, 
+     Subscript[1, 12], 0}, {0, 0, 
+     Subscript[1, 3], 0, 
+     Subscript[1, 5], 
+     Subscript[1, 6], 0, 0, 
+     Subscript[1, 9], 
+     Subscript[1, 10], 0, 
+     Subscript[1, 12], 0, 0}, {0, 
+     Subscript[1, 2], 0, 
+     Subscript[1, 4], 0, 
+     Subscript[1, 6], 0, 
+     Subscript[1, 8], 0, 
+     Subscript[1, 10], 0, 
+     Subscript[1, 12], 0, 
+     Subscript[1, 14], 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {
+    0, 
+     Subscript[1, 2], 
+     Subscript[1, 3], 
+     Subscript[1, 4], 0, 
+     Subscript[1, 6], 0, 
+     Subscript[1, 8], 
+     Subscript[1, 9], 
+     Subscript[1, 10], 0, 
+     Subscript[1, 12], 0, 
+     Subscript[1, 14], 
+     Subscript[1, 15], 
+     Subscript[1, 16], 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+     0}, {0, 
+     Subscript[1, 2], 0, 
+     Subscript[1, 4], 
+     Subscript[1, 5], 
+     Subscript[1, 6], 0, 
+     Subscript[1, 8], 0, 
+     Subscript[1, 10], 0, 
+     Subscript[1, 12], 0, 
+     Subscript[1, 14], 
+     Subscript[1, 15], 
+     Subscript[1, 16], 0, 
+     Subscript[1, 18], 0}, {0, 0, 
+     Subscript[1, 3], 0, 0, 
+     Subscript[1, 6], 
+     Subscript[1, 7], 0, 
+     Subscript[1, 9], 0, 0, 
+     Subscript[1, 12], 0, 
+     Subscript[1, 14], 
+     Subscript[1, 15], 0, 0, 
+     Subscript[1, 18], 0, 0}, {0, 
+     Subscript[1, 2], 0, 
+     Subscript[1, 4], 0, 
+     Subscript[1, 6], 0, 
+     Subscript[1, 8], 0, 
+     Subscript[1, 10], 
+     Subscript[1, 11], 
+     Subscript[1, 12], 0, 
+     Subscript[1, 14], 0, 
+     Subscript[1, 16], 0, 
+     Subscript[1, 18], 0, 
+     Subscript[1, 20], 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+     0, 0, 0, 0, 0}, {0, 
+     Subscript[1, 2], 
+     Subscript[1, 3], 
+     Subscript[1, 4], 0, 
+     Subscript[1, 6], 0, 
+     Subscript[1, 8], 
+     Subscript[1, 9], 
+     Subscript[1, 10], 0, 
+     Subscript[1, 12], 0, 
+     Subscript[1, 14], 
+     Subscript[1, 15], 
+     Subscript[1, 16], 0, 
+     Subscript[1, 18], 0, 
+     Subscript[1, 20], 
+     Subscript[1, 21], 
+     Subscript[1, 22], 0}, {0, 0, 0, 0, 
+     Subscript[1, 5], 0, 0, 0, 0, 
+     Subscript[1, 10], 0, 0, 0, 0, 
+     Subscript[1, 15], 0, 0, 0, 0, 
+     Subscript[1, 20], 0, 0, 0, 0}, {0, 
+     Subscript[1, 2], 0, 
+     Subscript[1, 4], 0, 
+     Subscript[1, 6], 0, 
+     Subscript[1, 8], 0, 
+     Subscript[1, 10], 0, 
+     Subscript[1, 12], 
+     Subscript[1, 13], 
+     Subscript[1, 14], 0, 
+     Subscript[1, 16], 0, 
+     Subscript[1, 18], 0, 
+     Subscript[1, 20], 0, 
+     Subscript[1, 22], 0, 
+     Subscript[1, 24], 0}, {0, 0, 
+     Subscript[1, 3], 0, 0, 
+     Subscript[1, 6], 0, 0, 
+     Subscript[1, 9], 0, 0, 
+     Subscript[1, 12], 0, 0, 
+     Subscript[1, 15], 0, 0, 
+     Subscript[1, 18], 0, 0, 
+     Subscript[1, 21], 0, 0, 
+     Subscript[1, 24], 0, 0}, {0, 
+     Subscript[1, 2], 0, 
+     Subscript[1, 4], 0, 
+     Subscript[1, 6], 
+     Subscript[1, 7], 
+     Subscript[1, 8], 0, 
+     Subscript[1, 10], 0, 
+     Subscript[1, 12], 0, 
+     Subscript[1, 14], 0, 
+     Subscript[1, 16], 0, 
+     Subscript[1, 18], 0, 
+     Subscript[1, 20], 
+     Subscript[1, 21], 
+     Subscript[1, 22], 0, 
+     Subscript[1, 24], 0, 
+     Subscript[1, 26], 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 
+     Subscript[1, 2], 
+     Subscript[1, 3], 
+     Subscript[1, 4], 
+     Subscript[1, 5], 
+     Subscript[1, 6], 0, 
+     Subscript[1, 8], 
+     Subscript[1, 9], 
+     Subscript[1, 10], 0, 
+     Subscript[1, 12], 0, 
+     Subscript[1, 14], 
+     Subscript[1, 15], 
+     Subscript[1, 16], 0, 
+     Subscript[1, 18], 0, 
+     Subscript[1, 20], 
+     Subscript[1, 21], 
+     Subscript[1, 22], 0, 
+     Subscript[1, 24], 
+     Subscript[1, 25], 
+     Subscript[1, 26], 
+     Subscript[1, 27], 
+     Subscript[1, 28], 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 
+     Subscript[1, 2], 0, 
+     Subscript[1, 4], 0, 
+     Subscript[1, 6], 0, 
+     Subscript[1, 8], 0, 
+     Subscript[1, 10], 0, 
+     Subscript[1, 12], 0, 
+     Subscript[1, 14], 0, 
+     Subscript[1, 16], 0, 
+     Subscript[1, 18], 0, 
+     Subscript[1, 20], 0, 
+     Subscript[1, 22], 0, 
+     Subscript[1, 24], 0, 
+     Subscript[1, 26], 0, 
+     Subscript[1, 28], 0, 
+     Subscript[1, 30], 0}, {0, 0, 
+     Subscript[1, 3], 0, 0, 
+     Subscript[1, 6], 0, 0, 
+     Subscript[1, 9], 0, 
+     Subscript[1, 11], 
+     Subscript[1, 12], 0, 0, 
+     Subscript[1, 15], 0, 0, 
+     Subscript[1, 18], 0, 0, 
+     Subscript[1, 21], 
+     Subscript[1, 22], 0, 
+     Subscript[1, 24], 0, 0, 
+     Subscript[1, 27], 0, 0, 
+     Subscript[1, 30], 0, 0}, {0, 
+     Subscript[1, 2], 0, 
+     Subscript[1, 4], 0, 
+     Subscript[1, 6], 0, 
+     Subscript[1, 8], 0, 
+     Subscript[1, 10], 0, 
+     Subscript[1, 12], 0, 
+     Subscript[1, 14], 0, 
+     Subscript[1, 16], 
+     Subscript[1, 17], 
+     Subscript[1, 18], 0, 
+     Subscript[1, 20], 0, 
+     Subscript[1, 22], 0, 
+     Subscript[1, 24], 0, 
+     Subscript[1, 26], 0, 
+     Subscript[1, 28], 0, 
+     Subscript[1, 30], 0, 
+     Subscript[1, 32], 0}, {0, 0, 0, 0, 
+     Subscript[1, 5], 0, 
+     Subscript[1, 7], 0, 0, 
+     Subscript[1, 10], 0, 0, 0, 
+     Subscript[1, 14], 
+     Subscript[1, 15], 0, 0, 0, 0, 
+     Subscript[1, 20], 
+     Subscript[1, 21], 0, 0, 0, 
+     Subscript[1, 25], 0, 0, 
+     Subscript[1, 28], 0, 
+     Subscript[1, 30], 0, 0, 0, 0}}]]], "Output",
+ CellChangeTimes->{3.6565700192239323`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"GCD", "[", 
+        RowBox[{"a", ",", "n"}], "]"}], ">", "1"}], ",", "1", ",", "0"}], 
+     "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"a", ",", "100"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", 
+      RowBox[{"a", "-", "1"}]}], "}"}]}], "]"}], "//", "ArrayPlot"}]], "Input",
+ CellChangeTimes->{{3.6565700302165613`*^9, 3.656570047654559*^9}, {
+  3.6565701957280283`*^9, 3.6565702180343037`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[RasterBox[CompressedData["
+1:eJzt1kuy60oVBNAbARNhJMyBIfBpM3WGwOu4U+BbPk5JWSWtiiCysZS7tnV9
+/PjL3//9t3/96devX//843//+ON/f/71Ov/56+/z3Zn1Pu2n3t6/3U+9vX+7
+n3p7/3Y/9fb+7X7q7f3b/dTb+7f7qbf3b/dTb+/f7qfe3r/dT/3s/dM8+/7V
+58/66fzd30/7/aV9881P5s/66fzd30/7/aV9881P5s/66fzd30/7/aX9u8+f
+3dv++zn7+3P2/fpZP/X2/k/vp97e/+n91Nv7P72fenv/p/dTb+//9H7q7f2/
+zdmco+6RUkoppZRS7p+vc5aPz43nKE/vt3/m9s/6qds/66du/6yfuv2zfur2
+z/qp2z/rp373/Wd7tfyqfHfae9nvmPvb+63+/ux37vyz92t/Pvtl+6X99nz7
+rb1fe//2/fbr7r2qH/V+9fX19fXP6afe3l9fX19f/7u5u3r7/Zlvvvnz+en9
+ad98880/b/6sn87f/f2Yb/7O82f33tWv+n3U10/6qbf319fX139qP/X2/vr6
+3+Rszt19l3x32ntd9fu7e67++dL90v7q2f58Z99/9vx2nv35zp6/+v2rf760
+v/rnWz1nn2/mq+fu+6efm3/23HhW8fb+Z/99pfudff/u+7d99/efenv/3d//
+0/dv++7vP/X2/ru//6fv3/ZvczaH/96llFJKKaV8Ur4OP8fH58bz03+nu/ZT
+b++v/+x+6u399Z/dT729v/6z+6m391+9P5vLO97+9zff/CfMn/XT+bu/H/PN
+b85P70/75ptv/vf38jX9qO+Hvr6+/l37qbf319fX11+1P5vL9/Sr8t1p7/WU
+/dJ+e779uve391v9/d19v/b+7fvtd+78s/drf76n7zfbm9/TP/1+pt6+P/X2
+72vq9s/6qe++f+rt/Xd//+37U3/6+7d/5rvvn3p7/29zNoff26WUUkoppfxJ
+vg7nnzw3np9+z/T19fVX66fe3l9fX1//rP5sLuffePv7a7755ptvvvnmm2/+
+OfNn93J+hh/1/Z71U2/v3+6n3t6/3U+9vX+7n3p7/3Y/9fb+7X7q7f3b/dTb
++7f7qZ+9/2wu5w2XUkoppZR75etwvqKPz43nKE/v333/tj/9/ds/c/tn/dTt
+n/VT333/1Nv77/7+v83ZHM5X9l3y3bnL/WfPb+fs88189Vx9/3S/tL96pp8v
+7a/++do523/mu+fZn+/s+avf3/535fyOftTft/69+6m399fX139uP/X2/vpr
+92dzOX+ir/L3m85v35/2d58/66fz2/en/d3nz/rp/Pb9aX/3+bN+Or99f9rf
+ff6sn85v35/208/FOe/9funr6z+3n3p7f319/fv2Z3M55z93KaWUUsqn5etw
+zo/38bnxHOXp/fbP3P5ZP3X7Z/3U7Z/1U7d/1k/97vvP9uKcX+9SSimllLvl
+63DO1/PxufH89O/8Xb/t7c/ffn9P3799/+791Nv7t/up737/0/dvf/7Uz/78
+s7mc8/28/fthvvlH9NP5u78f8/een96f9s03/8z5s3s55/fzo35f9Nfup97e
+X19f3++H/pr92VzO+fNcSimllPKn+Tqccz57bjxHeXp/e//U2/vv/v7tn/VT
+t3/WT/3p+7f97u//2///wDnn6e/MUb9T42nvddV+6fyz92t/vvZ+7f3b96++
+3+z+9n6rv7/df5/Onn/3/WZ7c8750X7U76O+vr6+vr7+9f3ZXM45v9rbv3+f
+zk/vT/tnz5/10/m7v5/V56f3p33fT/N/Nz+9P+37fp6Ts3s457zlR/0+6uvr
+n9dPvb2/vr7+z3M2h3POV3UppZRSXp+vwznnd/PxufGs4u390/vtn3n7/tR3
+f/+pt/ff/f0/ff+2f5uzOZxzfleXUkop5c/zdTjnnP/+ufHMevr6+vN+6u39
+9fXv3J/N5Zxz/jP/NN+ddK75e8xP70/75t97/qyfzt/9/Zh/Ts7u4Zxz/p2P
+z41n1ruqn3p7/6f3U2/v//R+6u39n95Pvb3/tzmbwznn/By/Kt+d9l6f7tfe
+v33/2ful/fb81fdL55+9X/vz3f33Y/X3l+7NOed8LR+fG89Rnt5v/8ztn/VT
+t3/WT93+WT/1b3M2h3PO+ZoupZRSNvJ1OOec38vH58Yz6+l/1k+9vb++frOf
+env/u/e//e8P55zze/qn+e6kc82/Zv6sn87f/f08fX56f9o3f+35s3s555zz
+3z03nlnv037q7f3b/dTb+7f7qbf3b/dTb+/f7qd+9v6r/veJc875nr5Lvjvt
+vXw+n8/n2z/v/vlmn5tzzjk/0sfnxnOUp/fbP3P7Z/3U7Z/1U7/7/qv+94Vz
+zvkzXUop5Z75OpxzzvlKPj43nllPX/+Kfurt/fX1v8nZHM4553xF/zTfnaP6
+6fz2/Wl/9/mzfjq/fX/a333+rJ/Ob9+f9tPPxTnnnN/Jx+fGM+s9pZ96e3/9
+Z/dTb++/en/V33fOOee84VJKKb/L1+Gcc875++fGc5S370893b/9+e2f9VPf
+ff/U2/t/m7M5nHPOOZdSSvnK1+Gcc875cT4+N55Z79N+6u392/3U2/u3+6m3
+92/3Uz97/1V/XznnnPMn+qf57qRznzI/vT/tm5/10/m7v5/2/FV/PznnnHM+
+f248s57+M/qpt/fXX7u/6u8j55xzzn/uUkrZytfhnHPO+X18fG48R3l6v/0z
+t3/WT/3u+6/6+8Y555zz6/2qfHeu6rfnp/e399t9/7PvT+efvd/Z75Vzzjnn
+/N1z45n19Pfop97eX//c/qq/T5xzzjnfzz/Ndyedu8v8WT+dv/v7ab+/tH/3
++av+/nDOOef8fj4+N55ZT19fv99f9feFc845589zKeW++Tqcc84556v4+Nx4
+VvH2/un99s+8fX/q3+ZsDuecc875ai6l7OXrcM4555zfxcfnxjPrXdVPvb3/
+0/upt/f/NmdzOOecc87v5p/mu5PONd/8Heav+vfLOeecc76aj8+NZ9bT/6yf
+env/u/dX/fvknHPOOd/Nr8p3p72X/Z6x36p/f5xzzjnnd/PxufEc5en99s/8
+7vuv+vfFOeecc/40l3LnfB3OOeecc76Gj8+NZ9Z7Sj/19v6r91f9++Ccc845
+5z/zT/PdSed+Oj+9P+2fPX/WT+e338+q33/OOeecc36sj8+NZ9b7tJ96e/92
+P/Wz91/1+80555xzzq91KZN8Hc4555xzzv/fc+M5ytP77Z/5tzmbwznnnHPO
+uZSrfP8455xzzvm9fHxuPLOe/hr9Vb9fnHPOOef8Wf5pvjtH9dP57fvTfvq5
+OOecc845X8HH58Yz613VT729/7c5m8M555xzzvlKLrv5OpxzzjnnnN/Bx+fG
+c5Sn96++/6r/vpxzzjnnnF/pMsvX4ZxzzjnnnP/vc+OZ9T7tp372/qv++3DO
+Oeecc76Tf5rvTjr3qvmrvn/OOeecc87v5ONz45n1Vumv+n4555xzzjl/ku+e
+s8/HOeecc845v87H58ZzlH+bszmcc84555zzdbydZ38+zjnnnHPO+XU+Pjee
+We/TuZxzzjnnnPP7e5rt/TnnnHPOOefr+Czb+3HOOeecc84555xzzjnn/I7+
+X6OFynI=
+   "], {{0, 0}, {99, 100}}, {0, 1}],
+  Frame->Automatic,
+  FrameLabel->{None, None},
+  FrameTicks->{{None, None}, {None, None}},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImageSize->{538., Automatic},
+  Method->{
+   "DefaultBoundaryStyle" -> Automatic, "DefaultPlotStyle" -> 
+    Automatic}]], "Output",
+ CellChangeTimes->{{3.6565700399891205`*^9, 3.6565700482455926`*^9}, {
+  3.656570196547075*^9, 3.6565702185843353`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"GCD", "[", 
+        RowBox[{"a", ",", "n"}], "]"}], ">", "1"}], ",", "0", ",", "1"}], 
+     "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"a", ",", "100"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", 
+      RowBox[{"a", "-", "1"}]}], "}"}]}], "]"}], "//", "ArrayPlot"}]], "Input",
+ CellChangeTimes->{{3.656570233109166*^9, 3.6565702368283787`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[RasterBox[CompressedData["
+1:eJzt112S7DQMBtCpgo2wEvbAEvh5ZussAZ4BtTxRHNnxcdUtPxx9sjpJp+f+
+9Oufv/zxw9fX1+///Pvtn38/fmXrr5/H9mq+unfP3513/Wp516+Wd/1qedev
+lnf9annXr5Z3/Wp516+WX/36VX32+av3n31/q+fv3n/174f++lfyq8+/en/v
+B/137u/9MLe/90NP/2ytcn9m793zn553//bOu397592/vfPu395592/v/Kn3
+L6vL1uj5nHPOOeec8328+v+H6v8vZu/V881vfvOb3/zmN7/5zW9+84/nZns2
+32yvXj/z9c43+/sx28239nzdvw+z3Xy9863+/M52882dr3v+7vPN1zNfVveU
+X51/l/e/vLy8/Fvz1b17fnl5eXn57+WzulU8Wk9dP/311/96/+73n/766z+v
+/+zvf/V8/fXX//7+Wd0uHq2n3o/y8pV8de+eX15eXv7UvPe3/In5rO4tHq3R
+69ft1fvf7bPfr6v76p+v+/20und/vtnnd3++2f7269d9/mx/+/tp9fmq/vbf
+/93nzzz7XKd7tO56/mfv3fNXzzd/7/zde3X+ar57756/er75e+fv3qvzV/Pd
+e/f81fPN3zt/9351/qyOf16j159zzjnnnPOdvPvv77d7tLLrX71/b8lX9+75
+5c/Oe37ld857fuV3znt+e/JZHb/Ho/XU/ddf/5P7z/59qZ6vv/4n95/9/c7y
++uuv//f7Z3X8GY/WKu9XeXl5+VXz1b17fnl5efnd8lkdX8OjNXr/q159/sxX
+m2/253v79Xv7fNV99nyZm2/ufN3zd59vvrn9T79+p86X1fE9PFp3/b7Mfr90
+79X5q3nzm79z/u7P333+7vN379X5q3nzm79z/u7P33V+Vsff4dEafX4455xz
+zvlZ3v33K1/bo5U9P9XnT15eXr47X92755eXl5d/Op/Vcf5pPfX86q+//vrr
+r7/++uu/Rv+sjvMRj9Zdz/fsvXv+7rzrV8u7frW861fLu361vOtXy7t+tfyu
+1y+r4/wOj9bo88s555xzzp/17r8fOf/k0cqe37v26vm7z9+9V+ev5s1vfvOb
+3/w983d//u7zd50/q+N8BY/W6PPf7dXv7+rnd3++2T77/dztq88/6/dvlc9X
+9bdfn9Xny/zt74/M3/77033+bM8+F+c7e7Tu+n7Lvztf3bvnl5eXPzfv/SXf
+kc/qOH+DR6v7+3dX/+7zu+fv7u/+fs7v3t/9/Zzfvb/7+zm/e3/393P+av+s
+jvMTPFqrfL/l5eXfm6/u3fPLy8ufl8/qOOfxGv3+cc4555zv5t1/f3H+Zo9W
+9v27a6+eb37zm9/85je/+c0/en5Wxzmve7RGv7+cc8455097999PnPPYo5V9
+f6vf/1X26vzd+d0/f/f83efvnnf9avnu69d9/unzV/Pde3X+q/msjnPe79F6
+6v2hv/6V/tU96189X3/9K/1nfz+yvP76d/TP6jjn63u07nq/yK+dr+7d88vL
+y/flvT/kr+SzOs75/h6t0fcH55xzzs/z7r9fOOfrerSy98dde/X87vm7P3/3
++eY3v/nNv+v7r3v+ar5r/qyOc86jNfr+qXr1/bf7fLPe/6dcv9nzdc/fff7q
+861+/zJ/+3yrvz9n+67zZXWcc/7d91qW++77UV5eXl5eXn6dfFbHOedVj9ZT
+779q/1nv36fmr+ZXn//0/p7PWv/q+frX9mr/LD+7/6nPZ1bHOeezPVp3vR/l
+5eXn5at79/zy8vLfz2d1nHPe7dEaff9xzjnn/Pve/fvPOeezPFrZ+2+VvXv+
+6vnm752/e6/OX813793zV883f+/83fvV+bM6zjnf3aM1+v7knHPOT/Tu32/O
+OV/Vo5W9P7M+8vLy8/fu+eXlT8xndZxzfrpHq/r+Hc3rv3f/6vnd8+u/dv/Z
+z1/1fP3f2T+r45xz/tmjFeVG+zyVr+7d85+ed//2zrt/e+dPvX9ZHeec85pH
+K6u7y7N99fm65+8+f/Z8sz/f26/f7P6nX7/q+d3zZb7rfFkd55zzuR6tKHf3
+Xj3f/OY3v/nNf9b8WR3nnPNej1ZWxznnnFe8+/ePc875HI9WlBvtI//M3j2/
+vHxn3vdnz3xWxznnfG+PVlYX9R09R/81+lf3rH/1fP17+89+vrK8/nv2z+o4
+55y/26MV5Ub7jOare/f83XnXr5Z3/Wp516+W3/X6ZXWcc87P9mhldat4tnfP
+V3Wfr3e+qvt8vfNV/dTPl9VxzjnnnzxaUe7uvXq++c1vfvOb/3vnZ3Wcc855
+xaOV1XHOOe/17t8Pzjnn/P88WlFutI+8/BP56t49v7z8lXxWxznnnHd6tLK6
+qO/oOaP5av/u87vn7+7v/n7O797f/f2cv9o/q+Occ85X9mhFudE+p+Sre/f8
+8mfnPb89+ayOc84539mjldVxzvnp3v3+5pxzzlf0aEW5u/fu87vnr+bNb/7O
++bs/f9f5WR3nnHN+skcrq+Oc8929+/3LOeecv9GjFeVG+4zmq3v3/N1516+W
+d/1q+V2vX1bHOeec8+serawu6jt6jv73nN89/9v7z75/1fP1/9yXc8455897
+tKLcaB/5M/LVvXt++T3zWR3nnHPO+zxaWR3nnFe9+/3HOeec8/s9WlHu7r16
+vvnNb/795s/qOOecc76vRyuru8uzfXa+u3/1/O75Ml99/tWfn+7rc3W+rI5z
+zjnn7/VoRbnRPvJ75Kt79/zyPfmsjnPOOefnerSyuqjv6Dlv6V/ds/7V83fv
+P/v+ZPlT+2d1nHPOOeeRRyvKjfaRl5dfN5/Vcc4555xf9WhldZzzfu9+f3DO
+Oeec/9ujFeVW27vnr55v/t75u/er82d1nHPOOeddHq2sjnNe9+7vP+ecc875
+3R6tKDfa56l8de+e//T8qfcvq+Occ84539WjldVFfUfP0V//N/fP6jjnnHPO
+3+rRinKjfeSf2bvnPzWf1XHOOeecn+rRyuru8mw3n/k65svqOOecc875/3u0
+otzde/V885v/yvlZHeecc845v+bRyuo4X8G7vz+cc8455/xraEW50T6n5Kt7
+9/y75rM6zjnnnHPe49HK6qK+o+fc1b96fvf81fzq81/tn9VxzjnnnPM1PVpR
+brTPaL66d8/fnd/1+mV1nHPOOed8T49WVsf5pz2r45xzzjnn7/RoRbm79+r5
+5u+ZP6vjnHPOOednerSyOv4O737+OOecc875uzxaUW60j/za+ayOc84555zz
+Kx6trC7qO3rOaL7av/v8rvmzOs4555xzzmd4tKLcaJ+n8tW9e/6r+ayOc845
+55zzDo9WVsfv8e77zznnnHPO+Z0erSh39149f9f5szrOOeecc8539Ghldfzz
+ntVxzjnnnHP+Ro9WlBvtM5qv7l3zZ3Wcc84555yf6NHK6qK+o+es3j+r45xz
+zjnnnP/XoxXlRvusns/qOOecc84559/3aGV1q3j39eOcc84555znK8rdvV89
+P6vjnHPOOeecP+/Ryuru8u7PzznnnHPOOb/PoxXlRvuM5jjnnHPOOefv8Whl
+dVHf1T4f55xzzjnn/DmPVpRbbX7OOeecc84555xzzjnnnL/J/wY/agfh
+   "], {{0, 0}, {99, 100}}, {0, 1}],
+  Frame->Automatic,
+  FrameLabel->{None, None},
+  FrameTicks->{{None, None}, {None, None}},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  Method->{
+   "DefaultBoundaryStyle" -> Automatic, "DefaultPlotStyle" -> 
+    Automatic}]], "Output",
+ CellChangeTimes->{3.6565702375034175`*^9}]
+}, Open  ]]
+},
+WindowSize->{1008, 686},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"10.2 for Microsoft Windows (32-bit) (July 7, 2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 438, 14, 31, "Input"],
+Cell[1021, 38, 22868, 591, 551, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23926, 634, 540, 16, 31, "Input"],
+Cell[24469, 652, 4164, 74, 557, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28670, 731, 487, 15, 31, "Input"],
+Cell[29160, 748, 4042, 71, 378, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
