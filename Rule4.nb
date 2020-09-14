@@ -1,0 +1,213 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      7644,        203]
+NotebookOptionsPosition[      6964,        178]
+NotebookOutlinePosition[      7304,        193]
+CellTagsIndexPosition[      7261,        190]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"x", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Thread", "[", 
+      RowBox[{"Rule", "[", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"Tuples", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"0", ",", "1"}], "}"}], ",", "4"}], "]"}], ")"}], ",", 
+        "#"}], "]"}], "]"}], "&"}], "/@", 
+    RowBox[{"Tuples", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"0", ",", "1"}], "}"}], ",", "16"}], "]"}]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.6747321313875513`*^9, 3.6747322034876757`*^9}, {
+   3.6747322460091076`*^9, 3.67473224657714*^9}, {3.674732289160576*^9, 
+   3.674732301238267*^9}, {3.6747323410255423`*^9, 3.67473237140828*^9}, {
+   3.6747324524299145`*^9, 3.6747325232409644`*^9}, {3.674732560544098*^9, 
+   3.674732596340145*^9}, {3.67473264991921*^9, 3.67473265463648*^9}, {
+   3.6747327929053884`*^9, 3.6747328174707937`*^9}, {3.674733031563039*^9, 
+   3.6747330772486515`*^9}, {3.674733125875433*^9, 3.674733165084676*^9}, {
+   3.6747333922416687`*^9, 3.674733406118462*^9}, {3.6747335866957903`*^9, 
+   3.674733596557355*^9}, 3.674770635366452*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", 
+    RowBox[{
+     RowBox[{"{", "a__", "}"}], ",", "b_"}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"Partition", "[", 
+       RowBox[{
+        RowBox[{"Flatten", "[", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", "0", ",", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"{", "a", "}"}], "/.", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{"___", ",", "1", ",", 
+                RowBox[{"Longest", "[", "r__", "]"}], ",", "1", ",", "___"}], 
+               "}"}], ":>", 
+              RowBox[{"{", 
+               RowBox[{"1", ",", "r", ",", "1"}], "}"}]}]}], ")"}], ",", "0", 
+           ",", "0", ",", "0"}], "}"}], "]"}], ",", "4", ",", "1"}], "]"}], "/.", 
+      RowBox[{"x", "[", 
+       RowBox[{"[", "b", "]"}], "]"}]}], ")"}], "/.", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"___", ",", "1", ",", 
+       RowBox[{"Longest", "[", "t__", "]"}], ",", "1", ",", "___"}], "}"}], ":>", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "t", ",", "1"}], "}"}]}]}]}], ";"}]], "Input",
+ CellChangeTimes->{3.674770658479774*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"rule4", "[", 
+   RowBox[{"n_", ",", "m_"}], "]"}], ":=", 
+  RowBox[{"NestList", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"f", "[", 
+      RowBox[{"#", ",", "n"}], "]"}], "&"}], ",", 
+    RowBox[{"{", "1", "}"}], ",", "m"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.6747707486109295`*^9, 3.6747707574194326`*^9}, {
+  3.674770799727853*^9, 3.6747708001618776`*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{3.6747427513826437`*^9, 3.6747707253716*^9}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.6747707315879555`*^9, 3.674770764783854*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.674741718988594*^9, 3.6747417190135956`*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.6747373636984863`*^9, 3.6747373749881315`*^9}, {
+  3.674741873084408*^9, 3.6747418953006787`*^9}, {3.6747419265574665`*^9, 
+  3.6747419289926057`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"ArrayPlot", "[", 
+    RowBox[{"f1", "[", 
+     RowBox[{"n", ",", "60"}], "]"}], "]"}], " ", ",", 
+   RowBox[{"{", 
+    RowBox[{"n", ",", "3", ",", 
+     RowBox[{"2", "^", "16"}], ",", "1"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.674737934641142*^9, 3.674737951168087*^9}, {
+   3.6747381769450006`*^9, 3.674738210404915*^9}, {3.674738448208516*^9, 
+   3.6747384502416325`*^9}, {3.6747387576322145`*^9, 
+   3.6747387776703606`*^9}, {3.674738906411724*^9, 3.6747389279559565`*^9}, {
+   3.6747390380892553`*^9, 3.6747390593694725`*^9}, 3.6747397926284127`*^9, {
+   3.6747398476935625`*^9, 3.674739875488152*^9}, {3.674740665598344*^9, 
+   3.674740683683378*^9}, {3.6747407717644157`*^9, 3.6747407815929785`*^9}, {
+   3.674740814285848*^9, 3.674740816697986*^9}, {3.6747415269516106`*^9, 
+   3.6747415566213074`*^9}, {3.674742007179078*^9, 3.674742014047471*^9}, 
+   3.6747420581079907`*^9, {3.674742385768732*^9, 3.6747423968713665`*^9}, {
+   3.674742428095153*^9, 3.674742463747192*^9}, {3.674742545766883*^9, 
+   3.6747426656747417`*^9}, {3.674742708285179*^9, 3.6747427124104147`*^9}, {
+   3.674743746318551*^9, 3.67474374700259*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{CloudObject`Private`n$$ = 3764, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[CloudObject`Private`n$$], 3, 65536, 1}}, Typeset`size$$ = {
+    330., {214., 218.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, CloudObject`Private`n$201796$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {CloudObject`Private`n$$ = 3}, 
+      "ControllerVariables" :> {
+        Hold[CloudObject`Private`n$$, CloudObject`Private`n$201796$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> ArrayPlot[
+        CloudObject`Private`f1[CloudObject`Private`n$$, 60]], 
+      "Specifications" :> {{CloudObject`Private`n$$, 3, 65536, 1}}, 
+      "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{381., {272., 279.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.6747425999729834`*^9, 3.674742666195771*^9}, 
+   3.6747427474814205`*^9, 3.674742822734725*^9, 3.6747437490207057`*^9}]
+}, Open  ]],
+
+Cell[BoxData[" "], "Input",
+ CellChangeTimes->{3.6747433802556133`*^9}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.6747389217346*^9, 3.6747389315381613`*^9}}]
+},
+WindowSize->{1005, 642},
+WindowMargins->{{Automatic, 0}, {0, Automatic}},
+FrontEndVersion->"10.2 for Microsoft Windows (32-bit) (July 7, 2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1146, 26, 31, "Input"],
+Cell[1707, 48, 1175, 33, 72, "Input"],
+Cell[2885, 83, 401, 11, 31, "Input"],
+Cell[3289, 96, 90, 1, 31, InheritFromParent],
+Cell[3382, 99, 94, 1, 31, InheritFromParent],
+Cell[3479, 102, 94, 1, 31, InheritFromParent],
+Cell[3576, 105, 200, 3, 31, "Input"],
+Cell[CellGroupData[{
+Cell[3801, 112, 1209, 21, 31, "Input"],
+Cell[5013, 135, 1766, 34, 568, "Output"]
+}, Open  ]],
+Cell[6794, 172, 71, 1, 31, "Input"],
+Cell[6868, 175, 92, 1, 31, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

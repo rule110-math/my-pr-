@@ -1,0 +1,394 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     18660,        384]
+NotebookOptionsPosition[     17817,        362]
+NotebookOutlinePosition[     18160,        377]
+CellTagsIndexPosition[     18117,        374]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["\<\
+# YouTube Link:
+
+# Ensure that you have both beautifulsoup and requests installed:
+#   pip install beautifulsoup4
+#   pip install requests
+
+import requests
+from bs4 import BeautifulSoup
+
+# Using the requests module, we use the \"get\" function
+# provided to access the webpage provided as an
+# argument to this function:
+result = requests.get(\"https://www.google.com/\")
+
+# To make sure that the website is accessible, we can
+# ensure that we obtain a 200 OK response to indicate
+# that the page is indeed present:
+print(result.status_code)
+
+# For other potential status codes you may encounter,
+# consult the following Wikipedia page:
+# https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
+
+# We can also check the HTTP header of the website to
+# verify that we have indeed accessed the correct page:
+print(result.headers)
+
+# For more information on HTTP headers and the information
+# one can obtain from them, you may consult:
+# https://en.wikipedia.org/wiki/List_of_HTTP_header_fields
+
+# Now, let us store the page content of the website accessed
+# from requests to a variable:
+src = result.content
+
+# Now that we have the page source stored, we will use the
+# BeautifulSoup module to parse and process the source.
+# To do so, we create a BeautifulSoup object based on the
+# source variable we created above:
+soup = BeautifulSoup(src, 'lxml')
+
+# Now that the page source has been processed via Beautifulsoup
+# we can access specific information directly from it. For instance,
+# say we want to see a list of all of the links on the page:
+links = soup.find_all(\"a\")
+print(links)
+print(\"\\n\")
+
+# Perhaps we just want to extract the link that has contains the text
+# \"About\" on the page instead of every link. We can use the built-in
+# \"text\" function to access the text content between the <a> </a>
+# tags.
+for link in links:
+    if \"About\" in link.text:
+        print(link)
+        print(link.attrs['href'])
+\
+\>", "ExternalLanguage",
+ CellChangeTimes->{{3.787127847334983*^9, 3.7871278630678825`*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"e75c8fc8-d2f1-4c93-bc80-e57703bedbde"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"200\"\>"], "Print",
+ CellChangeTimes->{3.787127922055257*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"b60d2c0c-377b-4aee-bb13-be30b74496e1"],
+
+Cell[BoxData["\<\"\\n\"\>"], "Print",
+ CellChangeTimes->{3.787127922059257*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"e8dc26c4-b40d-4295-b77b-79ff6e5699d0"],
+
+Cell[BoxData["\<\"{'Date': 'Sat, 04 Jan 2020 12:01:48 GMT', 'Expires': '-1', \
+'Cache-Control': 'private, max-age=0', 'Content-Type': 'text/html; \
+charset=ISO-8859-1', 'P3P': 'CP=\\\"This is not a P3P policy! See \
+g.co/p3phelp for more info.\\\"', 'Content-Encoding': 'gzip', 'Server': \
+'gws', 'X-XSS-Protection': '0', 'X-Frame-Options': 'SAMEORIGIN', \
+'Set-Cookie': '1P_JAR=2020-01-04-12; expires=Mon, 03-Feb-2020 12:01:48 GMT; \
+path=/; domain=.google.com, \
+NID=195=CWopb1j3Ab5pqc2ASUR7vw0ghWqBrjmDihhJoSaI10e-tXCb30CERZZ5XU_\
+Lehh0rbVBimDs66GOES1ATUgDrxqxC10rIzqe-\
+UUsqJzeYncZ6YNeWjBmNJnb9P4v1YRqHLFpFAIv80122Q0yaQxwtdgKXTwAYfqM1YNHuXIPTHg; \
+expires=Sun, 05-Jul-2020 12:01:48 GMT; path=/; domain=.google.com; HttpOnly', \
+'Alt-Svc': 'quic=\\\":443\\\"; ma=2592000; v=\\\"46,43\\\",h3-Q050=\\\":443\\\
+\"; ma=2592000,h3-Q049=\\\":443\\\"; ma=2592000,h3-Q048=\\\":443\\\"; \
+ma=2592000,h3-Q046=\\\":443\\\"; ma=2592000,h3-Q043=\\\":443\\\"; \
+ma=2592000', 'Transfer-Encoding': 'chunked'}\"\>"], "Print",
+ CellChangeTimes->{3.787127922064257*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"e7baeabf-05eb-46a7-9f15-1b968f7da006"],
+
+Cell[BoxData["\<\"\\n\"\>"], "Print",
+ CellChangeTimes->{3.787127922079258*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"930f3e33-1750-4bdf-b097-8c5f38f1d346"]
+}, Open  ]],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   TagBox["Failure",
+    "SummaryHead"], "[", 
+   DynamicModuleBox[{Typeset`open$$ = False, Typeset`embedState$$ = "Ready"}, 
+    TemplateBox[{PaneSelectorBox[{False -> GridBox[{{
+            PaneBox[
+             ButtonBox[
+              DynamicBox[
+               FEPrivate`FrontEndResource[
+               "FEBitmaps", "SquarePlusIconMedium"]], 
+              ButtonFunction :> (Typeset`open$$ = True), Appearance -> None, 
+              Evaluator -> Automatic, Method -> "Preemptive"], 
+             Alignment -> {Center, Center}, ImageSize -> 
+             Dynamic[{
+               Automatic, 3.5 CurrentValue["FontCapHeight"]/
+                AbsoluteCurrentValue[Magnification]}]], 
+            FrameBox[
+             StyleBox["\"\[WarningSign]\"", 
+              Directive["Message", 35], StripOnInput -> False], 
+             ContentPadding -> False, FrameStyle -> None, 
+             FrameMargins -> {{0, 0}, {0, 0}}, StripOnInput -> False], 
+            GridBox[{{
+               TagBox[
+                GridBox[{{
+                   TagBox["\"Message: \"", "SummaryItemAnnotation"], 
+                   "\[InvisibleSpace]", 
+                   TagBox[
+                   "\"Exception Thrown : FeatureNotFound.\"", 
+                    "SummaryItem"]}}, 
+                 GridBoxItemSize -> {"Columns" -> {6.5, All}}, 
+                 GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                 GridBoxSpacings -> {"Columns" -> {{0}}}], "SummaryItem"]}, {
+               TagBox[
+                GridBox[{{
+                   TagBox["\"Tag: \"", "SummaryItemAnnotation"], 
+                   "\[InvisibleSpace]", 
+                   TagBox["\"EvaluationFailure\"", "SummaryItem"]}}, 
+                 GridBoxItemSize -> {"Columns" -> {6.5, All}}, 
+                 GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                 GridBoxSpacings -> {"Columns" -> {{0}}}], "SummaryItem"]}}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
+             False, GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
+              BaseStyle -> {
+              ShowStringCharacters -> False, NumberMarks -> False, 
+               PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+          GridBoxAlignment -> {"Rows" -> {{Top}}}, AutoDelete -> False, 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+          BaselinePosition -> {1, 1}], True -> GridBox[{{
+            PaneBox[
+             ButtonBox[
+              DynamicBox[
+               FEPrivate`FrontEndResource[
+               "FEBitmaps", "SquareMinusIconMedium"]], 
+              ButtonFunction :> (Typeset`open$$ = False), Appearance -> None, 
+              Evaluator -> Automatic, Method -> "Preemptive"], 
+             Alignment -> {Center, Center}, ImageSize -> 
+             Dynamic[{
+               Automatic, 3.5 CurrentValue["FontCapHeight"]/
+                AbsoluteCurrentValue[Magnification]}]], 
+            FrameBox[
+             StyleBox["\"\[WarningSign]\"", 
+              Directive["Message", 35], StripOnInput -> False], 
+             ContentPadding -> False, FrameStyle -> None, 
+             FrameMargins -> {{0, 0}, {0, 0}}, StripOnInput -> False], 
+            GridBox[{{
+               TagBox[
+                GridBox[{{
+                   TagBox["\"Message: \"", "SummaryItemAnnotation"], 
+                   "\[InvisibleSpace]", 
+                   TagBox[
+                   "\"Exception Thrown : FeatureNotFound.\"", 
+                    "SummaryItem"]}}, 
+                 GridBoxItemSize -> {"Columns" -> {6.5, All}}, 
+                 GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                 GridBoxSpacings -> {"Columns" -> {{0}}}], "SummaryItem"]}, {
+               TagBox[
+                GridBox[{{
+                   TagBox["\"Tag: \"", "SummaryItemAnnotation"], 
+                   "\[InvisibleSpace]", 
+                   TagBox["\"EvaluationFailure\"", "SummaryItem"]}}, 
+                 GridBoxItemSize -> {"Columns" -> {6.5, All}}, 
+                 GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                 GridBoxSpacings -> {"Columns" -> {{0}}}], "SummaryItem"]}, {
+               RowBox[{
+                 TagBox[
+                  TemplateBox[{"\"ExceptionType\"", "\": \""}, "RowDefault"], 
+                  "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                 TagBox["\"FeatureNotFound\"", "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox[
+                  TemplateBox[{"\"StackTrace\"", "\": \""}, "RowDefault"], 
+                  "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                 TagBox[
+                  FrameBox[
+                   PaneBox[
+                    StyleBox[
+                    "\"Traceback (most recent call last):\\n  File \
+\\\"C:\\\\Program Files\\\\Wolfram \
+Research\\\\Mathematica\\\\11.3\\\\SystemFiles\\\\Components\\\\\
+ExternalEvaluate_Python\\\\Resources\\\\wolframevaluate\\\\evaluate.py\\\", \
+line 110, in runEvalLoop\\n    exec(compile(ast.Module(tree.body[:-1]), \
+'file', 'exec'),globals())\\n  File \\\"file\\\", line 40, in <module>\\n  \
+File \\\"C:\\\\Users\\\\WIN-07\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\\
+Python37-32\\\\lib\\\\site-packages\\\\bs4\\\\__init__.py\\\", line 228, in \
+__init__\\n    % \\\",\\\".join(features))\\nbs4.FeatureNotFound: Couldn't \
+find a tree builder with the features you requested: lxml. Do you need to \
+install a parser library?\\n\"", "Program", LineBreakWithin -> False], 
+                    ImageSize -> {{1, 500}, Tiny}, ContentPadding -> False, 
+                    FrameMargins -> 0, StripOnInput -> True, BaselinePosition -> 
+                    Baseline], Background -> 
+                   RGBColor[
+                    0.9012345679012346, 0.9012345679012346, 
+                    0.9012345679012346], RoundingRadius -> 5, FrameStyle -> 
+                   None, BaselinePosition -> Baseline], "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox[
+                  TemplateBox[{"\"Input\"", "\": \""}, "RowDefault"], 
+                  "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                 TagBox[
+                 "\"# YouTube Link:\\n\\n# Ensure that you have both \
+beautifulsoup and requests installed:\\n#   pip install beautifulsoup4\\n#   \
+pip install requests\\n\\nimport requests\\nfrom bs4 import \
+BeautifulSoup\\n\\n# Using the requests module, we use the \\\"get\\\" \
+function\\n# provided to access the webpage provided as an\\n# argument to \
+this function:\\nresult = \
+requests.get(\\\"https://www.google.com/\\\")\\n\\n# To make sure that the \
+website is accessible, we can\\n# ensure that we obtain a 200 OK response to \
+indicate\\n# that the page is indeed \
+present:\\nprint(result.status_code)\\n\\n# For other potential status codes \
+you may encounter,\\n# consult the following Wikipedia page:\\n# \
+https://en.wikipedia.org/wiki/List_of_HTTP_status_codes\\n\\n# We can also \
+check the HTTP header of the website to\\n# verify that we have indeed \
+accessed the correct page:\\nprint(result.headers)\\n\\n# For more \
+information on HTTP headers and the information\\n# one can obtain from them, \
+you may consult:\\n# https://en.wikipedia.org/wiki/List_of_HTTP_header_fields\
+\\n\\n# Now, let us store the page content of the website accessed\\n# from \
+requests to a variable:\\nsrc = result.content\\n\\n# Now that we have the \
+page source stored, we will use the\\n# BeautifulSoup module to parse and \
+process the source.\\n# To do so, we create a BeautifulSoup object based on \
+the\\n# source variable we created above:\\nsoup = BeautifulSoup(src, 'lxml')\
+\\n\\n# Now that the page source has been processed via Beautifulsoup\\n# we \
+can access specific information directly from it. For instance,\\n# say we \
+want to see a list of all of the links on the page:\\nlinks = \
+soup.find_all(\\\"a\\\")\\nprint(links)\\nprint(\\\"\\\\n\\\")\\n\\n# Perhaps \
+we just want to extract the link that has contains the text\\n# \\\"About\\\" \
+on the page instead of every link. We can use the built-in\\n# \\\"text\\\" \
+function to access the text content between the <a> </a>\\n# tags.\\nfor link \
+in links:\\n    if \\\"About\\\" in link.text:\\n        print(link)\\n       \
+ print(link.attrs['href'])\\n\"", "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox[
+                  TemplateBox[{"\"Output\"", "\": \""}, "RowDefault"], 
+                  "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                 TagBox[
+                  RowBox[{"Missing", "[", 
+                    RowBox[{"\"KeyAbsent\"", ",", "\"output\""}], "]"}], 
+                  "SummaryItem"]}]}}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
+             False, GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
+              BaseStyle -> {
+              ShowStringCharacters -> False, NumberMarks -> False, 
+               PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+          GridBoxAlignment -> {"Rows" -> {{Top}}}, AutoDelete -> False, 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+          BaselinePosition -> {1, 1}]}, 
+       Dynamic[Typeset`open$$], ImageSize -> Automatic]},
+     "SummaryPanel"],
+    DynamicModuleValues:>{}], "]"}],
+  Failure["EvaluationFailure", 
+   Association[
+   "MessageTemplate" :> MessageName[ExternalEvaluate, "error"], 
+    "MessageParameters" -> Association["Type" -> "FeatureNotFound"], 
+    "ExceptionType" -> "FeatureNotFound", "StackTrace" -> Framed[
+      Pane[
+       Style[
+       "Traceback (most recent call last):\n  File \"C:\\Program \
+Files\\Wolfram \
+Research\\Mathematica\\11.3\\SystemFiles\\Components\\ExternalEvaluate_Python\
+\\Resources\\wolframevaluate\\evaluate.py\", line 110, in runEvalLoop\n    \
+exec(compile(ast.Module(tree.body[:-1]), 'file', 'exec'),globals())\n  File \
+\"file\", line 40, in <module>\n  File \
+\"C:\\Users\\WIN-07\\AppData\\Local\\Programs\\Python\\Python37-32\\lib\\site-\
+packages\\bs4\\__init__.py\", line 228, in __init__\n    % \
+\",\".join(features))\nbs4.FeatureNotFound: Couldn't find a tree builder with \
+the features you requested: lxml. Do you need to install a parser library?\n",
+         "Program", LineBreakWithin -> False, StripOnInput -> True], 
+       ImageSize -> {{1, 500}, Tiny}, ContentPadding -> False, FrameMargins -> 
+       0, StripOnInput -> True, BaselinePosition -> Baseline], StripOnInput -> 
+      True, Background -> 
+      RGBColor[0.9012345679012346, 0.9012345679012346, 0.9012345679012346], 
+      RoundingRadius -> 5, FrameStyle -> None, BaselinePosition -> Baseline], 
+    "Input" -> 
+    "# YouTube Link:\n\n# Ensure that you have both beautifulsoup and \
+requests installed:\n#   pip install beautifulsoup4\n#   pip install requests\
+\n\nimport requests\nfrom bs4 import BeautifulSoup\n\n# Using the requests \
+module, we use the \"get\" function\n# provided to access the webpage \
+provided as an\n# argument to this function:\nresult = \
+requests.get(\"https://www.google.com/\")\n\n# To make sure that the website \
+is accessible, we can\n# ensure that we obtain a 200 OK response to indicate\n\
+# that the page is indeed present:\nprint(result.status_code)\n\n# For other \
+potential status codes you may encounter,\n# consult the following Wikipedia \
+page:\n# https://en.wikipedia.org/wiki/List_of_HTTP_status_codes\n\n# We can \
+also check the HTTP header of the website to\n# verify that we have indeed \
+accessed the correct page:\nprint(result.headers)\n\n# For more information \
+on HTTP headers and the information\n# one can obtain from them, you may \
+consult:\n# https://en.wikipedia.org/wiki/List_of_HTTP_header_fields\n\n# \
+Now, let us store the page content of the website accessed\n# from requests \
+to a variable:\nsrc = result.content\n\n# Now that we have the page source \
+stored, we will use the\n# BeautifulSoup module to parse and process the \
+source.\n# To do so, we create a BeautifulSoup object based on the\n# source \
+variable we created above:\nsoup = BeautifulSoup(src, 'lxml')\n\n# Now that \
+the page source has been processed via Beautifulsoup\n# we can access \
+specific information directly from it. For instance,\n# say we want to see a \
+list of all of the links on the page:\nlinks = soup.find_all(\"a\")\n\
+print(links)\nprint(\"\\n\")\n\n# Perhaps we just want to extract the link \
+that has contains the text\n# \"About\" on the page instead of every link. We \
+can use the built-in\n# \"text\" function to access the text content between \
+the <a> </a>\n# tags.\nfor link in links:\n    if \"About\" in link.text:\n   \
+     print(link)\n        print(link.attrs['href'])\n", "Output" -> 
+    Missing["KeyAbsent", "output"]]],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
+ CellChangeTimes->{3.787127922567286*^9},
+ CellLabel->"Out[1]=",ExpressionUUID->"1d11344a-aad6-4532-8a07-1cd1cfedc3f9"]
+}, Open  ]]
+},
+WindowSize->{759, 606},
+WindowMargins->{{Automatic, 124}, {22, Automatic}},
+FrontEndVersion->"11.3 for Microsoft Windows (32-bit) (March 6, 2018)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 2106, 60, 888, "ExternalLanguage",ExpressionUUID->"e75c8fc8-d2f1-4c93-bc80-e57703bedbde"],
+Cell[CellGroupData[{
+Cell[2711, 86, 183, 4, 22, "Print",ExpressionUUID->"b60d2c0c-377b-4aee-bb13-be30b74496e1"],
+Cell[2897, 92, 183, 4, 41, "Print",ExpressionUUID->"e8dc26c4-b40d-4295-b77b-79ff6e5699d0"],
+Cell[3083, 98, 1157, 18, 221, "Print",ExpressionUUID->"e7baeabf-05eb-46a7-9f15-1b968f7da006"],
+Cell[4243, 118, 183, 4, 41, "Print",ExpressionUUID->"930f3e33-1750-4bdf-b097-8c5f38f1d346"]
+}, Open  ]],
+Cell[4441, 125, 13360, 234, 71, "Output",ExpressionUUID->"1d11344a-aad6-4532-8a07-1cd1cfedc3f9"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

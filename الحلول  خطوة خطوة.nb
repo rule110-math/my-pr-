@@ -1,0 +1,1476 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     70145,       1466]
+NotebookOptionsPosition[     69690,       1449]
+NotebookOutlinePosition[     70062,       1465]
+CellTagsIndexPosition[     70019,       1462]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"WolframAlpha", "[", 
+   RowBox[{"\"\<x+y+z=1,x+3y-5z=3,14y-5z=0\>\"", ",", 
+    RowBox[{"PodStates", "\[Rule]", 
+     RowBox[{"{", "\"\<Solution__Step-by-step solution\>\"", "}"}]}]}], "]"}],
+   "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.7477117897224765`*^9, 3.747711795391801*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"23592894-e8ce-4da9-bfdc-f4ba9ecd7d13"],
+
+Cell[BoxData[
+ NamespaceBox["WolframAlphaQueryResults",
+  DynamicModuleBox[{Typeset`q$$ = "x+y+z=1,x+3y-5z=3,14y-5z=0", 
+   Typeset`opts$$ = {
+   AppearanceElements -> {
+     "Warnings", "Assumptions", "Brand", "Pods", "PodMenus", "Unsuccessful", 
+      "Sources"}, PodStates -> {"Solution__Step-by-step solution"}}, 
+   Typeset`elements$$ = {
+   "Warnings", "Assumptions", "Brand", "Pods", "PodMenus", "Unsuccessful", 
+    "Sources"}, Typeset`pod1$$ = XMLElement[
+   "pod", {"title" -> "Input", "scanner" -> "Identity", "id" -> "Input", 
+     "position" -> "100", "error" -> "false", "numsubpods" -> "1"}, {
+     XMLElement["subpod", {"title" -> ""}, {
+       XMLElement[
+       "minput", {}, {
+        "{x + y + z == 1, x + 3 y - 5 z == 3, 14 y - 5 z == 0}"}], 
+       XMLElement["cell", {"compressed" -> False, "string" -> True}, {
+         Cell[
+          BoxData[
+           FormBox[
+            TagBox[
+             RowBox[{"{", 
+               RowBox[{
+                 RowBox[{
+                   RowBox[{"x", "+", "y", "+", "z"}], "\[LongEqual]", "1"}], 
+                 ",", 
+                 RowBox[{
+                   RowBox[{"x", "+", 
+                    RowBox[{"3", " ", "y"}], "-", 
+                    RowBox[{"5", " ", "z"}]}], "\[LongEqual]", "3"}], ",", 
+                 RowBox[{
+                   RowBox[{
+                    RowBox[{"14", " ", "y"}], "-", 
+                    RowBox[{"5", " ", "z"}]}], "\[LongEqual]", "0"}]}], "}"}],
+              PolynomialForm[#, TraditionalOrder -> False]& ], 
+            TraditionalForm]], "Output", {
+          Background -> None, 
+           GraphicsBoxOptions -> {
+            DefaultBaseStyle -> {FontFamily -> "Times", "Graphics"}, 
+             DefaultAxesStyle -> Directive[
+               GrayLevel[0, 0.35], FontColor -> GrayLevel[0.25], FontOpacity -> 
+               1, "GraphicsAxes"], DefaultFrameStyle -> Directive[
+               GrayLevel[0, 0.35], FontColor -> GrayLevel[0.25], FontOpacity -> 
+               1, "GraphicsFrame"], DefaultFrameTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 10, "GraphicsFrameTicks"], 
+             DefaultTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 10, "GraphicsTicks"]}, 
+           Graphics3DBoxOptions -> {
+            DefaultBaseStyle -> {FontFamily -> "Times", "Graphics3D"}}}, 
+          NumberPoint -> ".", CellSize -> {550, Automatic}, 
+          AutoStyleOptions -> {"HighlightFormattingErrors" -> False}, 
+          RenderingOptions -> {
+           "3DRenderingMethod" -> "BSPTreeOrDepthBuffer"}]}], 
+       XMLElement[
+       "dataformats", {}, {
+        "plaintext,minput,computabledata,formatteddata,formuladata"}]}]}], 
+   Typeset`pod2$$ = XMLElement[
+   "pod", {"title" -> "Solutions", "scanner" -> "Reduce", "id" -> "Solution", 
+     "position" -> "200", "error" -> "false", "numsubpods" -> "2", "primary" -> 
+     "true"}, {
+     XMLElement["subpod", {"title" -> ""}, {
+       XMLElement[
+       "minput", {}, {
+        "Reduce[{x + y + z == 1, x + 3 y - 5 z == 3, 14 y - 5 z == 0}, {x, y, \
+z}, Reals]"}], 
+       XMLElement["cell", {"compressed" -> False, "string" -> True}, {
+         Cell[
+          BoxData[
+           FormBox[
+            FormBox[
+             FormBox[
+              TagBox[
+               GridBox[{{
+                  PaneBox[
+                   TemplateBox[{",   ", "\",   \"", 
+                    RowBox[{"x", "\[LongEqual]", 
+                    TagBox[
+                    FractionBox["56", "37"], Identity]}], 
+                    RowBox[{"y", "\[LongEqual]", 
+                    TagBox[
+                    RowBox[{"-", 
+                    FractionBox["5", "37"]}], Identity]}], 
+                    RowBox[{"z", "\[LongEqual]", 
+                    TagBox[
+                    RowBox[{"-", 
+                    FractionBox["14", "37"]}], Identity]}]}, 
+                    "RowWithSeparators"], BaselinePosition -> Baseline, 
+                   ImageSize -> 550]}}, 
+                GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                AllowScriptLevelChange -> False, DefaultBaseStyle -> "Column",
+                 GridBoxItemSize -> {
+                 "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+               "Column"], TraditionalForm], TraditionalForm], 
+            TraditionalForm]], "Output", {
+          Background -> None, 
+           GraphicsBoxOptions -> {
+            DefaultBaseStyle -> {FontFamily -> "Times", "Graphics"}, 
+             DefaultAxesStyle -> Directive[
+               GrayLevel[0, 0.35], FontColor -> GrayLevel[0.25], FontOpacity -> 
+               1, "GraphicsAxes"], DefaultFrameStyle -> Directive[
+               GrayLevel[0, 0.35], FontColor -> GrayLevel[0.25], FontOpacity -> 
+               1, "GraphicsFrame"], DefaultFrameTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 10, "GraphicsFrameTicks"], 
+             DefaultTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 10, "GraphicsTicks"]}, 
+           Graphics3DBoxOptions -> {
+            DefaultBaseStyle -> {FontFamily -> "Times", "Graphics3D"}}}, 
+          NumberPoint -> ".", CellSize -> {550, Automatic}, 
+          AutoStyleOptions -> {"HighlightFormattingErrors" -> False}, 
+          RenderingOptions -> {
+           "3DRenderingMethod" -> "BSPTreeOrDepthBuffer"}]}], 
+       XMLElement[
+       "dataformats", {}, {
+        "plaintext,minput,moutput,computabledata,formatteddata,formuladata"}]}\
+], 
+     XMLElement["subpod", {"title" -> "Possible intermediate steps"}, {
+       XMLElement["cell", {"compressed" -> True, "string" -> False}, {
+         Cell[
+          BoxData[
+           FormBox[
+            TagBox[
+             GridBox[{{
+                TagBox[
+                 GridBox[{{
+                    StyleBox[
+                    StyleBox[
+                    TemplateBox[{"\[NoBreak]", "\"\[NoBreak]\"", 
+                    
+                    TemplateBox[{"\"Solve the following system\""}, 
+                    "RowDefault"], "\":\""}, "RowWithSeparators"], 
+                    GrayLevel[0.5], StripOnInput -> False], {
+                    LinebreakAdjustments -> {1, 89, 100, 0, 100}, 
+                    LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                    0}, StripOnInput -> False]}, {
+                    TagBox[
+                    TemplateBox[{
+                    RowBox[{
+                    StyleBox["{", SpanMaxSize -> DirectedInfinity[1]], 
+                    TagBox[
+                    GridBox[{{
+                    RowBox[{
+                    TagBox[
+                    RowBox[{"x", "+", "y", "+", "z"}], HoldForm], 
+                    "\[LongEqual]", "1"}], 
+                    StyleBox[
+                    
+                    TemplateBox[{"\"    (equation \"", "1", "\")\""}, 
+                    "RowDefault"], 
+                    GrayLevel[0.5], Small, StripOnInput -> False]}, {
+                    RowBox[{
+                    TagBox[
+                    RowBox[{"x", "+", 
+                    RowBox[{"3", " ", "y"}], "-", 
+                    RowBox[{"5", " ", "z"}]}], HoldForm], "\[LongEqual]", 
+                    "3"}], 
+                    StyleBox[
+                    
+                    TemplateBox[{"\"    (equation \"", "2", "\")\""}, 
+                    "RowDefault"], 
+                    GrayLevel[0.5], Small, StripOnInput -> False]}, {
+                    RowBox[{
+                    TagBox[
+                    RowBox[{
+                    RowBox[{"14", " ", "y"}], "-", 
+                    RowBox[{"5", " ", "z"}]}], HoldForm], "\[LongEqual]", 
+                    "0"}], 
+                    StyleBox[
+                    
+                    TemplateBox[{"\"    (equation \"", "3", "\")\""}, 
+                    "RowDefault"], 
+                    GrayLevel[0.5], Small, StripOnInput -> False]}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Center}}}, AutoDelete -> 
+                    False, GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+                    "Grid"]}]}, "RowDefault"], HoldForm]}}, 
+                  GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                  AllowScriptLevelChange -> False, DefaultBaseStyle -> 
+                  "Column", 
+                  GridBoxItemSize -> {
+                   "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                  GridBoxSpacings -> {
+                   "Columns" -> {{None}}, "Rows" -> {{0.5}}}], "Column"]}, {
+                TagBox[
+                 GridBox[{{
+                    StyleBox[
+                    StyleBox[
+                    TemplateBox[{"\[NoBreak]", "\"\[NoBreak]\"", 
+                    TemplateBox[{
+                    TemplateBox[{"\"Subtract\"", 
+                    TemplateBox[{
+                    StyleBox["\" equation \"", 
+                    GrayLevel[0.3], StripOnInput -> False], 
+                    StyleBox["1", 
+                    GrayLevel[0.3], StripOnInput -> False]}, "RowDefault"], 
+                    "\" \""}, "RowDefault"], 
+                    TemplateBox[{"\"from\"", 
+                    TemplateBox[{
+                    StyleBox["\" equation \"", 
+                    GrayLevel[0.3], StripOnInput -> False], 
+                    StyleBox["2", 
+                    GrayLevel[0.3], StripOnInput -> False]}, "RowDefault"]}, 
+                    "RowDefault"]}, "RowDefault"], "\":\""}, 
+                    "RowWithSeparators"], 
+                    GrayLevel[0.5], StripOnInput -> False], {
+                    LinebreakAdjustments -> {1, 89, 100, 0, 100}, 
+                    LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                    0}, StripOnInput -> False]}, {
+                    TagBox[
+                    TemplateBox[{
+                    RowBox[{
+                    StyleBox["{", SpanMaxSize -> DirectedInfinity[1]], 
+                    TagBox[
+                    GridBox[{{
+                    RowBox[{
+                    TagBox[
+                    FormBox[
+                    TagBox[
+                    RowBox[{"x", "+", "y", "+", "z"}], HoldForm], 
+                    TraditionalForm], DisplayForm], "\[LongEqual]", "1"}], 
+                    StyleBox[
+                    TemplateBox[{"\"    \"", "\"(equation \"", 
+                    TemplateBox[{"1", "\")\""}, "RowDefault"]}, "RowDefault"], 
+                    GrayLevel[0.5], Small, StripOnInput -> False]}, {
+                    FrameBox[
+                    RowBox[{
+                    TagBox[
+                    FormBox[
+                    TagBox[
+                    RowBox[{
+                    StyleBox[
+                    RowBox[{"0", " ", "x"}], 
+                    GrayLevel[0.7], StripOnInput -> False], 
+                    StyleBox["+", 
+                    GrayLevel[0.7], StripOnInput -> False], 
+                    RowBox[{"2", " ", "y"}], "-", 
+                    RowBox[{"6", " ", "z"}]}], HoldForm], TraditionalForm], 
+                    DisplayForm], "\[LongEqual]", "2"}], FrameStyle -> 
+                    GrayLevel[0.8], FrameMargins -> 1, BaselinePosition -> 
+                    Baseline, ContentPadding -> False, StripOnInput -> False], 
+                    StyleBox[
+                    TemplateBox[{"\"    \"", "\"(equation \"", 
+                    TemplateBox[{"2", "\")\""}, "RowDefault"]}, "RowDefault"], 
+                    GrayLevel[0.5], Small, StripOnInput -> False]}, {
+                    RowBox[{
+                    TagBox[
+                    FormBox[
+                    TagBox[
+                    RowBox[{
+                    StyleBox[
+                    RowBox[{"0", " ", "x"}], 
+                    GrayLevel[0.7], StripOnInput -> False], 
+                    StyleBox["+", 
+                    GrayLevel[0.7], StripOnInput -> False], 
+                    RowBox[{"14", " ", "y"}], "-", 
+                    RowBox[{"5", " ", "z"}]}], HoldForm], TraditionalForm], 
+                    DisplayForm], "\[LongEqual]", "0"}], 
+                    StyleBox[
+                    TemplateBox[{"\"    \"", "\"(equation \"", 
+                    TemplateBox[{"3", "\")\""}, "RowDefault"]}, "RowDefault"], 
+                    GrayLevel[0.5], Small, StripOnInput -> False]}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Center}}}, AutoDelete -> 
+                    False, GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+                    "Grid"]}]}, "RowDefault"], HoldForm]}}, 
+                  GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                  AllowScriptLevelChange -> False, DefaultBaseStyle -> 
+                  "Column", 
+                  GridBoxItemSize -> {
+                   "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+                 "Column"]}, {
+                TagBox[
+                 GridBox[{{
+                    StyleBox[
+                    StyleBox[
+                    TemplateBox[{"\[NoBreak]", "\"\[NoBreak]\"", 
+                    TemplateBox[{
+                    TemplateBox[{"\"Divide\"", 
+                    TemplateBox[{
+                    StyleBox["\" equation \"", 
+                    GrayLevel[0.3], StripOnInput -> False], 
+                    StyleBox["2", 
+                    GrayLevel[0.3], StripOnInput -> False]}, "RowDefault"], 
+                    "\" \""}, "RowDefault"], "\"by \"", 
+                    TemplateBox[{
+                    StyleBox["2", 
+                    GrayLevel[0.3], StripOnInput -> False]}, "RowDefault"]}, 
+                    "RowDefault"], "\":\""}, "RowWithSeparators"], 
+                    GrayLevel[0.5], StripOnInput -> False], {
+                    LinebreakAdjustments -> {1, 89, 100, 0, 100}, 
+                    LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                    0}, StripOnInput -> False]}, {
+                    TagBox[
+                    TemplateBox[{
+                    RowBox[{
+                    StyleBox["{", SpanMaxSize -> DirectedInfinity[1]], 
+                    TagBox[
+                    GridBox[{{
+                    RowBox[{
+                    TagBox[
+                    FormBox[
+                    TagBox[
+                    RowBox[{"x", "+", "y", "+", "z"}], HoldForm], 
+                    TraditionalForm], DisplayForm], "\[LongEqual]", "1"}], 
+                    StyleBox[
+                    TemplateBox[{"\"    \"", "\"(equation \"", 
+                    TemplateBox[{"1", "\")\""}, "RowDefault"]}, "RowDefault"], 
+                    GrayLevel[0.5], Small, StripOnInput -> False]}, {
+                    FrameBox[
+                    RowBox[{
+                    TagBox[
+                    FormBox[
+                    TagBox[
+                    RowBox[{
+                    StyleBox[
+                    RowBox[{"0", " ", "x"}], 
+                    GrayLevel[0.7], StripOnInput -> False], 
+                    StyleBox["+", 
+                    GrayLevel[0.7], StripOnInput -> False], "y", "-", 
+                    RowBox[{"3", " ", "z"}]}], HoldForm], TraditionalForm], 
+                    DisplayForm], "\[LongEqual]", "1"}], FrameStyle -> 
+                    GrayLevel[0.8], FrameMargins -> 1, BaselinePosition -> 
+                    Baseline, ContentPadding -> False, StripOnInput -> False], 
+                    StyleBox[
+                    TemplateBox[{"\"    \"", "\"(equation \"", 
+                    TemplateBox[{"2", "\")\""}, "RowDefault"]}, "RowDefault"], 
+                    GrayLevel[0.5], Small, StripOnInput -> False]}, {
+                    RowBox[{
+                    TagBox[
+                    FormBox[
+                    TagBox[
+                    RowBox[{
+                    StyleBox[
+                    RowBox[{"0", " ", "x"}], 
+                    GrayLevel[0.7], StripOnInput -> False], 
+                    StyleBox["+", 
+                    GrayLevel[0.7], StripOnInput -> False], 
+                    RowBox[{"14", " ", "y"}], "-", 
+                    RowBox[{"5", " ", "z"}]}], HoldForm], TraditionalForm], 
+                    DisplayForm], "\[LongEqual]", "0"}], 
+                    StyleBox[
+                    TemplateBox[{"\"    \"", "\"(equation \"", 
+                    TemplateBox[{"3", "\")\""}, "RowDefault"]}, "RowDefault"], 
+                    GrayLevel[0.5], Small, StripOnInput -> False]}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Center}}}, AutoDelete -> 
+                    False, GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+                    "Grid"]}]}, "RowDefault"], HoldForm]}}, 
+                  GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                  AllowScriptLevelChange -> False, DefaultBaseStyle -> 
+                  "Column", 
+                  GridBoxItemSize -> {
+                   "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+                 "Column"]}, {
+                TagBox[
+                 GridBox[{{
+                    StyleBox[
+                    StyleBox[
+                    TemplateBox[{"\[NoBreak]", "\"\[NoBreak]\"", 
+                    TemplateBox[{
+                    TemplateBox[{"\"Swap\"", 
+                    TemplateBox[{
+                    StyleBox["\" equation \"", 
+                    GrayLevel[0.3], StripOnInput -> False], 
+                    StyleBox["2", 
+                    GrayLevel[0.3], StripOnInput -> False]}, "RowDefault"], 
+                    "\" \""}, "RowDefault"], 
+                    TemplateBox[{"\"with\"", 
+                    TemplateBox[{
+                    StyleBox["\" equation \"", 
+                    GrayLevel[0.3], StripOnInput -> False], 
+                    StyleBox["3", 
+                    GrayLevel[0.3], StripOnInput -> False]}, "RowDefault"]}, 
+                    "RowDefault"]}, "RowDefault"], "\":\""}, 
+                    "RowWithSeparators"], 
+                    GrayLevel[0.5], StripOnInput -> False], {
+                    LinebreakAdjustments -> {1, 89, 100, 0, 100}, 
+                    LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                    0}, StripOnInput -> False]}, {
+                    TagBox[
+                    TemplateBox[{
+                    RowBox[{
+                    StyleBox["{", SpanMaxSize -> DirectedInfinity[1]], 
+                    TagBox[
+                    GridBox[{{
+                    RowBox[{
+                    TagBox[
+                    FormBox[
+                    TagBox[
+                    RowBox[{"x", "+", "y", "+", "z"}], HoldForm], 
+                    TraditionalForm], DisplayForm], "\[LongEqual]", "1"}], 
+                    StyleBox[
+                    TemplateBox[{"\"    \"", "\"(equation \"", 
+                    TemplateBox[{"1", "\")\""}, "RowDefault"]}, "RowDefault"], 
+                    GrayLevel[0.5], Small, StripOnInput -> False]}, {
+                    FrameBox[
+                    RowBox[{
+                    TagBox[
+                    FormBox[
+                    TagBox[
+                    RowBox[{
+                    StyleBox[
+                    RowBox[{"0", " ", "x"}], 
+                    GrayLevel[0.7], StripOnInput -> False], 
+                    StyleBox["+", 
+                    GrayLevel[0.7], StripOnInput -> False], 
+                    RowBox[{"14", " ", "y"}], "-", 
+                    RowBox[{"5", " ", "z"}]}], HoldForm], TraditionalForm], 
+                    DisplayForm], "\[LongEqual]", "0"}], FrameStyle -> 
+                    GrayLevel[0.8], FrameMargins -> 1, BaselinePosition -> 
+                    Baseline, ContentPadding -> False, StripOnInput -> False], 
+                    StyleBox[
+                    TemplateBox[{"\"    \"", "\"(equation \"", 
+                    TemplateBox[{"2", "\")\""}, "RowDefault"]}, "RowDefault"], 
+                    GrayLevel[0.5], Small, StripOnInput -> False]}, {
+                    FrameBox[
+                    RowBox[{
+                    TagBox[
+                    FormBox[
+                    TagBox[
+                    RowBox[{
+                    StyleBox[
+                    RowBox[{"0", " ", "x"}], 
+                    GrayLevel[0.7], StripOnInput -> False], 
+                    StyleBox["+", 
+                    GrayLevel[0.7], StripOnInput -> False], "y", "-", 
+                    RowBox[{"3", " ", "z"}]}], HoldForm], TraditionalForm], 
+                    DisplayForm], "\[LongEqual]", "1"}], FrameStyle -> 
+                    GrayLevel[0.8], FrameMargins -> 1, BaselinePosition -> 
+                    Baseline, ContentPadding -> False, StripOnInput -> False], 
+                    StyleBox[
+                    TemplateBox[{"\"    \"", "\"(equation \"", 
+                    TemplateBox[{"3", "\")\""}, "RowDefault"]}, "RowDefault"], 
+                    GrayLevel[0.5], Small, StripOnInput -> False]}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Center}}}, AutoDelete -> 
+                    False, GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+                    "Grid"]}]}, "RowDefault"], HoldForm]}}, 
+                  GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                  AllowScriptLevelChange -> False, DefaultBaseStyle -> 
+                  "Column", 
+                  GridBoxItemSize -> {
+                   "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+                 "Column"]}, {
+                TagBox[
+                 GridBox[{{
+                    StyleBox[
+                    StyleBox[
+                    TemplateBox[{"\[NoBreak]", "\"\[NoBreak]\"", 
+                    TemplateBox[{"\"Subtract \"", 
+                    TemplateBox[{
+                    TemplateBox[{
+                    StyleBox[
+                    FractionBox["1", "14"], 
+                    GrayLevel[0.3], StripOnInput -> False], 
+                    StyleBox["\"\[ThinSpace]\"", 
+                    GrayLevel[0.3], StripOnInput -> False], 
+                    StyleBox[
+                    StyleBox[
+                    StyleBox[
+                    "\"\[Times]\"", FontColor -> GrayLevel[0.5], StripOnInput -> 
+                    False], Small, StripOnInput -> False], 
+                    GrayLevel[0.3], StripOnInput -> False], 
+                    StyleBox["\"\[ThinSpace]\"", 
+                    GrayLevel[0.3], StripOnInput -> False], 
+                    StyleBox["\"(\"", 
+                    GrayLevel[0.3], StripOnInput -> False], 
+                    StyleBox["\"equation \"", 
+                    GrayLevel[0.3], StripOnInput -> False], 
+                    StyleBox["2", 
+                    GrayLevel[0.3], StripOnInput -> False], 
+                    StyleBox["\")\"", 
+                    GrayLevel[0.3], StripOnInput -> False]}, "RowDefault"], 
+                    "\" \""}, "RowDefault"], 
+                    TemplateBox[{"\"from\"", 
+                    TemplateBox[{
+                    StyleBox["\" equation \"", 
+                    GrayLevel[0.3], StripOnInput -> False], 
+                    StyleBox["3", 
+                    GrayLevel[0.3], StripOnInput -> False]}, "RowDefault"]}, 
+                    "RowDefault"]}, "RowDefault"], "\":\""}, 
+                    "RowWithSeparators"], 
+                    GrayLevel[0.5], StripOnInput -> False], {
+                    LinebreakAdjustments -> {1, 89, 100, 0, 100}, 
+                    LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                    0}, StripOnInput -> False]}, {
+                    TagBox[
+                    TemplateBox[{
+                    RowBox[{
+                    StyleBox["{", SpanMaxSize -> DirectedInfinity[1]], 
+                    TagBox[
+                    GridBox[{{
+                    RowBox[{
+                    TagBox[
+                    FormBox[
+                    TagBox[
+                    RowBox[{"x", "+", "y", "+", "z"}], HoldForm], 
+                    TraditionalForm], DisplayForm], "\[LongEqual]", "1"}], 
+                    StyleBox[
+                    TemplateBox[{"\"    \"", "\"(equation \"", 
+                    TemplateBox[{"1", "\")\""}, "RowDefault"]}, "RowDefault"], 
+                    GrayLevel[0.5], Small, StripOnInput -> False]}, {
+                    RowBox[{
+                    TagBox[
+                    FormBox[
+                    TagBox[
+                    RowBox[{
+                    StyleBox[
+                    RowBox[{"0", " ", "x"}], 
+                    GrayLevel[0.7], StripOnInput -> False], 
+                    StyleBox["+", 
+                    GrayLevel[0.7], StripOnInput -> False], 
+                    RowBox[{"14", " ", "y"}], "-", 
+                    RowBox[{"5", " ", "z"}]}], HoldForm], TraditionalForm], 
+                    DisplayForm], "\[LongEqual]", "0"}], 
+                    StyleBox[
+                    TemplateBox[{"\"    \"", "\"(equation \"", 
+                    TemplateBox[{"2", "\")\""}, "RowDefault"]}, "RowDefault"], 
+                    GrayLevel[0.5], Small, StripOnInput -> False]}, {
+                    FrameBox[
+                    RowBox[{
+                    TagBox[
+                    FormBox[
+                    TagBox[
+                    RowBox[{
+                    StyleBox[
+                    RowBox[{"0", " ", "x"}], 
+                    GrayLevel[0.7], StripOnInput -> False], 
+                    StyleBox["+", 
+                    GrayLevel[0.7], StripOnInput -> False], 
+                    StyleBox[
+                    RowBox[{"0", " ", "y"}], 
+                    GrayLevel[0.7], StripOnInput -> False], "-", 
+                    FractionBox[
+                    RowBox[{"37", " ", "z"}], "14"]}], HoldForm], 
+                    TraditionalForm], DisplayForm], "\[LongEqual]", "1"}], 
+                    FrameStyle -> GrayLevel[0.8], FrameMargins -> 1, 
+                    BaselinePosition -> Baseline, ContentPadding -> False, 
+                    StripOnInput -> False], 
+                    StyleBox[
+                    TemplateBox[{"\"    \"", "\"(equation \"", 
+                    TemplateBox[{"3", "\")\""}, "RowDefault"]}, "RowDefault"], 
+                    GrayLevel[0.5], Small, StripOnInput -> False]}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Center}}}, AutoDelete -> 
+                    False, GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+                    "Grid"]}]}, "RowDefault"], HoldForm]}}, 
+                  GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                  AllowScriptLevelChange -> False, DefaultBaseStyle -> 
+                  "Column", 
+                  GridBoxItemSize -> {
+                   "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+                 "Column"]}, {
+                TagBox[
+                 GridBox[{{
+                    StyleBox[
+                    StyleBox[
+                    TemplateBox[{"\[NoBreak]", "\"\[NoBreak]\"", 
+                    TemplateBox[{
+                    TemplateBox[{"\"Multiply\"", 
+                    TemplateBox[{
+                    StyleBox["\" equation \"", 
+                    GrayLevel[0.3], StripOnInput -> False], 
+                    StyleBox["3", 
+                    GrayLevel[0.3], StripOnInput -> False]}, "RowDefault"], 
+                    "\" \""}, "RowDefault"], "\"by \"", 
+                    TemplateBox[{
+                    StyleBox["14", 
+                    GrayLevel[0.3], StripOnInput -> False]}, "RowDefault"]}, 
+                    "RowDefault"], "\":\""}, "RowWithSeparators"], 
+                    GrayLevel[0.5], StripOnInput -> False], {
+                    LinebreakAdjustments -> {1, 89, 100, 0, 100}, 
+                    LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                    0}, StripOnInput -> False]}, {
+                    TagBox[
+                    TemplateBox[{
+                    RowBox[{
+                    StyleBox["{", SpanMaxSize -> DirectedInfinity[1]], 
+                    TagBox[
+                    GridBox[{{
+                    RowBox[{
+                    TagBox[
+                    FormBox[
+                    TagBox[
+                    RowBox[{"x", "+", "y", "+", "z"}], HoldForm], 
+                    TraditionalForm], DisplayForm], "\[LongEqual]", "1"}], 
+                    StyleBox[
+                    TemplateBox[{"\"    \"", "\"(equation \"", 
+                    TemplateBox[{"1", "\")\""}, "RowDefault"]}, "RowDefault"], 
+                    GrayLevel[0.5], Small, StripOnInput -> False]}, {
+                    RowBox[{
+                    TagBox[
+                    FormBox[
+                    TagBox[
+                    RowBox[{
+                    StyleBox[
+                    RowBox[{"0", " ", "x"}], 
+                    GrayLevel[0.7], StripOnInput -> False], 
+                    StyleBox["+", 
+                    GrayLevel[0.7], StripOnInput -> False], 
+                    RowBox[{"14", " ", "y"}], "-", 
+                    RowBox[{"5", " ", "z"}]}], HoldForm], TraditionalForm], 
+                    DisplayForm], "\[LongEqual]", "0"}], 
+                    StyleBox[
+                    TemplateBox[{"\"    \"", "\"(equation \"", 
+                    TemplateBox[{"2", "\")\""}, "RowDefault"]}, "RowDefault"], 
+                    GrayLevel[0.5], Small, StripOnInput -> False]}, {
+                    FrameBox[
+                    RowBox[{
+                    TagBox[
+                    FormBox[
+                    TagBox[
+                    RowBox[{
+                    StyleBox[
+                    RowBox[{"0", " ", "x"}], 
+                    GrayLevel[0.7], StripOnInput -> False], 
+                    StyleBox["+", 
+                    GrayLevel[0.7], StripOnInput -> False], 
+                    StyleBox[
+                    RowBox[{"0", " ", "y"}], 
+                    GrayLevel[0.7], StripOnInput -> False], "-", 
+                    RowBox[{"37", " ", "z"}]}], HoldForm], TraditionalForm], 
+                    DisplayForm], "\[LongEqual]", "14"}], FrameStyle -> 
+                    GrayLevel[0.8], FrameMargins -> 1, BaselinePosition -> 
+                    Baseline, ContentPadding -> False, StripOnInput -> False], 
+                    StyleBox[
+                    TemplateBox[{"\"    \"", "\"(equation \"", 
+                    TemplateBox[{"3", "\")\""}, "RowDefault"]}, "RowDefault"], 
+                    GrayLevel[0.5], Small, StripOnInput -> False]}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Center}}}, AutoDelete -> 
+                    False, GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+                    "Grid"]}]}, "RowDefault"], HoldForm]}}, 
+                  GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                  AllowScriptLevelChange -> False, DefaultBaseStyle -> 
+                  "Column", 
+                  GridBoxItemSize -> {
+                   "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+                 "Column"]}, {
+                TagBox[
+                 GridBox[{{
+                    StyleBox[
+                    StyleBox[
+                    TemplateBox[{"\[NoBreak]", "\"\[NoBreak]\"", 
+                    TemplateBox[{
+                    TemplateBox[{"\"Divide\"", 
+                    TemplateBox[{
+                    StyleBox["\" equation \"", 
+                    GrayLevel[0.3], StripOnInput -> False], 
+                    StyleBox["3", 
+                    GrayLevel[0.3], StripOnInput -> False]}, "RowDefault"], 
+                    "\" \""}, "RowDefault"], "\"by \"", 
+                    TemplateBox[{
+                    StyleBox[
+                    RowBox[{"-", "37"}], 
+                    GrayLevel[0.3], StripOnInput -> False]}, "RowDefault"]}, 
+                    "RowDefault"], "\":\""}, "RowWithSeparators"], 
+                    GrayLevel[0.5], StripOnInput -> False], {
+                    LinebreakAdjustments -> {1, 89, 100, 0, 100}, 
+                    LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                    0}, StripOnInput -> False]}, {
+                    TagBox[
+                    TemplateBox[{
+                    RowBox[{
+                    StyleBox["{", SpanMaxSize -> DirectedInfinity[1]], 
+                    TagBox[
+                    GridBox[{{
+                    RowBox[{
+                    TagBox[
+                    FormBox[
+                    TagBox[
+                    RowBox[{"x", "+", "y", "+", "z"}], HoldForm], 
+                    TraditionalForm], DisplayForm], "\[LongEqual]", "1"}], 
+                    StyleBox[
+                    TemplateBox[{"\"    \"", "\"(equation \"", 
+                    TemplateBox[{"1", "\")\""}, "RowDefault"]}, "RowDefault"], 
+                    GrayLevel[0.5], Small, StripOnInput -> False]}, {
+                    RowBox[{
+                    TagBox[
+                    FormBox[
+                    TagBox[
+                    RowBox[{
+                    StyleBox[
+                    RowBox[{"0", " ", "x"}], 
+                    GrayLevel[0.7], StripOnInput -> False], 
+                    StyleBox["+", 
+                    GrayLevel[0.7], StripOnInput -> False], 
+                    RowBox[{"14", " ", "y"}], "-", 
+                    RowBox[{"5", " ", "z"}]}], HoldForm], TraditionalForm], 
+                    DisplayForm], "\[LongEqual]", "0"}], 
+                    StyleBox[
+                    TemplateBox[{"\"    \"", "\"(equation \"", 
+                    TemplateBox[{"2", "\")\""}, "RowDefault"]}, "RowDefault"], 
+                    GrayLevel[0.5], Small, StripOnInput -> False]}, {
+                    FrameBox[
+                    RowBox[{
+                    TagBox[
+                    FormBox[
+                    TagBox[
+                    RowBox[{
+                    StyleBox[
+                    RowBox[{"0", " ", "x"}], 
+                    GrayLevel[0.7], StripOnInput -> False], 
+                    StyleBox["+", 
+                    GrayLevel[0.7], StripOnInput -> False], 
+                    StyleBox[
+                    RowBox[{"0", " ", "y"}], 
+                    GrayLevel[0.7], StripOnInput -> False], 
+                    StyleBox["+", 
+                    GrayLevel[0.7], StripOnInput -> False], "z"}], HoldForm], 
+                    TraditionalForm], DisplayForm], "\[LongEqual]", 
+                    RowBox[{"-", 
+                    FractionBox["14", "37"]}]}], FrameStyle -> GrayLevel[0.8],
+                     FrameMargins -> 1, BaselinePosition -> Baseline, 
+                    ContentPadding -> False, StripOnInput -> False], 
+                    StyleBox[
+                    TemplateBox[{"\"    \"", "\"(equation \"", 
+                    TemplateBox[{"3", "\")\""}, "RowDefault"]}, "RowDefault"], 
+                    GrayLevel[0.5], Small, StripOnInput -> False]}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Center}}}, AutoDelete -> 
+                    False, GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+                    "Grid"]}]}, "RowDefault"], HoldForm]}}, 
+                  GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                  AllowScriptLevelChange -> False, DefaultBaseStyle -> 
+                  "Column", 
+                  GridBoxItemSize -> {
+                   "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+                 "Column"]}, {
+                TagBox[
+                 GridBox[{{
+                    StyleBox[
+                    StyleBox[
+                    TemplateBox[{"\[NoBreak]", "\"\[NoBreak]\"", 
+                    TemplateBox[{"\"Add \"", 
+                    TemplateBox[{
+                    TemplateBox[{
+                    StyleBox["5", 
+                    GrayLevel[0.3], StripOnInput -> False], 
+                    StyleBox["\"\[ThinSpace]\"", 
+                    GrayLevel[0.3], StripOnInput -> False], 
+                    StyleBox[
+                    StyleBox[
+                    StyleBox[
+                    "\"\[Times]\"", FontColor -> GrayLevel[0.5], StripOnInput -> 
+                    False], Small, StripOnInput -> False], 
+                    GrayLevel[0.3], StripOnInput -> False], 
+                    StyleBox["\"\[ThinSpace]\"", 
+                    GrayLevel[0.3], StripOnInput -> False], 
+                    StyleBox["\"(\"", 
+                    GrayLevel[0.3], StripOnInput -> False], 
+                    StyleBox["\"equation \"", 
+                    GrayLevel[0.3], StripOnInput -> False], 
+                    StyleBox["3", 
+                    GrayLevel[0.3], StripOnInput -> False], 
+                    StyleBox["\")\"", 
+                    GrayLevel[0.3], StripOnInput -> False]}, "RowDefault"], 
+                    "\" \""}, "RowDefault"], 
+                    TemplateBox[{"\"to\"", 
+                    TemplateBox[{
+                    StyleBox["\" equation \"", 
+                    GrayLevel[0.3], StripOnInput -> False], 
+                    StyleBox["2", 
+                    GrayLevel[0.3], StripOnInput -> False]}, "RowDefault"]}, 
+                    "RowDefault"]}, "RowDefault"], "\":\""}, 
+                    "RowWithSeparators"], 
+                    GrayLevel[0.5], StripOnInput -> False], {
+                    LinebreakAdjustments -> {1, 89, 100, 0, 100}, 
+                    LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                    0}, StripOnInput -> False]}, {
+                    TagBox[
+                    TemplateBox[{
+                    RowBox[{
+                    StyleBox["{", SpanMaxSize -> DirectedInfinity[1]], 
+                    TagBox[
+                    GridBox[{{
+                    RowBox[{
+                    TagBox[
+                    FormBox[
+                    TagBox[
+                    RowBox[{"x", "+", "y", "+", "z"}], HoldForm], 
+                    TraditionalForm], DisplayForm], "\[LongEqual]", "1"}], 
+                    StyleBox[
+                    TemplateBox[{"\"    \"", "\"(equation \"", 
+                    TemplateBox[{"1", "\")\""}, "RowDefault"]}, "RowDefault"], 
+                    GrayLevel[0.5], Small, StripOnInput -> False]}, {
+                    FrameBox[
+                    RowBox[{
+                    TagBox[
+                    FormBox[
+                    TagBox[
+                    RowBox[{
+                    StyleBox[
+                    RowBox[{"0", " ", "x"}], 
+                    GrayLevel[0.7], StripOnInput -> False], 
+                    StyleBox["+", 
+                    GrayLevel[0.7], StripOnInput -> False], 
+                    RowBox[{"14", " ", "y"}], 
+                    StyleBox["+", 
+                    GrayLevel[0.7], StripOnInput -> False], 
+                    StyleBox[
+                    RowBox[{"0", " ", "z"}], 
+                    GrayLevel[0.7], StripOnInput -> False]}], HoldForm], 
+                    TraditionalForm], DisplayForm], "\[LongEqual]", 
+                    RowBox[{"-", 
+                    FractionBox["70", "37"]}]}], FrameStyle -> GrayLevel[0.8],
+                     FrameMargins -> 1, BaselinePosition -> Baseline, 
+                    ContentPadding -> False, StripOnInput -> False], 
+                    StyleBox[
+                    TemplateBox[{"\"    \"", "\"(equation \"", 
+                    TemplateBox[{"2", "\")\""}, "RowDefault"]}, "RowDefault"], 
+                    GrayLevel[0.5], Small, StripOnInput -> False]}, {
+                    RowBox[{
+                    TagBox[
+                    FormBox[
+                    TagBox[
+                    RowBox[{
+                    StyleBox[
+                    RowBox[{"0", " ", "x"}], 
+                    GrayLevel[0.7], StripOnInput -> False], 
+                    StyleBox["+", 
+                    GrayLevel[0.7], StripOnInput -> False], 
+                    StyleBox[
+                    RowBox[{"0", " ", "y"}], 
+                    GrayLevel[0.7], StripOnInput -> False], 
+                    StyleBox["+", 
+                    GrayLevel[0.7], StripOnInput -> False], "z"}], HoldForm], 
+                    TraditionalForm], DisplayForm], "\[LongEqual]", 
+                    RowBox[{"-", 
+                    FractionBox["14", "37"]}]}], 
+                    StyleBox[
+                    TemplateBox[{"\"    \"", "\"(equation \"", 
+                    TemplateBox[{"3", "\")\""}, "RowDefault"]}, "RowDefault"], 
+                    GrayLevel[0.5], Small, StripOnInput -> False]}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Center}}}, AutoDelete -> 
+                    False, GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+                    "Grid"]}]}, "RowDefault"], HoldForm]}}, 
+                  GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                  AllowScriptLevelChange -> False, DefaultBaseStyle -> 
+                  "Column", 
+                  GridBoxItemSize -> {
+                   "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+                 "Column"]}, {
+                TagBox[
+                 GridBox[{{
+                    StyleBox[
+                    StyleBox[
+                    TemplateBox[{"\[NoBreak]", "\"\[NoBreak]\"", 
+                    TemplateBox[{
+                    TemplateBox[{"\"Divide\"", 
+                    TemplateBox[{
+                    StyleBox["\" equation \"", 
+                    GrayLevel[0.3], StripOnInput -> False], 
+                    StyleBox["2", 
+                    GrayLevel[0.3], StripOnInput -> False]}, "RowDefault"], 
+                    "\" \""}, "RowDefault"], "\"by \"", 
+                    TemplateBox[{
+                    StyleBox["14", 
+                    GrayLevel[0.3], StripOnInput -> False]}, "RowDefault"]}, 
+                    "RowDefault"], "\":\""}, "RowWithSeparators"], 
+                    GrayLevel[0.5], StripOnInput -> False], {
+                    LinebreakAdjustments -> {1, 89, 100, 0, 100}, 
+                    LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                    0}, StripOnInput -> False]}, {
+                    TagBox[
+                    TemplateBox[{
+                    RowBox[{
+                    StyleBox["{", SpanMaxSize -> DirectedInfinity[1]], 
+                    TagBox[
+                    GridBox[{{
+                    RowBox[{
+                    TagBox[
+                    FormBox[
+                    TagBox[
+                    RowBox[{"x", "+", "y", "+", "z"}], HoldForm], 
+                    TraditionalForm], DisplayForm], "\[LongEqual]", "1"}], 
+                    StyleBox[
+                    TemplateBox[{"\"    \"", "\"(equation \"", 
+                    TemplateBox[{"1", "\")\""}, "RowDefault"]}, "RowDefault"], 
+                    GrayLevel[0.5], Small, StripOnInput -> False]}, {
+                    FrameBox[
+                    RowBox[{
+                    TagBox[
+                    FormBox[
+                    TagBox[
+                    RowBox[{
+                    StyleBox[
+                    RowBox[{"0", " ", "x"}], 
+                    GrayLevel[0.7], StripOnInput -> False], 
+                    StyleBox["+", 
+                    GrayLevel[0.7], StripOnInput -> False], "y", 
+                    StyleBox["+", 
+                    GrayLevel[0.7], StripOnInput -> False], 
+                    StyleBox[
+                    RowBox[{"0", " ", "z"}], 
+                    GrayLevel[0.7], StripOnInput -> False]}], HoldForm], 
+                    TraditionalForm], DisplayForm], "\[LongEqual]", 
+                    RowBox[{"-", 
+                    FractionBox["5", "37"]}]}], FrameStyle -> GrayLevel[0.8], 
+                    FrameMargins -> 1, BaselinePosition -> Baseline, 
+                    ContentPadding -> False, StripOnInput -> False], 
+                    StyleBox[
+                    TemplateBox[{"\"    \"", "\"(equation \"", 
+                    TemplateBox[{"2", "\")\""}, "RowDefault"]}, "RowDefault"], 
+                    GrayLevel[0.5], Small, StripOnInput -> False]}, {
+                    RowBox[{
+                    TagBox[
+                    FormBox[
+                    TagBox[
+                    RowBox[{
+                    StyleBox[
+                    RowBox[{"0", " ", "x"}], 
+                    GrayLevel[0.7], StripOnInput -> False], 
+                    StyleBox["+", 
+                    GrayLevel[0.7], StripOnInput -> False], 
+                    StyleBox[
+                    RowBox[{"0", " ", "y"}], 
+                    GrayLevel[0.7], StripOnInput -> False], 
+                    StyleBox["+", 
+                    GrayLevel[0.7], StripOnInput -> False], "z"}], HoldForm], 
+                    TraditionalForm], DisplayForm], "\[LongEqual]", 
+                    RowBox[{"-", 
+                    FractionBox["14", "37"]}]}], 
+                    StyleBox[
+                    TemplateBox[{"\"    \"", "\"(equation \"", 
+                    TemplateBox[{"3", "\")\""}, "RowDefault"]}, "RowDefault"], 
+                    GrayLevel[0.5], Small, StripOnInput -> False]}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Center}}}, AutoDelete -> 
+                    False, GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+                    "Grid"]}]}, "RowDefault"], HoldForm]}}, 
+                  GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                  AllowScriptLevelChange -> False, DefaultBaseStyle -> 
+                  "Column", 
+                  GridBoxItemSize -> {
+                   "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+                 "Column"]}, {
+                TagBox[
+                 GridBox[{{
+                    StyleBox[
+                    StyleBox[
+                    TemplateBox[{"\[NoBreak]", "\"\[NoBreak]\"", 
+                    TemplateBox[{
+                    TemplateBox[{"\"Subtract\"", 
+                    TemplateBox[{
+                    StyleBox["\" equation \"", 
+                    GrayLevel[0.3], StripOnInput -> False], 
+                    StyleBox["2", 
+                    GrayLevel[0.3], StripOnInput -> False]}, "RowDefault"], 
+                    "\" \""}, "RowDefault"], 
+                    TemplateBox[{"\"from\"", 
+                    TemplateBox[{
+                    StyleBox["\" equation \"", 
+                    GrayLevel[0.3], StripOnInput -> False], 
+                    StyleBox["1", 
+                    GrayLevel[0.3], StripOnInput -> False]}, "RowDefault"]}, 
+                    "RowDefault"]}, "RowDefault"], "\":\""}, 
+                    "RowWithSeparators"], 
+                    GrayLevel[0.5], StripOnInput -> False], {
+                    LinebreakAdjustments -> {1, 89, 100, 0, 100}, 
+                    LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                    0}, StripOnInput -> False]}, {
+                    TagBox[
+                    TemplateBox[{
+                    RowBox[{
+                    StyleBox["{", SpanMaxSize -> DirectedInfinity[1]], 
+                    TagBox[
+                    GridBox[{{
+                    FrameBox[
+                    RowBox[{
+                    TagBox[
+                    FormBox[
+                    TagBox[
+                    RowBox[{"x", "+", 
+                    StyleBox[
+                    RowBox[{"0", " ", "y"}], 
+                    GrayLevel[0.7], StripOnInput -> False], 
+                    StyleBox["+", 
+                    GrayLevel[0.7], StripOnInput -> False], "z"}], HoldForm], 
+                    TraditionalForm], DisplayForm], "\[LongEqual]", 
+                    FractionBox["42", "37"]}], FrameStyle -> GrayLevel[0.8], 
+                    FrameMargins -> 1, BaselinePosition -> Baseline, 
+                    ContentPadding -> False, StripOnInput -> False], 
+                    StyleBox[
+                    TemplateBox[{"\"    \"", "\"(equation \"", 
+                    TemplateBox[{"1", "\")\""}, "RowDefault"]}, "RowDefault"], 
+                    GrayLevel[0.5], Small, StripOnInput -> False]}, {
+                    RowBox[{
+                    TagBox[
+                    FormBox[
+                    TagBox[
+                    RowBox[{
+                    StyleBox[
+                    RowBox[{"0", " ", "x"}], 
+                    GrayLevel[0.7], StripOnInput -> False], 
+                    StyleBox["+", 
+                    GrayLevel[0.7], StripOnInput -> False], "y", 
+                    StyleBox["+", 
+                    GrayLevel[0.7], StripOnInput -> False], 
+                    StyleBox[
+                    RowBox[{"0", " ", "z"}], 
+                    GrayLevel[0.7], StripOnInput -> False]}], HoldForm], 
+                    TraditionalForm], DisplayForm], "\[LongEqual]", 
+                    RowBox[{"-", 
+                    FractionBox["5", "37"]}]}], 
+                    StyleBox[
+                    TemplateBox[{"\"    \"", "\"(equation \"", 
+                    TemplateBox[{"2", "\")\""}, "RowDefault"]}, "RowDefault"], 
+                    GrayLevel[0.5], Small, StripOnInput -> False]}, {
+                    RowBox[{
+                    TagBox[
+                    FormBox[
+                    TagBox[
+                    RowBox[{
+                    StyleBox[
+                    RowBox[{"0", " ", "x"}], 
+                    GrayLevel[0.7], StripOnInput -> False], 
+                    StyleBox["+", 
+                    GrayLevel[0.7], StripOnInput -> False], 
+                    StyleBox[
+                    RowBox[{"0", " ", "y"}], 
+                    GrayLevel[0.7], StripOnInput -> False], 
+                    StyleBox["+", 
+                    GrayLevel[0.7], StripOnInput -> False], "z"}], HoldForm], 
+                    TraditionalForm], DisplayForm], "\[LongEqual]", 
+                    RowBox[{"-", 
+                    FractionBox["14", "37"]}]}], 
+                    StyleBox[
+                    TemplateBox[{"\"    \"", "\"(equation \"", 
+                    TemplateBox[{"3", "\")\""}, "RowDefault"]}, "RowDefault"], 
+                    GrayLevel[0.5], Small, StripOnInput -> False]}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Center}}}, AutoDelete -> 
+                    False, GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+                    "Grid"]}]}, "RowDefault"], HoldForm]}}, 
+                  GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                  AllowScriptLevelChange -> False, DefaultBaseStyle -> 
+                  "Column", 
+                  GridBoxItemSize -> {
+                   "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+                 "Column"]}, {
+                TagBox[
+                 GridBox[{{
+                    StyleBox[
+                    StyleBox[
+                    TemplateBox[{"\[NoBreak]", "\"\[NoBreak]\"", 
+                    TemplateBox[{
+                    TemplateBox[{"\"Subtract\"", 
+                    TemplateBox[{
+                    StyleBox["\" equation \"", 
+                    GrayLevel[0.3], StripOnInput -> False], 
+                    StyleBox["3", 
+                    GrayLevel[0.3], StripOnInput -> False]}, "RowDefault"], 
+                    "\" \""}, "RowDefault"], 
+                    TemplateBox[{"\"from\"", 
+                    TemplateBox[{
+                    StyleBox["\" equation \"", 
+                    GrayLevel[0.3], StripOnInput -> False], 
+                    StyleBox["1", 
+                    GrayLevel[0.3], StripOnInput -> False]}, "RowDefault"]}, 
+                    "RowDefault"]}, "RowDefault"], "\":\""}, 
+                    "RowWithSeparators"], 
+                    GrayLevel[0.5], StripOnInput -> False], {
+                    LinebreakAdjustments -> {1, 89, 100, 0, 100}, 
+                    LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                    0}, StripOnInput -> False]}, {
+                    TagBox[
+                    TemplateBox[{
+                    RowBox[{
+                    StyleBox["{", SpanMaxSize -> DirectedInfinity[1]], 
+                    TagBox[
+                    GridBox[{{
+                    FrameBox[
+                    RowBox[{
+                    TagBox[
+                    FormBox[
+                    TagBox[
+                    RowBox[{"x", 
+                    StyleBox["+", 
+                    GrayLevel[0.7], StripOnInput -> False], 
+                    StyleBox[
+                    RowBox[{"0", " ", "y"}], 
+                    GrayLevel[0.7], StripOnInput -> False], 
+                    StyleBox["+", 
+                    GrayLevel[0.7], StripOnInput -> False], 
+                    StyleBox[
+                    RowBox[{"0", " ", "z"}], 
+                    GrayLevel[0.7], StripOnInput -> False]}], HoldForm], 
+                    TraditionalForm], DisplayForm], "\[LongEqual]", 
+                    FractionBox["56", "37"]}], FrameStyle -> GrayLevel[0.8], 
+                    FrameMargins -> 1, BaselinePosition -> Baseline, 
+                    ContentPadding -> False, StripOnInput -> False], 
+                    StyleBox[
+                    TemplateBox[{"\"    \"", "\"(equation \"", 
+                    TemplateBox[{"1", "\")\""}, "RowDefault"]}, "RowDefault"], 
+                    GrayLevel[0.5], Small, StripOnInput -> False]}, {
+                    RowBox[{
+                    TagBox[
+                    FormBox[
+                    TagBox[
+                    RowBox[{
+                    StyleBox[
+                    RowBox[{"0", " ", "x"}], 
+                    GrayLevel[0.7], StripOnInput -> False], 
+                    StyleBox["+", 
+                    GrayLevel[0.7], StripOnInput -> False], "y", 
+                    StyleBox["+", 
+                    GrayLevel[0.7], StripOnInput -> False], 
+                    StyleBox[
+                    RowBox[{"0", " ", "z"}], 
+                    GrayLevel[0.7], StripOnInput -> False]}], HoldForm], 
+                    TraditionalForm], DisplayForm], "\[LongEqual]", 
+                    RowBox[{"-", 
+                    FractionBox["5", "37"]}]}], 
+                    StyleBox[
+                    TemplateBox[{"\"    \"", "\"(equation \"", 
+                    TemplateBox[{"2", "\")\""}, "RowDefault"]}, "RowDefault"], 
+                    GrayLevel[0.5], Small, StripOnInput -> False]}, {
+                    RowBox[{
+                    TagBox[
+                    FormBox[
+                    TagBox[
+                    RowBox[{
+                    StyleBox[
+                    RowBox[{"0", " ", "x"}], 
+                    GrayLevel[0.7], StripOnInput -> False], 
+                    StyleBox["+", 
+                    GrayLevel[0.7], StripOnInput -> False], 
+                    StyleBox[
+                    RowBox[{"0", " ", "y"}], 
+                    GrayLevel[0.7], StripOnInput -> False], 
+                    StyleBox["+", 
+                    GrayLevel[0.7], StripOnInput -> False], "z"}], HoldForm], 
+                    TraditionalForm], DisplayForm], "\[LongEqual]", 
+                    RowBox[{"-", 
+                    FractionBox["14", "37"]}]}], 
+                    StyleBox[
+                    TemplateBox[{"\"    \"", "\"(equation \"", 
+                    TemplateBox[{"3", "\")\""}, "RowDefault"]}, "RowDefault"], 
+                    GrayLevel[0.5], Small, StripOnInput -> False]}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Center}}}, AutoDelete -> 
+                    False, GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+                    "Grid"]}]}, "RowDefault"], HoldForm]}}, 
+                  GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                  AllowScriptLevelChange -> False, DefaultBaseStyle -> 
+                  "Column", 
+                  GridBoxItemSize -> {
+                   "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+                 "Column"]}, {
+                TagBox[
+                 GridBox[{{
+                    StyleBox[
+                    StyleBox[
+                    TemplateBox[{"\[NoBreak]", "\"\[NoBreak]\"", 
+                    
+                    TemplateBox[{"\"Collect \"", "\"results\""}, 
+                    "RowDefault"], "\":\""}, "RowWithSeparators"], 
+                    GrayLevel[0.5], StripOnInput -> False], {
+                    LinebreakAdjustments -> {1, 89, 100, 0, 100}, 
+                    LinebreakAdjustments -> {1, 100, 1, 0, 100}, LineIndent -> 
+                    0}, StripOnInput -> False]}, {
+                    FrameBox[
+                    TagBox[
+                    GridBox[{{
+                    StyleBox[
+                    TemplateBox[{"\"Answer:\""}, "RowDefault"], FontFamily -> 
+                    "Helvetica", FontSize -> 12, StripOnInput -> False], 
+                    "\[SpanFromLeft]"}, {"\"\"", 
+                    TagBox[
+                    TemplateBox[{
+                    RowBox[{
+                    StyleBox["{", SpanMaxSize -> DirectedInfinity[1]], 
+                    TagBox[
+                    GridBox[{{
+                    RowBox[{"x", "\[LongEqual]", 
+                    FractionBox["56", "37"]}]}, {
+                    RowBox[{"y", "\[LongEqual]", 
+                    RowBox[{"-", 
+                    FractionBox["5", "37"]}]}]}, {
+                    RowBox[{"z", "\[LongEqual]", 
+                    RowBox[{"-", 
+                    FractionBox["14", "37"]}]}]}}, 
+                    GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                    DefaultBaseStyle -> "Column", 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+                    "Column"]}]}, "RowDefault"], HoldForm]}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Baseline}}}, 
+                    AutoDelete -> False, 
+                    GridBoxItemSize -> {"Columns" -> {2.5, Automatic}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {2, 0, 3}, "Rows" -> {1.5, 1, 2}}, 
+                    AllowScriptLevelChange -> False], "Grid"], FrameStyle -> {
+                    AbsoluteThickness[1], 
+                    RGBColor[0.52, 0.76, 0.86]}, Background -> 
+                    RGBColor[0.91, 0.98, 1], RoundingRadius -> 3, 
+                    FrameMargins -> 12, StripOnInput -> False]}}, 
+                  GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                  AllowScriptLevelChange -> False, DefaultBaseStyle -> 
+                  "Column", 
+                  GridBoxItemSize -> {
+                   "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+                 "Column"]}}, GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+              AllowScriptLevelChange -> False, DefaultBaseStyle -> "Column", 
+              GridBoxDividers -> {
+               "Columns" -> {{False}}, "Rows" -> {False, {True}, False}}, 
+              GridBoxItemSize -> {
+               "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+              GridBoxSpacings -> {
+               "Columns" -> {{Automatic}}, "Rows" -> {{3}}}, FrameStyle -> 
+              GrayLevel[0.7]], "Column"], TraditionalForm]], "Output", {
+          Background -> None, 
+           GraphicsBoxOptions -> {
+            DefaultBaseStyle -> {FontFamily -> "Times", "Graphics"}, 
+             DefaultAxesStyle -> Directive[
+               GrayLevel[0, 0.35], FontColor -> GrayLevel[0.25], FontOpacity -> 
+               1, "GraphicsAxes"], DefaultFrameStyle -> Directive[
+               GrayLevel[0, 0.35], FontColor -> GrayLevel[0.25], FontOpacity -> 
+               1, "GraphicsFrame"], DefaultFrameTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 10, "GraphicsFrameTicks"], 
+             DefaultTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 10, "GraphicsTicks"]}, 
+           Graphics3DBoxOptions -> {
+            DefaultBaseStyle -> {FontFamily -> "Times", "Graphics3D"}}}, 
+          NumberPoint -> ".", CellSize -> {550, Automatic}, 
+          AutoStyleOptions -> {"HighlightFormattingErrors" -> False}, 
+          RenderingOptions -> {
+           "3DRenderingMethod" -> "BSPTreeOrDepthBuffer"}]}], 
+       XMLElement["dataformats", {}, {"plaintext"}]}], 
+     XMLElement["states", {"count" -> "3"}, {
+       XMLElement[
+       "state", {
+        "name" -> "Approximate form", "input" -> 
+         "Solution__Approximate form"}, {}], 
+       XMLElement[
+       "statelist", {
+        "count" -> "4", "value" -> "Use elimination", "delimiters" -> ""}, {
+         XMLElement[
+         "state", {
+          "name" -> "Use elimination", "input" -> 
+           "Solution__Use elimination"}, {}], 
+         XMLElement[
+         "state", {
+          "name" -> "Use substitution", "input" -> 
+           "Solution__Use substitution"}, {}], 
+         XMLElement[
+         "state", {
+          "name" -> "Use Gaussian elimination", "input" -> 
+           "Solution__Use Gaussian elimination"}, {}], 
+         XMLElement[
+         "state", {
+          "name" -> "Use Cramer's rule", "input" -> 
+           "Solution__Use Cramer's rule"}, {}]}], 
+       XMLElement[
+       "state", {
+        "name" -> "Hide steps", "input" -> "Solution__Hide steps"}, {}]}]}], 
+   Typeset`pod3$$ = XMLElement[
+   "pod", {"title" -> "Alternate forms", "scanner" -> "Simplification", "id" -> 
+     "AlternateForm", "position" -> "300", "error" -> "false", "numsubpods" -> 
+     "2"}, {
+     XMLElement["subpod", {"title" -> ""}, {
+       XMLElement[
+       "minput", {}, {
+        "FullSimplify[{x + y + z == 1, x + 3 y - 5 z == 3, 14 y - 5 z == \
+0}]"}], 
+       XMLElement["cell", {"compressed" -> False, "string" -> True}, {
+         Cell[
+          BoxData[
+           FormBox[
+            RowBox[{"{", 
+              RowBox[{
+                RowBox[{
+                  RowBox[{"x", "+", "y", "+", "z"}], "\[LongEqual]", "1"}], 
+                ",", 
+                RowBox[{
+                  RowBox[{"x", "+", 
+                    RowBox[{"3", " ", "y"}]}], "\[LongEqual]", 
+                  TagBox[
+                   RowBox[{
+                    RowBox[{"5", " ", "z"}], "+", "3"}], Identity]}], ",", 
+                RowBox[{
+                  RowBox[{"14", " ", "y"}], "\[LongEqual]", 
+                  TagBox[
+                   RowBox[{"5", " ", "z"}], Identity]}]}], "}"}], 
+            TraditionalForm]], "Output", {
+          Background -> None, 
+           GraphicsBoxOptions -> {
+            DefaultBaseStyle -> {FontFamily -> "Times", "Graphics"}, 
+             DefaultAxesStyle -> Directive[
+               GrayLevel[0, 0.35], FontColor -> GrayLevel[0.25], FontOpacity -> 
+               1, "GraphicsAxes"], DefaultFrameStyle -> Directive[
+               GrayLevel[0, 0.35], FontColor -> GrayLevel[0.25], FontOpacity -> 
+               1, "GraphicsFrame"], DefaultFrameTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 10, "GraphicsFrameTicks"], 
+             DefaultTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 10, "GraphicsTicks"]}, 
+           Graphics3DBoxOptions -> {
+            DefaultBaseStyle -> {FontFamily -> "Times", "Graphics3D"}}}, 
+          NumberPoint -> ".", CellSize -> {550, Automatic}, 
+          AutoStyleOptions -> {"HighlightFormattingErrors" -> False}, 
+          RenderingOptions -> {
+           "3DRenderingMethod" -> "BSPTreeOrDepthBuffer"}]}], 
+       XMLElement[
+       "dataformats", {}, {
+        "plaintext,minput,moutput,computabledata,formatteddata,formuladata"}]}\
+], 
+     XMLElement["subpod", {"title" -> ""}, {
+       XMLElement["cell", {"compressed" -> False, "string" -> True}, {
+         Cell[
+          BoxData[
+           FormBox[
+            RowBox[{"{", 
+              RowBox[{
+                RowBox[{"z", "\[LongEqual]", 
+                  TagBox[
+                   RowBox[{
+                    RowBox[{"-", "x"}], "-", "y", "+", "1"}], Identity]}], 
+                ",", 
+                RowBox[{"z", "\[LongEqual]", 
+                  TagBox[
+                   RowBox[{
+                    FractionBox["x", "5"], "+", 
+                    FractionBox[
+                    RowBox[{"3", " ", "y"}], "5"], "-", 
+                    FractionBox["3", "5"]}], Identity]}], ",", 
+                RowBox[{"z", "\[LongEqual]", 
+                  TagBox[
+                   FractionBox[
+                    RowBox[{"14", " ", "y"}], "5"], Identity]}]}], "}"}], 
+            TraditionalForm]], "Output", {
+          Background -> None, 
+           GraphicsBoxOptions -> {
+            DefaultBaseStyle -> {FontFamily -> "Times", "Graphics"}, 
+             DefaultAxesStyle -> Directive[
+               GrayLevel[0, 0.35], FontColor -> GrayLevel[0.25], FontOpacity -> 
+               1, "GraphicsAxes"], DefaultFrameStyle -> Directive[
+               GrayLevel[0, 0.35], FontColor -> GrayLevel[0.25], FontOpacity -> 
+               1, "GraphicsFrame"], DefaultFrameTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 10, "GraphicsFrameTicks"], 
+             DefaultTicksStyle -> 
+             Directive[
+              FontFamily -> "Times", FontSize -> 10, "GraphicsTicks"]}, 
+           Graphics3DBoxOptions -> {
+            DefaultBaseStyle -> {FontFamily -> "Times", "Graphics3D"}}}, 
+          NumberPoint -> ".", CellSize -> {550, Automatic}, 
+          AutoStyleOptions -> {"HighlightFormattingErrors" -> False}, 
+          RenderingOptions -> {
+           "3DRenderingMethod" -> "BSPTreeOrDepthBuffer"}]}], 
+       XMLElement[
+       "dataformats", {}, {
+        "plaintext,moutput,computabledata,formatteddata,formuladata"}]}]}], 
+   Typeset`aux1$$ = {True, False, {False}, True}, Typeset`aux2$$ = {
+   True, False, {False, False}, True}, Typeset`aux3$$ = {
+   True, False, {False, False}, True}, Typeset`asyncpods$$ = {}, 
+   Typeset`nonpods$$ = {}, Typeset`initdone$$ = True, Typeset`queryinfo$$ = {
+   "success" -> "true", "error" -> "false", "numpods" -> "3", "datatypes" -> 
+    "", "timedout" -> "", "timedoutpods" -> "", "timing" -> "2.945", 
+    "parsetiming" -> "1.039", "parsetimedout" -> "false", "recalculate" -> "",
+     "id" -> "MSPa868413dc9i1cafi2d2e700005d4gaa90473164h0", "host" -> 
+    "http://www5b.wolframalpha.com", "server" -> "56", "related" -> 
+    "http://www5b.wolframalpha.com/api/v2/relatedQueries.jsp?id=\
+MSPa868513dc9i1cafi2d2e70000419b9468724i36eb2586184755524934074", "version" -> 
+    "2.6"}, Typeset`sessioninfo$$ = {
+   "TimeZone" -> 3., 
+    "Date" -> {2018, 10, 5, 10, 4, 14.087158`8.90139833660256}, "Line" -> 1, 
+    "SessionID" -> 24561003837169616059}, Typeset`showpods$$ = {1, 2, 3}, 
+   Typeset`failedpods$$ = {}, Typeset`chosen$$ = {}, Typeset`open$$ = False, 
+   Typeset`newq$$ = "x+y+z=1,x+3y-5z=3,14y-5z=0"}, 
+   DynamicBox[ToBoxes[
+     AlphaIntegration`FormatAlphaResults[
+      Dynamic[{
+       1, {Typeset`pod1$$, Typeset`pod2$$, Typeset`pod3$$}, {
+        Typeset`aux1$$, Typeset`aux2$$, Typeset`aux3$$}, Typeset`chosen$$, 
+        Typeset`open$$, Typeset`elements$$, Typeset`q$$, Typeset`opts$$, 
+        Typeset`nonpods$$, Typeset`queryinfo$$, Typeset`sessioninfo$$, 
+        Typeset`showpods$$, Typeset`failedpods$$, Typeset`newq$$}]], 
+     StandardForm],
+    ImageSizeCache->{568., {1941., 1953.}},
+    TrackedSymbols:>{Typeset`showpods$$, Typeset`failedpods$$}],
+   DynamicModuleValues:>{},
+   Initialization:>If[
+     Not[Typeset`initdone$$], Null; WolframAlphaClient`Private`doAsyncUpdates[
+       Hold[{Typeset`pod1$$, Typeset`pod2$$, Typeset`pod3$$}], 
+       Typeset`asyncpods$$, 
+       Dynamic[Typeset`failedpods$$]]; Typeset`asyncpods$$ = {}; 
+     Typeset`initdone$$ = True],
+   SynchronousInitialization->False],
+  BaseStyle->{Deployed -> True},
+  DeleteWithContents->True,
+  Editable->False,
+  SelectWithContents->True]], "Output",
+ CellChangeTimes->{3.747711856358288*^9},
+ CellLabel->"Out[1]=",ExpressionUUID->"9646425f-21dc-426a-8505-c803d1a638fb"]
+}, Open  ]]
+},
+WindowSize->{759, 606},
+WindowMargins->{{Automatic, 124}, {22, Automatic}},
+Magnification:>2. Inherited,
+FrontEndVersion->"11.3 for Microsoft Windows (32-bit) (March 6, 2018)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 410, 8, 214, "Input",ExpressionUUID->"23592894-e8ce-4da9-bfdc-f4ba9ecd7d13"],
+Cell[993, 32, 68681, 1414, 3963, "Output",ExpressionUUID->"9646425f-21dc-426a-8505-c803d1a638fb"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

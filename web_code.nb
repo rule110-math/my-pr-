@@ -1,0 +1,165 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      6137,        157]
+NotebookOptionsPosition[      5132,        134]
+NotebookOutlinePosition[      5501,        150]
+CellTagsIndexPosition[      5458,        147]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.7866256639989977`*^9, 
+  3.7866256885274005`*^9}},ExpressionUUID->"0245d0e6-69bb-45f9-ae81-\
+abe1b581b93a"],
+
+Cell[BoxData["\"\<x=PageCode\>\""], "Input",
+ CellChangeTimes->{{3.786625712620779*^9, 
+  3.7866257275956354`*^9}},ExpressionUUID->"2369f8b2-d1ab-4712-9d8b-\
+87507e0f706b"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"f", "[", "x_", "]"}], ":=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"\"\<https://www.youtube.com/watch?v=\>\"", "<>", "#"}], "&"}], "/@", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"StringCases", "[", 
+       RowBox[{"x", ",", 
+        RowBox[{"\"\</vi/\>\"", "~~", 
+         RowBox[{"Shortest", "[", "a__", "]"}], "~~", "\"\</\>\""}]}], " ", 
+       "]"}], "//", "DeleteDuplicates"}], "//", 
+     RowBox[{
+      RowBox[{"StringDelete", "[", 
+       RowBox[{"#", ",", 
+        RowBox[{"{", 
+         RowBox[{"\"\<vi/\>\"", ",", "\"\</\>\""}], "}"}]}], "]"}], "&"}]}], 
+    ")"}]}]}]], "Input",
+ CellChangeTimes->{{3.7866256903735065`*^9, 3.7866256998790503`*^9}, {
+  3.7866691413864393`*^9, 3.7866691449526434`*^9}},
+ CellLabel->
+  "In[195]:=",ExpressionUUID->"0864e3df-d102-4b7a-88f7-7a899ca9ab61"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"d", "[", "x_", "]"}], ":=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"\"\<https://www.youtube.com/watch?v=\>\"", "<>", "#"}], "&"}], "/@", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"StringCases", "[", 
+       RowBox[{"x", "\[IndentingNewLine]", ",", 
+        RowBox[{
+         RowBox[{"\"\<?v=\>\"", "~~", "a1__"}], "\[Rule]", "a1"}]}], "]"}], "/.", 
+      RowBox[{
+       RowBox[{"{", "}"}], "\[Rule]", "Nothing"}]}], "//", 
+     "DeleteDuplicates"}], ")"}]}]}]], "Input",
+ CellChangeTimes->{{3.7866669367273407`*^9, 3.7866669371993675`*^9}, 
+   3.786671208153652*^9},ExpressionUUID->"b435bc28-532c-4586-88c7-\
+78a63d136c1d"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"x", "=", 
+   RowBox[{"Import", "[", 
+    RowBox[{
+    "\"\<https://www.youtube.com/channel/UCdP6NBSDvqYP2TmNRUgVTmw/videos\>\"",
+      ",", "\"\<Hyperlinks\>\""}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.7866689179216585`*^9, 3.7866690019194627`*^9}, {
+   3.786669081998043*^9, 3.786669082392065*^9}, {3.786670404294674*^9, 
+   3.7866704213676505`*^9}, 3.78667118731546*^9},
+ CellLabel->
+  "In[220]:=",ExpressionUUID->"8bb0b7cf-4d94-493b-97b1-f5f4bca0a222"],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.7866696120073576`*^9, 3.7866696695696497`*^9}, {
+   3.7866697033045797`*^9, 3.7866697377005467`*^9}, {3.786669777079799*^9, 
+   3.786670017248536*^9}, {3.786670063939207*^9, 3.786670107127677*^9}, 
+   3.7866712127599154`*^9},ExpressionUUID->"ceca1b24-7f31-4797-8dbd-\
+144deaf57c0e"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"d", "[", "x", "]"}]], "Input",
+ CellChangeTimes->{{3.786670038658761*^9, 3.786670040494866*^9}},
+ CellLabel->
+  "In[218]:=",ExpressionUUID->"32310596-0a51-465f-8537-6dae9c6a9a0b"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"https://www.youtube.com/watch?v=uxyYspPhw_U\"\>", 
+   ",", "\<\"https://www.youtube.com/watch?v=F1aDeT5WRlY\"\>", 
+   ",", "\<\"https://www.youtube.com/watch?v=1eRcLCRHuOw\"\>", 
+   ",", "\<\"https://www.youtube.com/watch?v=nfRCEN56bcM\"\>", 
+   ",", "\<\"https://www.youtube.com/watch?v=Aop3E8rMsXA\"\>", 
+   ",", "\<\"https://www.youtube.com/watch?v=iLd7wR_3QFI\"\>", 
+   ",", "\<\"https://www.youtube.com/watch?v=3zEpx91mjpk\"\>", 
+   ",", "\<\"https://www.youtube.com/watch?v=aShr-tewST8\"\>", 
+   ",", "\<\"https://www.youtube.com/watch?v=TAudBwnR8sU\"\>", 
+   ",", "\<\"https://www.youtube.com/watch?v=TiprsI5ha8s\"\>", 
+   ",", "\<\"https://www.youtube.com/watch?v=Ozw_m0WDfD0\"\>", 
+   ",", "\<\"https://www.youtube.com/watch?v=kGOc7dseO7c\"\>", 
+   ",", "\<\"https://www.youtube.com/watch?v=QLI7AgIJOTI\"\>", 
+   ",", "\<\"https://www.youtube.com/watch?v=jSYndKTo2_o\"\>", 
+   ",", "\<\"https://www.youtube.com/watch?v=0H0k4WEBU4g\"\>", 
+   ",", "\<\"https://www.youtube.com/watch?v=qX3KCPHb0Wk\"\>", 
+   ",", "\<\"https://www.youtube.com/watch?v=bHSmuKXiVXA\"\>", 
+   ",", "\<\"https://www.youtube.com/watch?v=mD2DNYUsZQU\"\>", 
+   ",", "\<\"https://www.youtube.com/watch?v=tRCpgUdRSGw\"\>", 
+   ",", "\<\"https://www.youtube.com/watch?v=1hMUhpxv6J0\"\>", 
+   ",", "\<\"https://www.youtube.com/watch?v=yNsji4_UBWM\"\>", 
+   ",", "\<\"https://www.youtube.com/watch?v=Jr8gkVJHRNQ\"\>"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{
+  3.786670040863887*^9, {3.786670072821715*^9, 3.786670108715768*^9}},
+ CellLabel->
+  "Out[218]=",ExpressionUUID->"61ffa220-9fc8-4f15-9ce4-58c4f8c86c5f"]
+}, Open  ]]
+},
+WindowSize->{997, 686},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+Magnification:>2. Inherited,
+FrontEndVersion->"11.3 for Microsoft Windows (32-bit) (March 6, 2018)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 156, 3, 57, "Input",ExpressionUUID->"0245d0e6-69bb-45f9-ae81-abe1b581b93a"],
+Cell[717, 25, 172, 3, 57, "Input",ExpressionUUID->"2369f8b2-d1ab-4712-9d8b-87507e0f706b"],
+Cell[892, 30, 846, 23, 161, "Input",ExpressionUUID->"0864e3df-d102-4b7a-88f7-7a899ca9ab61"],
+Cell[1741, 55, 673, 18, 175, "Input",ExpressionUUID->"b435bc28-532c-4586-88c7-78a63d136c1d"],
+Cell[2417, 75, 500, 11, 161, "Input",ExpressionUUID->"8bb0b7cf-4d94-493b-97b1-f5f4bca0a222"],
+Cell[2920, 88, 331, 5, 57, "Input",ExpressionUUID->"ceca1b24-7f31-4797-8dbd-144deaf57c0e"],
+Cell[CellGroupData[{
+Cell[3276, 97, 203, 4, 82, "Input",ExpressionUUID->"32310596-0a51-465f-8537-6dae9c6a9a0b"],
+Cell[3482, 103, 1634, 28, 910, "Output",ExpressionUUID->"61ffa220-9fc8-4f15-9ce4-58c4f8c86c5f"]
+}, Open  ]]
+}
+]
+*)
+

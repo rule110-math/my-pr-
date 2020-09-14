@@ -1,0 +1,220 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      8216,        211]
+NotebookOptionsPosition[      7903,        195]
+NotebookOutlinePosition[      8242,        210]
+CellTagsIndexPosition[      8199,        207]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{"k", ">", 
+       RowBox[{"PrimePi", "[", 
+        RowBox[{"Sqrt", "[", 
+         RowBox[{"m", " ", "n"}], "]"}], "]"}]}], ",", 
+      RowBox[{"k", "=", 
+       RowBox[{"PrimePi", "[", 
+        RowBox[{"Sqrt", "[", 
+         RowBox[{"m", " ", "n"}], "]"}], "]"}]}]}], "]"}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"Text", "@", 
+     RowBox[{"Column", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"{", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"Row", "[", 
+          RowBox[{"{", 
+           RowBox[{"\"\<primes whose multiples have been sieved:  \>\"", ",", 
+            RowBox[{"Row", "[", 
+             RowBox[{
+              RowBox[{"Prime", "[", 
+               RowBox[{"Range", "[", "k", "]"}], "]"}], ",", "\"\<,\>\""}], 
+             "]"}]}], "}"}], "]"}], ",", "\[IndentingNewLine]", "\"\<\>\"", 
+         ",", "\[IndentingNewLine]", 
+         RowBox[{"Grid", "@", 
+          RowBox[{"Partition", "[", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{
+             RowBox[{
+              RowBox[{"If", "[", "\[IndentingNewLine]", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{
+                  RowBox[{"#", "=!=", "1"}], " ", "&&", " ", 
+                  RowBox[{
+                   RowBox[{"GCD", "[", 
+                    RowBox[{"#", ",", " ", 
+                    RowBox[{
+                    RowBox[{"Prime", "[", 
+                    RowBox[{"Floor", "[", "k", "]"}], "]"}], "!"}]}], "]"}], "==",
+                    "1"}]}], " ", "||", " ", 
+                 RowBox[{"PrimeQ", "[", "#", "]"}]}], ",", 
+                "\[IndentingNewLine]", 
+                RowBox[{"Item", "[", 
+                 RowBox[{
+                  RowBox[{"Style", "[", 
+                   RowBox[{"#", ",", " ", "fs"}], "]"}], ",", 
+                  RowBox[{"Background", "\[Rule]", 
+                   RowBox[{"RGBColor", "[", 
+                    RowBox[{"1", ",", ".47", ",", "0"}], "]"}]}]}], "]"}], 
+                ",", "\[IndentingNewLine]", 
+                RowBox[{"Style", "[", 
+                 RowBox[{"#", ",", "fs"}], "]"}]}], "\[IndentingNewLine]", 
+               "]"}], "&"}], "/@", " ", 
+             RowBox[{"Range", "[", 
+              RowBox[{"m", " ", "n"}], "]"}]}], ",", "\n", "\t", "m"}], 
+           "]"}]}]}], "}"}], ",", "\[IndentingNewLine]", "Center"}], 
+      "]"}]}]}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"k", ",", "2", ",", "\"\<number of primes to sieve with\>\""}], 
+      "}"}], ",", " ", "1", ",", " ", 
+     RowBox[{"PrimePi", "[", 
+      RowBox[{"Sqrt", "[", 
+       RowBox[{"m", " ", "n"}], "]"}], "]"}], ",", " ", "1"}], "}"}], ",", 
+   "Delimiter", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"m", ",", "19", ",", "\"\<width of array\>\""}], "}"}], ",", 
+     "2", ",", "31", ",", "1"}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"n", ",", "19", ",", "\"\<height of array\>\""}], "}"}], ",", 
+     "2", ",", "31", ",", "1"}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"fs", ",", "12", ",", "\"\<font size\>\""}], "}"}], ",", "2", 
+     ",", "20", ",", "1"}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"AutorunSequencing", "\[Rule]", 
+    RowBox[{"{", "1", "}"}]}]}], "\n", "]"}]], "Input",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.38213058468233*^9, 3.382130632651845*^9}, {
+   3.38347957659256*^9, 3.383479600670685*^9}, {3.383479786233185*^9, 
+   3.38347984784256*^9}, {3.383479878795685*^9, 3.38347988265506*^9}, {
+   3.38367671409978*^9, 3.38367671797478*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`fs$$ = 12, $CellContext`k$$ = 
+    2, $CellContext`m$$ = 19, $CellContext`n$$ = 19, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`k$$], 2, "number of primes to sieve with"}, 1, 
+      Dynamic[
+       PrimePi[
+        Sqrt[$CellContext`m$$ $CellContext`n$$]]], 1}, {{
+       Hold[$CellContext`m$$], 19, "width of array"}, 2, 31, 1}, {{
+       Hold[$CellContext`n$$], 19, "height of array"}, 2, 31, 1}, {{
+       Hold[$CellContext`fs$$], 12, "font size"}, 2, 20, 1}}, 
+    Typeset`size$$ = {504., {174., 181.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = True, $CellContext`k$632$$ = 
+    0, $CellContext`m$633$$ = 0, $CellContext`n$634$$ = 
+    0, $CellContext`fs$635$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`fs$$ = 12, $CellContext`k$$ = 
+        2, $CellContext`m$$ = 19, $CellContext`n$$ = 19}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`k$$, $CellContext`k$632$$, 0], 
+        Hold[$CellContext`m$$, $CellContext`m$633$$, 0], 
+        Hold[$CellContext`n$$, $CellContext`n$634$$, 0], 
+        Hold[$CellContext`fs$$, $CellContext`fs$635$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> (If[$CellContext`k$$ > PrimePi[
+           Sqrt[$CellContext`m$$ $CellContext`n$$]], $CellContext`k$$ = 
+         PrimePi[
+           Sqrt[$CellContext`m$$ $CellContext`n$$]]]; Text[
+         Column[{
+           Row[{"primes whose multiples have been sieved:  ", 
+             Row[
+              Prime[
+               Range[$CellContext`k$$]], ","]}], "", 
+           Grid[
+            Partition[
+             Map[If[
+               Or[
+                And[# =!= 1, GCD[#, 
+                   Factorial[
+                    Prime[
+                    Floor[$CellContext`k$$]]]] == 1], 
+                PrimeQ[#]], 
+               Item[
+                Style[#, $CellContext`fs$$], Background -> 
+                RGBColor[1, 0.47, 0]], 
+               Style[#, $CellContext`fs$$]]& , 
+              Range[$CellContext`m$$ $CellContext`n$$]], $CellContext`m$$]]}, 
+          Center]]), 
+      "Specifications" :> {{{$CellContext`k$$, 2, 
+          "number of primes to sieve with"}, 1, 
+         Dynamic[
+          PrimePi[
+           Sqrt[$CellContext`m$$ $CellContext`n$$]]], 1}, 
+        Delimiter, {{$CellContext`m$$, 19, "width of array"}, 2, 31, 
+         1}, {{$CellContext`n$$, 19, "height of array"}, 2, 31, 
+         1}, {{$CellContext`fs$$, 12, "font size"}, 2, 20, 1}}, 
+      "Options" :> {AutorunSequencing -> {1}}, "DefaultOptions" :> {}],
+     ImageSizeCache->{555., {271., 278.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.528142999886375*^9, 3.6330465814594774`*^9}]
+}, Open  ]]
+},
+WindowSize->{715, 527},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"10.0 for Microsoft Windows (32-bit) (July 1, 2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 3829, 93, 432, "Input"],
+Cell[4411, 117, 3476, 75, 599, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

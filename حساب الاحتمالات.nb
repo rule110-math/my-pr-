@@ -1,0 +1,856 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     32853,        846]
+NotebookOptionsPosition[     31635,        799]
+NotebookOutlinePosition[     32286,        824]
+CellTagsIndexPosition[     32243,        821]
+WindowTitle->Counting Paths through a Grid - Source
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Counting Paths through a Grid", "Section",
+ CellFrame->{{0, 0}, {0, 0}},
+ ShowCellBracket->False,
+ FontColor->RGBColor[0.597406, 0, 0.0527047]],
+
+Cell[BoxData[
+ GraphicsBox[RasterBox[CompressedData["
+1:eJztnVuSozgWQDNiPqa3MJ+zpVlCbaB3WlGVNV9dvYH6TQRUph/ZGIHQmwvG
+xoZzQu3Aku7VfUj4Nk53//fLn//78q+Xl5f/NP/88e+Xl8v154Xj5+fp89y0
+4+X63L7VnQu02XqOt9FzjRK5qtRMoYZFpk11/Ji+WDye92+r7+fFfbnGkuu9
+eIQ4LBVJ+YRo5DPnRdITDp0TLRg6m/62nY/n08f5+H461G37fWqum57z4Xy2
+jby0prMZOh4/jodLOx2bt6fzRSEA3B/KMKGSBy/DSKVcyYOn8krHqajvqed6
+G6iol4qkfAIVNQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADsizPA/lj72AEA
+AMCmWLu0AXh01j6jAAAAcdb+hNwUJ5e1zZnPDEeey/e1jx0AAABsirVLm03x
+XFVlhs1X1JNY+4wCAAB02B9PJ4BdsvYpBAAAgOeGihpADo9GAUDIr+Lnr7ef
+a9vw16/i73VtMPx6+2v1gGwMijeAE89FAQA2DRW1BxX14lBRA0wi+lx0baMA
+AAAAAAAAAAAAbkj0uegR4L4cDoe1TYA1YQMAbIaDy9rm3JU9+w4AjwB3np3D
+BgDYDHuuKu/su3k0ynNRACGLHMy93dm2ijCPpHvD7LliAQAAmA0VNRioqIGK
+GlYk9Vz0AAAAAAAAAAAAALBR9KPR8Kf0a9sFAAAAAAAAAAAAcCt4LgoAAAAA
+AAAAAAB7I/Vc9ONheH9/X9uEzUJsZ0PoAGBZ3gNuLQgggR21GUjl7SC2syF0
+ALAsVNQgxMv14XAI/xOja9sIAAAAT0lYWM5jbT/msGffAQAAAGAp9lxV3sF3
+b1r0uehSZgAAAAAAAAAAAAA8Ar9b6rpuXpu3+tf0PBcFWJcFvxYBAAAAANgh
+VNQAADCK5LnobwAAAAAAAAAAAIANUbcPRav+wehH7LmoUqpsqKqmNTSXRVE0
+by593mtRXlrfo7mImTlVN6ebUOhR07q3jmxVWXqquqxVOUjZq1eDVNe662ro
+Nxe1Xr5o2lt5cUc7VWr3BpGindNL6TkDl5nVIGWtbuaXWbwJo/OVKjSX68oL
+shMTO4ylHf+yy5GbhU5EubJJPeWgx5ayBfvOIR2qD5QJXWmFtJs2pLsLvu40
+4oOesh/tJ3TKW/3DomZONgVdVPtNXvVXYWydyBRl/NWNWNW62L06G344TcNW
+L/SVpaTqcmeOWGWOm3W+TFPWsbL8dE1yklUal73ghDtBH+Hu1dE/HBM7/t7h
+sjNoN29Calrl2GadWfsMeoc0elcR584clrm5qzO5a+5mQe4imy2Tu1qcu+g2
+7od7mkvVtqJtajgInQuqzUrRtWFCzIAkzQdK0/RR1U33JEhtgOhosnmLKtX0
+DArVhaJHtZOlmgPbVN+mWZhRGzNvEc13MD61kIRcEPS2WciRp/C97a0ow569
+DCOVRurZU0lFnUoBFbWkKiv7I0xFLc4dFXUAFfVUtVTUYRD2V1EnfTd7u920
+v+va/NXoSXM86qXVwFtzgNvS7vJG3730Ga76Wkq/6lFz3dlWOa+69XpUOSix
+ixQtrrVV1pxBleO+uesMsv6QjenXF+bViFjGO5rtObaUp7bVoENe21Kqy1Un
+1M8xOaxNftysOh61q5joKStQpbkIQ2p54HRWXcqsOsbVU7oZNBr8Fbv+yotk
+GBkvbuFbu9/LkY6DF3ZvTvqtOVXdBi0dlN6WZekEsHfQ2flmjpnQ+25vfn//
+2yH1eswnokp/tNkpsJNrTqJruX4tzAkKBJXJVdUbbJmtrwtrUfuoGm2Ru5S3
+AcrEGQyPld3jzbFTH+oP+is3d+XVuev2wI1zN9w8rZM1I3dFf203xxKvuUyT
+TevJkd8JSzF7iVHBzJa+D0vFZJLapawNh6xiQ91ixaf03R+lDHvaMqwPCKl8
++lRGgkZF3W3Q0oGKmoq685yKmoo6L5jZ0vdhqZhMUruUteEQFfUk37VU98C8
+qRvq+uPjQz8UPZ/P+snoZYIqVAwtaFY0r+E0+8l8VIM3Gs70JkelUoLR0XBm
+2X5dldcmWS5lQ2r1jDue+DBaRvrzvidVpc2WOKJicRvVZu+HaFqjgpngC/MS
+Fek2rRvSjKCy9rnxfepWFFKokVMzWaEsU9GDbEYnbfuoYOpGkdcwql/Sv+fc
+CVdJcY1a+Yo3WuUaZsfE+9S+j3mTRuFZoAxL9eTtFK6ecccTH0bnlmGkMtXz
+dKnMLCTpifZTUUfnyNOR4QGrstQuHTXGFqSiXiV3wlVSXKNWvuKNVrmG2TGh
+ooZb0+T0rUWf/br9e1HvuWjR/z1/+JOUIujKPxYu+l9YCEX0kGVARDxjjHxa
+ygZv6ejF6KiE0cfp0eUk6JMrmVamQx1qkPTIRzNSo4LC0OnbV7S/tD7WRw32
+ElFYP1/y7EkZn09lPhHedej7vDiHSkbzq79YsWcWfUUUzYgXf7mdqa04eiK0
+ebYxe86d9yE+T3n+OzuVqHbMx01Up/kkCud7Q0ZJ5uvCRQhNGvVCoueayK9O
+mKP8qDDd9szol7b5AM5LSup0P7LvxXBX8dWGvlCGTTJm1IBwianK3QySyo2k
+clR/KtShBkmPfDQjNSpIRS0xexJRy8NjS0UtMfVBcmegoh6FijrkEarKPVfU
+Gd89w+rwd/Tt34uq/kuT6C2xsG5WhXvLsu+KUb+8/kxsvQMryUIxdp8PLc/c
+FiblXaJEcgvKuODFf54N8yYXwYejZ2fUbO8i5b7kXwRSPfJtFu1JWZ7BtlZu
+eRg9XXJEbcuriorIU2xkjYjQi2hJFjXeFvFmhjeNUWu9HhO3/LQoe8tdSKqC
+ys+f+tE5aZVoBSU0T87U+sr2emq4Ur7k9eQrhydiaqiF3LqSX4QFfacMk684
+yaT7l2GkUr7iJJOoqKMrUlGPritxZ9RyT9aIUFHn133e3IVQUQvVUlHPhor6
+1r6r/k9G9X1A/47+dDrZ/9+lb9++vbr8+PHDe7X7w077rafHU+JNTo1GF/Wu
+U52hhtCjqGEZJVGdoZsp5ZmZoRe2kc3Fd0tnKGKvJQ9UKr8pRh15dY0MZTOO
+e/pTa43OSUmFpn5Pbzzv7agveTNCJRnZ70FCX4OU5ZWn9KfiELrpLZ3aIZn0
+RYmGN+NRPsIpd7y19pa7qIhQZ15coicVmamMLjpb1SLmLUgmzlOtzau6RRAm
+bYxFTJoh9Vy+U4aNKonqDN1MKc/MDL2wjXydWIaRylElz5LKVExSS2Scigqm
+HHl1jQxlM457+lNrjc5JSYWmUlF7jqQ2RmqHZNIXJRrejEf5CKfc8dbaW+6i
+IkKdeXGJnlRkpjK66GxVi5i3IJk4T7U2r+oWQZi0MRYxaYbUZnyPLvH/lte2
+FP/69esnAAAAAAAAAAAAwM74B4thROM=
+   "], {{0, 0}, {1800, 25}}, {0, 255},
+   ColorFunction->RGBColor],
+  ImageSize->{1800, 25},
+  PlotRange->{{0, 1800}, {0, 25}}]], "Section",
+ CellFrame->{{0, 0}, {0, 0}},
+ ShowCellBracket->False],
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"m", "=", 
+     RowBox[{"Max", "[", 
+      RowBox[{"1", ",", 
+       RowBox[{"Min", "[", 
+        RowBox[{"m", ",", 
+         RowBox[{"Binomial", "[", 
+          RowBox[{"nn", ",", "k"}], "]"}]}], "]"}]}], "]"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"nn", "=", 
+     RowBox[{"Min", "[", 
+      RowBox[{"n", ",", 
+       RowBox[{"-", 
+        RowBox[{"Round", "[", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"Sqrt", "[", "2", "]"}], 
+           RowBox[{"pt", "[", 
+            RowBox[{"[", "2", "]"}], "]"}]}], ")"}], "]"}]}]}], "]"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"k", "=", 
+     RowBox[{"Quiet", "@", 
+      RowBox[{"Min", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"First", "@", 
+          RowBox[{"First", "[", 
+           RowBox[{"Position", "[", 
+            RowBox[{
+             RowBox[{"Table", "[", 
+              RowBox[{"i", ",", 
+               RowBox[{"{", 
+                RowBox[{"i", ",", 
+                 RowBox[{"-", "nn"}], ",", "nn", ",", "2"}], "}"}]}], "]"}], 
+             ",", 
+             RowBox[{"Round", "[", 
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"Sqrt", "[", "2", "]"}], 
+                RowBox[{"pt", "[", 
+                 RowBox[{"[", "1", "]"}], "]"}]}], ")"}], "]"}]}], "]"}], 
+           "]"}]}], "-", "1"}], ",", "nn"}], "]"}]}]}], ";", 
+    "\[IndentingNewLine]", "\[IndentingNewLine]", 
+    RowBox[{"pt", "=", 
+     RowBox[{"First", "@", 
+      RowBox[{"Nearest", "[", 
+       RowBox[{
+        RowBox[{"N", "/@", 
+         RowBox[{"Partition", "[", 
+          RowBox[{
+           RowBox[{"Flatten", "[", 
+            RowBox[{"Table", "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"Cos", "[", "a", "]"}], ",", 
+                    RowBox[{"Sin", "[", "a", "]"}]}], "}"}], ",", 
+                   RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"-", 
+                    RowBox[{"Sin", "[", "a", "]"}]}], ",", 
+                    RowBox[{"Cos", "[", "a", "]"}]}], "}"}]}], "}"}], "/.", 
+                 RowBox[{"a", "\[Rule]", 
+                  RowBox[{"Pi", "/", "4"}]}]}], ")"}], ".", 
+               RowBox[{"{", 
+                RowBox[{"i", ",", 
+                 RowBox[{"j", "-", "n"}]}], "}"}]}], ",", 
+              RowBox[{"{", 
+               RowBox[{"j", ",", "0", ",", "n"}], "}"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"i", ",", "0", ",", "j"}], "}"}]}], "]"}], "]"}], ",", 
+           "2"}], "]"}]}], ",", "pt"}], "]"}]}]}], ";", "\[IndentingNewLine]",
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+    RowBox[{"Column", "[", 
+     RowBox[{"{", 
+      RowBox[{"LocatorPane", "[", 
+       RowBox[{
+        RowBox[{"Dynamic", "[", 
+         RowBox[{"pt", ",", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"pt", "=", 
+             RowBox[{"First", "@", 
+              RowBox[{"Nearest", "[", 
+               RowBox[{
+                RowBox[{"N", "/@", 
+                 RowBox[{"Partition", "[", 
+                  RowBox[{
+                   RowBox[{"Flatten", "[", 
+                    RowBox[{"Table", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"Cos", "[", "a", "]"}], ",", 
+                    RowBox[{"Sin", "[", "a", "]"}]}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"-", 
+                    RowBox[{"Sin", "[", "a", "]"}]}], ",", 
+                    RowBox[{"Cos", "[", "a", "]"}]}], "}"}]}], "}"}], "/.", 
+                    RowBox[{"a", "\[Rule]", 
+                    RowBox[{"Pi", "/", "4"}]}]}], ")"}], ".", 
+                    RowBox[{"{", 
+                    RowBox[{"i", ",", 
+                    RowBox[{"j", "-", "n"}]}], "}"}]}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"j", ",", "0", ",", "n"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"i", ",", "0", ",", "j"}], "}"}]}], "]"}], "]"}], 
+                   ",", "2"}], "]"}]}], ",", "#"}], "]"}]}]}], ")"}], "&"}]}],
+          "]"}], ",", "\[IndentingNewLine]", 
+        RowBox[{"Dynamic", "@", 
+         RowBox[{"CountingPaths", "[", 
+          RowBox[{"k", ",", "n", ",", "nn", ",", "m"}], "]"}]}], ",", 
+        RowBox[{"Appearance", "\[Rule]", 
+         RowBox[{"Text", "@", 
+          RowBox[{"Style", "[", 
+           RowBox[{"\"\<B\>\"", ",", "Blue"}], "]"}]}]}]}], "]"}], "}"}], 
+     "]"}]}], ",", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"m", ",", "1", ",", "\"\<the possible paths\>\""}], "}"}], ",", 
+     "1", ",", 
+     RowBox[{"Binomial", "[", 
+      RowBox[{"nn", ",", "k"}], "]"}], ",", "1", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"k", ",", "3"}], "}"}], ",", "0", ",", "nn", ",", "1", ",", 
+     RowBox[{"ControlType", "\[Rule]", "None"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"nn", ",", "6"}], "}"}], ",", "0", ",", "n", ",", "1", ",", 
+     RowBox[{"ControlType", "\[Rule]", "None"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"n", ",", "6", ",", "\"\<number of rows n\>\""}], "}"}], ",", 
+     "0", ",", "16", ",", "1", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"pt", ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", 
+         RowBox[{"-", "3"}]}], "}"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "n"}], ",", 
+       RowBox[{"-", "n"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"n", ",", "0"}], "}"}], ",", 
+     RowBox[{"ControlType", "\[Rule]", "None"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"TrackedSymbols", "\[RuleDelayed]", 
+    RowBox[{"{", 
+     RowBox[{"m", ",", "k", ",", "nn", ",", "n", ",", "pt"}], "}"}]}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"AutorunSequencing", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "4"}], "}"}]}], ",", "\[IndentingNewLine]", 
+   RowBox[{"Initialization", "\[RuleDelayed]", 
+    RowBox[{"(", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"CountingPaths", "[", 
+        RowBox[{"k_", ",", "n_", ",", "nn_", ",", "m_", ",", "opts___"}], 
+        "]"}], ":=", 
+       RowBox[{"Module", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"matrix", ",", "triangle", ",", "path"}], "}"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"Clear", "[", "a", "]"}], ";", "\[IndentingNewLine]", 
+          RowBox[{"matrix", "=", " ", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"Cos", "[", "a", "]"}], ",", 
+                RowBox[{"Sin", "[", "a", "]"}]}], "}"}], ",", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"-", 
+                 RowBox[{"Sin", "[", "a", "]"}]}], ",", 
+                RowBox[{"Cos", "[", "a", "]"}]}], "}"}]}], "}"}], "/.", 
+            RowBox[{"a", "\[Rule]", 
+             RowBox[{"Pi", "/", "4"}]}]}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"triangle", "=", 
+           RowBox[{"Partition", "[", 
+            RowBox[{
+             RowBox[{"Flatten", "[", 
+              RowBox[{"Table", "[", 
+               RowBox[{
+                RowBox[{"matrix", ".", 
+                 RowBox[{"{", 
+                  RowBox[{"i", ",", 
+                   RowBox[{"j", "-", "n"}]}], "}"}]}], ",", 
+                RowBox[{"{", 
+                 RowBox[{"j", ",", "0", ",", "n"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{"i", ",", "0", ",", "j"}], "}"}]}], "]"}], "]"}], 
+             ",", "2"}], "]"}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"path", "=", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"matrix", ".", "#"}], "&"}], "/@", 
+            RowBox[{"Prepend", "[", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"Accumulate", "[", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{"#", ",", 
+                   RowBox[{"#", "-", "1"}]}], "}"}], "&"}], "/@", 
+                "\[IndentingNewLine]", 
+                RowBox[{"Take", "[", "\[IndentingNewLine]", 
+                 RowBox[{
+                  RowBox[{"Join", "[", "\[IndentingNewLine]", 
+                   RowBox[{
+                    RowBox[{"Table", "[", 
+                    RowBox[{"0", ",", 
+                    RowBox[{"{", "nn", "}"}]}], "]"}], ",", 
+                    "\[IndentingNewLine]", 
+                    RowBox[{
+                    RowBox[{"Reverse", "[", 
+                    RowBox[{"Permutations", "[", 
+                    RowBox[{"Join", "[", 
+                    RowBox[{
+                    RowBox[{"Table", "[", 
+                    RowBox[{"1", ",", 
+                    RowBox[{"{", "k", "}"}]}], "]"}], ",", 
+                    RowBox[{"Table", "[", 
+                    RowBox[{"0", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"nn", "-", "k"}], "}"}]}], "]"}]}], "]"}], "]"}], 
+                    " ", "]"}], " ", "[", 
+                    RowBox[{"[", "m", "]"}], "]"}]}], "\[IndentingNewLine]", 
+                   "]"}], ",", "\[IndentingNewLine]", 
+                  RowBox[{"-", "nn"}]}], "]"}]}], "\[IndentingNewLine]", 
+               "]"}], ",", "\[IndentingNewLine]", 
+              RowBox[{"{", 
+               RowBox[{"0", ",", "0"}], "}"}]}], "\[IndentingNewLine]", 
+             "]"}]}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"Graphics", "[", 
+           RowBox[{
+            RowBox[{"{", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"RGBColor", "[", 
+               RowBox[{".33", ",", ".26", ",", ".78"}], "]"}], ",", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"Circle", "[", 
+                 RowBox[{"#", ",", ".5"}], "]"}], "&"}], "/@", "triangle"}], 
+              ",", "\[IndentingNewLine]", 
+              RowBox[{"If", "[", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"k", "\[LessEqual]", "nn"}], "&&", 
+                 RowBox[{"m", "\[LessEqual]", 
+                  RowBox[{"Binomial", "[", 
+                   RowBox[{"nn", ",", "k"}], "]"}]}]}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"RGBColor", "[", 
+                   RowBox[{"1", ",", ".47", ",", "0"}], "]"}], ",", 
+                  RowBox[{"PointSize", "[", ".02", "]"}], ",", 
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{"Disk", "[", 
+                    RowBox[{"#", ",", ".4"}], "]"}], "&"}], "/@", "path"}]}], 
+                 "}"}], ",", 
+                RowBox[{"{", "}"}]}], "]"}], ",", "\[IndentingNewLine]", 
+              RowBox[{"Text", "[", 
+               RowBox[{"\"\<A\>\"", ",", 
+                RowBox[{"path", "[", 
+                 RowBox[{"[", " ", "1", "]"}], "]"}]}], " ", "]"}]}], 
+             "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+            RowBox[{"PlotRange", "\[Rule]", "All"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"PlotLabel", "\[Rule]", 
+             RowBox[{"If", "[", "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"Binomial", "[", 
+                 RowBox[{"nn", ",", "k"}], "]"}], "\[Equal]", "1"}], ",", 
+               "\[IndentingNewLine]", 
+               RowBox[{"Style", "[", 
+                RowBox[{
+                 RowBox[{"Row", "[", 
+                  RowBox[{"{", 
+                   RowBox[{"\"\<\\n\>\"", ",", 
+                    RowBox[{"Binomial", "[", 
+                    RowBox[{"nn", ",", "k"}], "]"}], ",", 
+                    "\"\< possible path from A to B\>\""}], "}"}], "]"}], 
+                 ",", "\"\<Label\>\""}], "]"}], ",", "\[IndentingNewLine]", 
+               RowBox[{"Style", "[", 
+                RowBox[{
+                 RowBox[{"Row", "[", 
+                  RowBox[{"{", 
+                   RowBox[{"\"\<\\n\>\"", ",", 
+                    RowBox[{"Binomial", "[", 
+                    RowBox[{"nn", ",", "k"}], "]"}], ",", 
+                    "\"\< possible paths from A to B\>\""}], "}"}], "]"}], 
+                 ",", "\"\<Label\>\""}], "]"}]}], "\[IndentingNewLine]", 
+              "]"}]}], ",", 
+            RowBox[{"ImageSize", "\[Rule]", 
+             RowBox[{"{", 
+              RowBox[{"500", ",", "372"}], "}"}]}], ",", "opts"}], 
+           "\[IndentingNewLine]", "]"}]}]}], "\[IndentingNewLine]", "]"}]}], 
+      ";"}], "\[IndentingNewLine]", ")"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.3905803540128527`*^9, 3.3905803569034777`*^9}, {
+   3.5061844834688015`*^9, 3.506184490927547*^9}, {3.506184533668821*^9, 
+   3.5061845489063444`*^9}},
+ CellID->345753919]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`k$$ = 2, $CellContext`m$$ = 
+    1, $CellContext`n$$ = 6, $CellContext`nn$$ = 4, $CellContext`pt$$ = {
+    0., -2.8284271247461903`}, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`m$$], 1, "the possible paths"}, 1, 
+      Dynamic[
+       Binomial[$CellContext`nn$$, $CellContext`k$$]], 1}, {{
+       Hold[$CellContext`k$$], 2}, 0, 
+      Dynamic[$CellContext`nn$$], 1}, {{
+       Hold[$CellContext`nn$$], 4}, 0, 
+      Dynamic[$CellContext`n$$], 1}, {{
+       Hold[$CellContext`n$$], 6, "number of rows n"}, 0, 16, 1}, {{
+       Hold[$CellContext`pt$$], {0., -2.8284271247461903`}}, 
+      Dynamic[{-$CellContext`n$$, -$CellContext`n$$}], 
+      Dynamic[{$CellContext`n$$, 0}]}}, Typeset`size$$ = {
+    506., {186.5, 191.5}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = False, $CellContext`m$195764$$ = 
+    0, $CellContext`k$195765$$ = 0, $CellContext`nn$195766$$ = 
+    0, $CellContext`n$195767$$ = 0, $CellContext`pt$195768$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`k$$ = 2, $CellContext`m$$ = 
+        1, $CellContext`n$$ = 6, $CellContext`nn$$ = 
+        4, $CellContext`pt$$ = {0., -2.8284271247461903`}}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`m$$, $CellContext`m$195764$$, 0], 
+        Hold[$CellContext`k$$, $CellContext`k$195765$$, 0], 
+        Hold[$CellContext`nn$$, $CellContext`nn$195766$$, 0], 
+        Hold[$CellContext`n$$, $CellContext`n$195767$$, 0], 
+        Hold[$CellContext`pt$$, $CellContext`pt$195768$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> ($CellContext`m$$ = Max[1, 
+          Min[$CellContext`m$$, 
+           Binomial[$CellContext`nn$$, $CellContext`k$$]]]; $CellContext`nn$$ = 
+        Min[$CellContext`n$$, -
+          Round[Sqrt[2] Part[$CellContext`pt$$, 2]]]; $CellContext`k$$ = Quiet[
+          Min[First[
+             First[
+              Position[
+               
+               Table[$CellContext`i, {$CellContext`i, -$CellContext`nn$$, \
+$CellContext`nn$$, 2}], 
+               Round[Sqrt[2] Part[$CellContext`pt$$, 1]]]]] - 
+           1, $CellContext`nn$$]]; $CellContext`pt$$ = First[
+          Nearest[
+           Map[N, 
+            Partition[
+             Flatten[
+              Table[
+               Dot[
+                ReplaceAll[{{
+                   Cos[$CellContext`a], 
+                   Sin[$CellContext`a]}, {-Sin[$CellContext`a], 
+                   Cos[$CellContext`a]}}, $CellContext`a -> 
+                 Pi/4], {$CellContext`i, $CellContext`j - $CellContext`n$$}], \
+{$CellContext`j, 0, $CellContext`n$$}, {$CellContext`i, 0, $CellContext`j}]], 
+             2]], $CellContext`pt$$]]; Column[{
+          LocatorPane[
+           Dynamic[$CellContext`pt$$, ($CellContext`pt$$ = First[
+              Nearest[
+               Map[N, 
+                Partition[
+                 Flatten[
+                  Table[
+                   Dot[
+                    ReplaceAll[{{
+                    Cos[$CellContext`a], 
+                    Sin[$CellContext`a]}, {-Sin[$CellContext`a], 
+                    Cos[$CellContext`a]}}, $CellContext`a -> 
+                    Pi/4], {$CellContext`i, $CellContext`j - \
+$CellContext`n$$}], {$CellContext`j, 0, $CellContext`n$$}, {$CellContext`i, 
+                    0, $CellContext`j}]], 2]], #]])& ], 
+           Dynamic[
+            $CellContext`CountingPaths[$CellContext`k$$, $CellContext`n$$, \
+$CellContext`nn$$, $CellContext`m$$]], Appearance -> Text[
+             Style["B", Blue]]]}]), 
+      "Specifications" :> {{{$CellContext`m$$, 1, "the possible paths"}, 1, 
+         Dynamic[
+          Binomial[$CellContext`nn$$, $CellContext`k$$]], 1, Appearance -> 
+         "Labeled"}, {{$CellContext`k$$, 2}, 0, 
+         Dynamic[$CellContext`nn$$], 1, ControlType -> 
+         None}, {{$CellContext`nn$$, 4}, 0, 
+         Dynamic[$CellContext`n$$], 1, ControlType -> 
+         None}, {{$CellContext`n$$, 6, "number of rows n"}, 0, 16, 1, 
+         Appearance -> 
+         "Labeled"}, {{$CellContext`pt$$, {0., -2.8284271247461903`}}, 
+         Dynamic[{-$CellContext`n$$, -$CellContext`n$$}], 
+         Dynamic[{$CellContext`n$$, 0}], ControlType -> None}}, 
+      "Options" :> {
+       TrackedSymbols :> {$CellContext`m$$, $CellContext`k$$, \
+$CellContext`nn$$, $CellContext`n$$, $CellContext`pt$$}, 
+        AutorunSequencing -> {1, 4}}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{551., {245., 250.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>(($CellContext`CountingPaths[
+         Pattern[$CellContext`k, 
+          Blank[]], 
+         Pattern[$CellContext`n, 
+          Blank[]], 
+         Pattern[$CellContext`nn, 
+          Blank[]], 
+         Pattern[$CellContext`m, 
+          Blank[]], 
+         Pattern[$CellContext`opts, 
+          BlankNullSequence[]]] := 
+       Module[{$CellContext`matrix, $CellContext`triangle, $CellContext`path},
+          Clear[$CellContext`a]; $CellContext`matrix = ReplaceAll[{{
+              Cos[$CellContext`a], 
+              Sin[$CellContext`a]}, {-Sin[$CellContext`a], 
+              Cos[$CellContext`a]}}, $CellContext`a -> 
+            Pi/4]; $CellContext`triangle = Partition[
+            Flatten[
+             Table[
+              
+              Dot[$CellContext`matrix, {$CellContext`i, $CellContext`j - \
+$CellContext`n}], {$CellContext`j, 0, $CellContext`n}, {$CellContext`i, 
+               0, $CellContext`j}]], 2]; $CellContext`path = 
+          Map[Dot[$CellContext`matrix, #]& , 
+            Prepend[
+             Accumulate[
+              Map[{#, # - 1}& , 
+               Take[
+                Join[
+                 Table[0, {$CellContext`nn}], 
+                 Part[
+                  Reverse[
+                   Permutations[
+                    Join[
+                    Table[1, {$CellContext`k}], 
+                    Table[
+                    0, {$CellContext`nn - $CellContext`k}]]]], \
+$CellContext`m]], -$CellContext`nn]]], {0, 0}]]; Graphics[{
+            RGBColor[0.33, 0.26, 0.78], 
+            Map[Circle[#, 0.5]& , $CellContext`triangle], 
+            If[
+             
+             And[$CellContext`k <= $CellContext`nn, $CellContext`m <= 
+              Binomial[$CellContext`nn, $CellContext`k]], {
+              RGBColor[1, 0.47, 0], 
+              PointSize[0.02], 
+              Map[Disk[#, 0.4]& , $CellContext`path]}, {}], 
+            Text["A", 
+             Part[$CellContext`path, 1]]}, PlotRange -> All, PlotLabel -> 
+           If[Binomial[$CellContext`nn, $CellContext`k] == 1, 
+             Style[
+              Row[{"\n", 
+                Binomial[$CellContext`nn, $CellContext`k], 
+                " possible path from A to B"}], "Label"], 
+             Style[
+              Row[{"\n", 
+                Binomial[$CellContext`nn, $CellContext`k], 
+                " possible paths from A to B"}], "Label"]], 
+           ImageSize -> {500, 372}, $CellContext`opts]]; Null); 
+     Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->484987252],
+
+Cell[CellGroupData[{
+
+Cell["CAPTION", "Section",
+ CellFrame->{{0, 0}, {1, 0}},
+ CellFrameColor->RGBColor[0.87, 0.87, 0.87],
+ FontFamily->"Helvetica",
+ FontSize->12,
+ FontWeight->"Bold",
+ FontColor->RGBColor[0.597406, 0, 0.0527047]],
+
+Cell[TextData[{
+ "A downward path joins the top spot A to the variable bottom spot B. For a \
+fixed B, there are \"",
+ Cell[BoxData[
+  FormBox["n", TraditionalForm]], "InlineMath"],
+ " choose ",
+ Cell[BoxData[
+  FormBox["k", TraditionalForm]], "InlineMath"],
+ "\" = ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{" ", 
+    TagBox[
+     RowBox[{"(", GridBox[{
+        {
+         TagBox["n",
+          Identity,
+          Editable->True,
+          Selectable->True]},
+        {
+         TagBox["k",
+          Identity,
+          Editable->True,
+          Selectable->True]}
+       }], ")"}],
+     InterpretTemplate[Binomial[#, #2]& ],
+     Editable->False,
+     Selectable->False]}], TraditionalForm]], "InlineMath"],
+ Cell[BoxData[
+  FormBox[Cell["", "InlineMath"], TraditionalForm]], "InlineMath"],
+ " possible paths, where ",
+ Cell[BoxData[
+  FormBox["n", TraditionalForm]], "InlineMath"],
+ " is the row number and ",
+ Cell[BoxData[
+  FormBox["k", TraditionalForm]], "InlineMath"],
+ " counts how far B is along its row, with both ",
+ Cell[BoxData[
+  FormBox["n", TraditionalForm]], "InlineMath"],
+ " and ",
+ Cell[BoxData[
+  FormBox["k", TraditionalForm]], "InlineMath"],
+ " starting at zero. These numbers are the binomial coefficients that form \
+Pascal's triangle. "
+}], "Text"]
+}, Close]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["THIS NOTEBOOK IS THE SOURCE CODE FROM", "Text",
+ CellFrame->{{0, 0}, {0, 0}},
+ CellMargins->{{48, 10}, {4, 28}},
+ CellGroupingRules->{"SectionGrouping", 25},
+ CellFrameMargins->{{48, 48}, {6, 5}},
+ CellFrameColor->RGBColor[0.87, 0.87, 0.87],
+ FontFamily->"Helvetica",
+ FontSize->10,
+ FontWeight->"Bold",
+ FontColor->RGBColor[0.597406, 0, 0.0527047]],
+
+Cell[TextData[{
+ "\"",
+ ButtonBox["Counting Paths through a Grid",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://demonstrations.wolfram.com/CountingPathsThroughAGrid/"], None},
+  ButtonNote->
+   "http://demonstrations.wolfram.com/CountingPathsThroughAGrid/"],
+ "\"",
+ " from ",
+ ButtonBox["the Wolfram Demonstrations Project",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://demonstrations.wolfram.com/"], None},
+  ButtonNote->"http://demonstrations.wolfram.com/"],
+ "\[ParagraphSeparator]\[NonBreakingSpace]",
+ ButtonBox["http://demonstrations.wolfram.com/CountingPathsThroughAGrid/",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://demonstrations.wolfram.com/CountingPathsThroughAGrid/"], None},
+  ButtonNote->"http://demonstrations.wolfram.com/CountingPathsThroughAGrid/"]
+}], "Text",
+ CellMargins->{{48, Inherited}, {0, Inherited}},
+ FontFamily->"Verdana",
+ FontSize->10,
+ FontColor->GrayLevel[0.5]],
+
+Cell[TextData[{
+ "Contributed by: ",
+ ButtonBox["George Beck",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://demonstrations.wolfram.com/author.html?author=George+Beck"], 
+    None},
+  ButtonNote->
+   "http://demonstrations.wolfram.com/author.html?author=George+Beck"],
+ " and ",
+ ButtonBox["Rob Morris",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://demonstrations.wolfram.com/author.html?author=Rob+Morris"], 
+    None},
+  ButtonNote->
+   "http://demonstrations.wolfram.com/author.html?author=Rob+Morris"]
+}], "Text",
+ CellDingbat->"\[FilledSmallSquare]",
+ CellMargins->{{66, 48}, {2, 4}},
+ FontFamily->"Verdana",
+ FontSize->10,
+ FontColor->GrayLevel[0.6],
+ CellID->930102005],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "A full-function Wolfram ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " system (Version 6 or higher) is required to edit this notebook.\n",
+ StyleBox[ButtonBox["GET WOLFRAM MATHEMATICA \[RightGuillemet]",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://www.wolfram.com/products/mathematica/"], None},
+  ButtonNote->"http://www.wolfram.com/products/mathematica/"],
+  FontFamily->"Helvetica",
+  FontWeight->"Bold",
+  FontSlant->"Italic",
+  FontColor->RGBColor[1, 0.42, 0]]
+}], "Text",
+ CellFrame->True,
+ CellMargins->{{48, 68}, {8, 28}},
+ CellFrameMargins->12,
+ CellFrameColor->RGBColor[0.87, 0.87, 0.87],
+ CellChangeTimes->{3.3750111182355957`*^9},
+ ParagraphSpacing->{1., 1.},
+ FontFamily->"Verdana",
+ FontSize->10,
+ FontColor->GrayLevel[0.411765],
+ Background->RGBColor[1, 1, 1]],
+
+Cell[TextData[{
+ "\[Copyright] ",
+ StyleBox[ButtonBox["Wolfram Demonstrations Project & Contributors",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://demonstrations.wolfram.com/"], None},
+  ButtonNote->"http://demonstrations.wolfram.com/"],
+  FontColor->GrayLevel[0.6]],
+ "\[ThickSpace]\[ThickSpace]\[ThickSpace]|\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+ StyleBox[ButtonBox["Terms of Use",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://demonstrations.wolfram.com/termsofuse.html"], None},
+  ButtonNote->"http://demonstrations.wolfram.com/termsofuse.html"],
+  FontColor->GrayLevel[0.6]],
+ "\[ThickSpace]\[ThickSpace]\[ThickSpace]|\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+ StyleBox[ButtonBox["Make a new version of this Demonstration \
+\[RightGuillemet]",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://demonstrations.wolfram.com/participate/upload.jsp?id=\
+CountingPathsThroughAGrid"], None},
+  ButtonNote->None],
+  FontColor->GrayLevel[0.6]]
+}], "Text",
+ CellFrame->{{0, 0}, {0, 0.5}},
+ CellMargins->{{48, 10}, {20, 50}},
+ CellFrameMargins->{{6, 0}, {6, 6}},
+ CellFrameColor->GrayLevel[0.6],
+ FontFamily->"Verdana",
+ FontSize->9,
+ FontColor->GrayLevel[0.6]]
+}, Open  ]]
+}, Open  ]]
+},
+Editable->True,
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+CellInsertionPointCell->None,
+WindowSize->{751, 650},
+WindowMargins->{{Inherited, Inherited}, {Inherited, 0}},
+WindowElements->{
+ "StatusArea", "MemoryMonitor", "MagnificationPopUp", "VerticalScrollBar", 
+  "MenuBar"},
+WindowTitle->"Counting Paths through a Grid - Source",
+DockedCells->{},
+CellContext->Notebook,
+FrontEndVersion->"8.0 for Microsoft Windows (32-bit) (November 7, 2010)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[631, 23, 149, 3, 70, "Section"],
+Cell[783, 28, 3700, 64, 70, "Section"],
+Cell[4486, 94, 13727, 339, 70, "Input",
+ CellID->345753919]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18250, 438, 7761, 171, 70, "Output",
+ CellID->484987252],
+Cell[CellGroupData[{
+Cell[26036, 613, 209, 6, 70, "Section"],
+Cell[26248, 621, 1274, 44, 70, "Text"]
+}, Close]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[27570, 671, 355, 9, 70, "Text",
+ CellGroupingRules->{"SectionGrouping", 25}],
+Cell[27928, 682, 935, 25, 70, "Text"],
+Cell[28866, 709, 701, 23, 70, "Text",
+ CellID->930102005],
+Cell[CellGroupData[{
+Cell[29592, 736, 815, 24, 70, "Text"],
+Cell[30410, 762, 1197, 33, 70, "Text"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+(* NotebookSignature 3SzqmwkL3uFn7ApooA18JcAl *)

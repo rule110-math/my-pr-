@@ -1,0 +1,223 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      8102,        213]
+NotebookOptionsPosition[      7180,        182]
+NotebookOutlinePosition[      7624,        199]
+CellTagsIndexPosition[      7581,        196]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.5348633287635202`*^9, 3.5348633301385202`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"f", "[", 
+   RowBox[{"x_", ",", "y_"}], "]"}], ":=", 
+  RowBox[{"x", "^", "y"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"f", "[", "x_", "]"}], ":=", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"Prime", "[", "n", "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", "1", ",", "x"}], "}"}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"MatrixForm", "[", 
+    RowBox[{"Array", "[", 
+     RowBox[{"f", ",", 
+      RowBox[{"{", 
+       RowBox[{"n", ",", "n"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "1"}], "}"}]}], "]"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"n", ",", "1", ",", "10", ",", "1"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.534863314091645*^9, 3.534863369185395*^9}, {
+   3.534863466029145*^9, 3.5348634689822702`*^9}, {3.5348636396697702`*^9, 
+   3.534863673654145*^9}, 3.534863746622895*^9, {3.534864080810395*^9, 
+   3.5348640853260202`*^9}, {3.5348641336072702`*^9, 3.534864151560395*^9}, {
+   3.534864413029145*^9, 3.534864416466645*^9}, {3.534871032841645*^9, 
+   3.534871090247895*^9}, {3.5348711243572702`*^9, 3.534871125060395*^9}, {
+   3.5348713902322702`*^9, 3.5348713912010202`*^9}, 3.534871460154145*^9, 
+   3.5348718431697702`*^9, {3.5348721133572702`*^9, 3.534872180404145*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`n$$ = 2, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`n$$], 1, 10, 1}}, Typeset`size$$ = {
+    85., {19.5, 30.5}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`n$2745$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`n$$ = 1}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`n$$, $CellContext`n$2745$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> MatrixForm[
+        Array[$CellContext`f, {$CellContext`n$$, $CellContext`n$$}, {1, 1}]], 
+      "Specifications" :> {{$CellContext`n$$, 1, 10, 1}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{491., {105., 116.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.5348710921385202`*^9, 3.5348711266385202`*^9}, 
+   3.5348713933885202`*^9, 3.5348718537322702`*^9, {3.534872164872895*^9, 
+   3.534872182747895*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"LinearSolve", "[", 
+    RowBox[{
+     RowBox[{"Array", "[", 
+      RowBox[{"f", ",", 
+       RowBox[{"{", 
+        RowBox[{"n", ",", "n"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "1"}], "}"}]}], "]"}], ",", 
+     RowBox[{"f", "[", "n", "]"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"n", ",", "1", ",", "10", ",", "1"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.534871864654145*^9, 3.534871986779145*^9}, {
+  3.534872024247895*^9, 3.5348721022947702`*^9}, {3.5348721975135202`*^9, 
+  3.5348722104822702`*^9}, {3.5348723810447702`*^9, 3.5348724399822702`*^9}, {
+  3.5348725201697702`*^9, 3.534872520904145*^9}, {3.5348733137322702`*^9, 
+  3.5348733270760202`*^9}, {3.5348734283885202`*^9, 3.5348734378260202`*^9}, {
+  3.534873634185395*^9, 3.5348736431385202`*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`n$$ = 3, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`n$$], 1, 10, 1}}, Typeset`size$$ = {
+    168.2, {16.1, 30.259999999999998`}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = True, $CellContext`n$3572$$ =
+     0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`n$$ = 1}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`n$$, $CellContext`n$3572$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> LinearSolve[
+        Array[$CellContext`f, {$CellContext`n$$, $CellContext`n$$}, {1, 1}], 
+        $CellContext`f[$CellContext`n$$]], 
+      "Specifications" :> {{$CellContext`n$$, 1, 10, 1}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{491., {128., 139.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.5348724864197702`*^9, 3.534872523310395*^9, 
+  3.5348725697010202`*^9, 3.5348733306072702`*^9, 3.534873439435395*^9, 
+  3.5348736451385202`*^9}]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.5348721697635202`*^9, 3.5348721727010202`*^9}, 
+   3.534872259466645*^9, {3.534872526966645*^9, 3.5348725423572702`*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.5348725335447702`*^9, 3.5348725657010202`*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.534872536154145*^9, 3.534872596279145*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.534872593372895*^9, 3.5348725933885202`*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.5348725602010202`*^9, 3.534872560216645*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.534872258654145*^9, 3.534872258654145*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{3.5348723634822702`*^9}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.534872368904145*^9, 3.5348723689197702`*^9}}]
+},
+WindowSize->{862, 524},
+WindowMargins->{{-53, Automatic}, {Automatic, -72}},
+Magnification:>FEPrivate`If[
+  FEPrivate`Equal[FEPrivate`$VersionNumber, 6.], 2., 2. Inherited],
+FrontEndVersion->"8.0 for Microsoft Windows (32-bit) (February 23, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 96, 1, 57, "Input"],
+Cell[CellGroupData[{
+Cell[678, 25, 1331, 31, 160, "Input"],
+Cell[2012, 58, 1682, 34, 278, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3731, 97, 862, 19, 92, "Input"],
+Cell[4596, 118, 1742, 36, 324, "Output"]
+}, Open  ]],
+Cell[6353, 157, 170, 2, 57, "Input"],
+Cell[6526, 161, 96, 1, 57, InheritFromParent],
+Cell[6625, 164, 92, 1, 57, InheritFromParent],
+Cell[6720, 167, 94, 1, 57, InheritFromParent],
+Cell[6817, 170, 94, 1, 57, InheritFromParent],
+Cell[6914, 173, 92, 1, 57, InheritFromParent],
+Cell[7009, 176, 70, 1, 57, "Input"],
+Cell[7082, 179, 94, 1, 57, InheritFromParent]
+}
+]
+*)
+
+(* End of internal cache information *)
+
