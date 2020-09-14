@@ -1,0 +1,151 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      5603,        141]
+NotebookOptionsPosition[      4928,        120]
+NotebookOutlinePosition[      5300,        136]
+CellTagsIndexPosition[      5257,        133]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"NestList", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Flatten", "[", 
+     RowBox[{"StringReplaceList", "[", 
+      RowBox[{"#", ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"\"\<A\>\"", "->", "\"\<AB\>\""}], ",", 
+         RowBox[{"\"\<B\>\"", "->", "\"\<A\>\""}]}], "}"}]}], "]"}], "]"}], 
+    "&"}], ",", 
+   RowBox[{"{", "\"\<A\>\"", "}"}], ",", "5"}], "]"}]], "Input",
+ CellChangeTimes->{{3.7777374689415216`*^9, 3.777737486234511*^9}},
+ CellLabel->"In[35]:=",ExpressionUUID->"969a1fce-fe5d-4a39-8ea1-4ffe1d91bcfe"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", "\<\"A\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"AB\"\>", "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"ABB\"\>", ",", "\<\"AA\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"ABBB\"\>", ",", "\<\"AAB\"\>", ",", "\<\"ABA\"\>", 
+     ",", "\<\"ABA\"\>", ",", "\<\"AAB\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"ABBBB\"\>", ",", "\<\"AABB\"\>", ",", "\<\"ABAB\"\>", 
+     ",", "\<\"ABBA\"\>", ",", "\<\"ABAB\"\>", ",", "\<\"AABB\"\>", 
+     ",", "\<\"AAA\"\>", ",", "\<\"ABBA\"\>", ",", "\<\"AAA\"\>", 
+     ",", "\<\"ABAB\"\>", ",", "\<\"ABBA\"\>", ",", "\<\"AAA\"\>", 
+     ",", "\<\"ABAB\"\>", ",", "\<\"ABAB\"\>", ",", "\<\"AABB\"\>", 
+     ",", "\<\"AAA\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"ABBBBB\"\>", ",", "\<\"AABBB\"\>", ",", "\<\"ABABB\"\>", 
+     ",", "\<\"ABBAB\"\>", ",", "\<\"ABBBA\"\>", ",", "\<\"ABABB\"\>", 
+     ",", "\<\"AABBB\"\>", ",", "\<\"AAAB\"\>", ",", "\<\"AABA\"\>", 
+     ",", "\<\"ABBAB\"\>", ",", "\<\"AAAB\"\>", ",", "\<\"ABABB\"\>", 
+     ",", "\<\"ABAA\"\>", ",", "\<\"ABBBA\"\>", ",", "\<\"AABA\"\>", 
+     ",", "\<\"ABAA\"\>", ",", "\<\"ABBAB\"\>", ",", "\<\"ABBAB\"\>", 
+     ",", "\<\"AAAB\"\>", ",", "\<\"ABABB\"\>", ",", "\<\"ABAA\"\>", 
+     ",", "\<\"ABABB\"\>", ",", "\<\"AABBB\"\>", ",", "\<\"AAAB\"\>", 
+     ",", "\<\"AABA\"\>", ",", "\<\"ABAA\"\>", ",", "\<\"AABA\"\>", 
+     ",", "\<\"AAAB\"\>", ",", "\<\"ABBBA\"\>", ",", "\<\"AABA\"\>", 
+     ",", "\<\"ABAA\"\>", ",", "\<\"ABBAB\"\>", ",", "\<\"ABAA\"\>", 
+     ",", "\<\"AABA\"\>", ",", "\<\"AAAB\"\>", ",", "\<\"ABBAB\"\>", 
+     ",", "\<\"AAAB\"\>", ",", "\<\"ABABB\"\>", ",", "\<\"ABAA\"\>", 
+     ",", "\<\"ABBBA\"\>", ",", "\<\"AABA\"\>", ",", "\<\"ABAA\"\>", 
+     ",", "\<\"ABBAB\"\>", ",", "\<\"ABAA\"\>", ",", "\<\"AABA\"\>", 
+     ",", "\<\"AAAB\"\>", ",", "\<\"ABBAB\"\>", ",", "\<\"AAAB\"\>", 
+     ",", "\<\"ABABB\"\>", ",", "\<\"ABAA\"\>", ",", "\<\"ABBAB\"\>", 
+     ",", "\<\"AAAB\"\>", ",", "\<\"ABABB\"\>", ",", "\<\"ABAA\"\>", 
+     ",", "\<\"ABABB\"\>", ",", "\<\"AABBB\"\>", ",", "\<\"AAAB\"\>", 
+     ",", "\<\"AABA\"\>", ",", "\<\"ABAA\"\>", ",", "\<\"AABA\"\>", 
+     ",", "\<\"AAAB\"\>"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.7777374786580777`*^9, 3.7777374877025948`*^9}},
+ CellLabel->"Out[35]=",ExpressionUUID->"412e1c27-7e82-4ebe-b194-e51603777b0f"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NestList", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Union", "[", 
+     RowBox[{"Flatten", "[", 
+      RowBox[{"StringReplaceList", "[", 
+       RowBox[{"#", ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"\"\<A\>\"", "->", "\"\<AB\>\""}], ",", 
+          RowBox[{"\"\<B\>\"", "->", "\"\<A\>\""}]}], "}"}]}], "]"}], "]"}], 
+     "]"}], "&"}], ",", 
+   RowBox[{"{", "\"\<A\>\"", "}"}], ",", "5"}], "]"}]], "Input",
+ CellLabel->"In[36]:=",ExpressionUUID->"6cafff9c-7093-4838-acc3-d3e7d794ef73"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", "\<\"A\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"AB\"\>", "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"AA\"\>", ",", "\<\"ABB\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"AAB\"\>", ",", "\<\"ABA\"\>", ",", "\<\"ABBB\"\>"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"AAA\"\>", ",", "\<\"AABB\"\>", ",", "\<\"ABAB\"\>", 
+     ",", "\<\"ABBA\"\>", ",", "\<\"ABBBB\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"AAAB\"\>", ",", "\<\"AABA\"\>", ",", "\<\"AABBB\"\>", 
+     ",", "\<\"ABAA\"\>", ",", "\<\"ABABB\"\>", ",", "\<\"ABBAB\"\>", 
+     ",", "\<\"ABBBA\"\>", ",", "\<\"ABBBBB\"\>"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.777737661023508*^9},
+ CellLabel->"Out[36]=",ExpressionUUID->"c6f633e8-465a-4767-8d69-1fd1afedb722"]
+}, Open  ]]
+},
+WindowSize->{1024, 686},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+Magnification:>2. Inherited,
+FrontEndVersion->"12.0 for Microsoft Windows (32-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 559, 14, 136, "Input",ExpressionUUID->"969a1fce-fe5d-4a39-8ea1-4ffe1d91bcfe"],
+Cell[1142, 38, 2381, 40, 442, "Output",ExpressionUUID->"412e1c27-7e82-4ebe-b194-e51603777b0f"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3560, 83, 533, 14, 175, "Input",ExpressionUUID->"6cafff9c-7093-4838-acc3-d3e7d794ef73"],
+Cell[4096, 99, 816, 18, 226, "Output",ExpressionUUID->"c6f633e8-465a-4767-8d69-1fd1afedb722"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
